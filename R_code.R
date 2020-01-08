@@ -1,4 +1,6 @@
 save_in_folder <- "D:/TGX/GitHub/"
+source(paste0(save_in_folder, "R_functions.R"))
+       
 ## Proteomic data in vitro:
 Invitro_data_log <- Loaded_data(folder = paste0(save_in_folder , "Anthracycline_Protein_Analysis/data"), file_name = "Hecatos_Cardio_Px_ANTvsFluctDMSO_log2_median_normalized.txt")
 Invitro_data_log <- get.rowname(Invitro_data_log)
