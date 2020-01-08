@@ -1,0 +1,815 @@
+Disease	Disease_id	Gene	Gene_id	UniProt	Gene_Full_Name	Protein_Class	N_diseases_g	DSI_g	DPI_g	pLI	Score_gda	EL_gda	EI_gda	N_PMIDs	N_SNPs_gda	First_Ref	Last_Ref
+Heart failure	C0018801	GRK2	156	P25098	G protein-coupled receptor kinase 2	kinase; transferase	92	0.58	0.517		0.6	no reported evidence	0.904761904761905	22	0	1994.0	2017.0
+Heart failure	C0018801	ACE	1636	P12821	angiotensin I converting enzyme	hydrolase; protease	624	0.367	0.897	1.5509e-37	0.6	no reported evidence	0.96969696969697	72	1	1992.0	2017.0
+Heart failure	C0018801	ADRB1	153	P08588	adrenoceptor beta 1	receptor	77	0.586	0.586	3.4881e-06	0.6	no reported evidence	0.933333333333333	35	2	1992.0	2017.0
+Heart failure	C0018801	AGT	183	P01019	angiotensinogen	enzyme modulator	451	0.406	0.862	3.8655e-08	0.6	no reported evidence	0.96551724137931	33	0	1992.0	2018.0
+Heart failure	C0018801	AGTR1	185	P30556	angiotensin II receptor type 1	receptor	273	0.454	0.759	0.0005718	0.6	no reported evidence	1.0	16	0	1997.0	2014.0
+Heart failure	C0018801	TNF	7124	P01375	tumor necrosis factor	signaling molecule	1640	0.263	0.966	0.8046	0.6	no reported evidence	0.9047619	30	0	1996.0	2013.0
+Heart failure	C0018801	NPPB	4879	P16860	natriuretic peptide B		112	0.567	0.552	9.1339e-06	0.6	no reported evidence	0.9166667	28	0	1991.0	2016.0
+Heart failure	C0018801	EDN1	1906	P05305	endothelin 1	signaling molecule	419	0.417	0.828	0.45733	0.6	no reported evidence	1.0	20	1	1994.0	2014.0
+Heart failure	C0018801	ATP2A2	488	P16615	ATPase sarcoplasmic/endoplasmic reticulum Ca2+ transporting 2	hydrolase; transporter	98	0.572	0.552	0.99949	0.6	no reported evidence	0.909090909090909	13	0	1996.0	2016.0
+Heart failure	C0018801	IL6	3569	P05231	interleukin 6		1330	0.287	0.966	0.33873	0.6	no reported evidence	1.0	14	0	2000.0	2016.0
+Heart failure	C0018801	NPPA	4878	P01160	natriuretic peptide A		127	0.546	0.69	0.00063899	0.59	no reported evidence	0.8888889	14	1	1989.0	2015.0
+Heart failure	C0018801	HIF1A	3091	Q16665	hypoxia inducible factor 1 subunit alpha	nucleic acid binding; transcription factor	586	0.367	0.793	0.97467	0.57	no reported evidence	1.0	9	0	2005.0	2016.0
+Heart failure	C0018801	PPARGC1A	10891	Q9UBK2	PPARG coactivator 1 alpha	transcription factor	191	0.497	0.828	0.99991	0.55	no reported evidence	1.0	7	0	2004.0	2013.0
+Heart failure	C0018801	HMOX1	3162	P09601	heme oxygenase 1	oxidoreductase	460	0.403	0.862	0.0078856	0.54	no reported evidence	1.0	6	0	2005.0	2016.0
+Heart failure	C0018801	SOD2	6648	P04179	superoxide dismutase 2	oxidoreductase	488	0.396	0.897	0.15955	0.51	no reported evidence	1.0	6	0	2006.0	2014.0
+Heart failure	C0018801	ADRB3	155	P13945	adrenoceptor beta 3	receptor	98	0.558	0.552	2.7182e-07	0.51	no reported evidence	1.0	4	0	2004.0	2011.0
+Heart failure	C0018801	MSTN	2660	O14793	myostatin	signaling molecule	67	0.602	0.586	0.4399	0.51	no reported evidence	1.0	2	0	2007.0	2011.0
+Heart failure	C0018801	HTR2B	3357	P41595	5-hydroxytryptamine receptor 2B	receptor	34	0.696	0.31	3.4768e-10	0.5	no reported evidence		2	0	2008.0	2009.0
+Heart failure	C0018801	RAC1	5879	P63000	Rac family small GTPase 1	enzyme modulator	226	0.47	0.931	0.70654	0.5	no reported evidence		2	0	2003.0	2006.0
+Heart failure	C0018801	TNNT2	7139	P45379	troponin T2, cardiac type	cytoskeletal protein	64	0.611	0.241	0.002605	0.42	no reported evidence	1.0	4	0	2002.0	2016.0
+Heart failure	C0018801	REN	5972	P00797	renin	hydrolase; protease	373	0.423	0.759	2.1242e-07	0.4	no reported evidence	0.96875	35	0	1982.0	2017.0
+Heart failure	C0018801	NR3C2	4306	P08235	nuclear receptor subfamily 3 group C member 2	nucleic acid binding; receptor; transcription factor	163	0.52	0.69	0.80843	0.4	no reported evidence	1.0	14	0	2005.0	2016.0
+Heart failure	C0018801	NOS3	4846	P29474	nitric oxide synthase 3		467	0.401	0.862	8.8921e-07	0.4	no reported evidence	0.8461538	15	2	2008.0	2016.0
+Heart failure	C0018801	VEGFA	7422	P15692	vascular endothelial growth factor A	signaling molecule	1174	0.298	0.897	2.651e-05	0.39	no reported evidence	1.0	11	0	2000.0	2016.0
+Heart failure	C0018801	CRP	1401	P02741	C-reactive protein		470	0.399	0.862	0.0037357	0.38	no reported evidence	0.875	9	0	2006.0	2013.0
+Heart failure	C0018801	CTGF	1490	P29279	connective tissue growth factor	signaling molecule	299	0.443	0.759	0.0027502	0.37	no reported evidence	1.0	8	0	2010.0	2015.0
+Heart failure	C0018801	ADRA2C	152	P18825	adrenoceptor alpha 2C	receptor	26	0.707	0.207	0.51513	0.36	no reported evidence	0.5	7	0	2002.0	2013.0
+Heart failure	C0018801	PPP1R1A	5502	Q13522	protein phosphatase 1 regulatory inhibitor subunit 1A	enzyme modulator; signaling molecule	57	0.6	0.586	0.021352	0.36	no reported evidence	0.8333333	7	2	2004.0	2016.0
+Heart failure	C0018801	NOS2	4843	P35228	nitric oxide synthase 2		531	0.385	0.931	1.4648e-14	0.35	no reported evidence	0.8	6	0	1996.0	2014.0
+Heart failure	C0018801	EDNRA	1909	P25101	endothelin receptor type A		259	0.469	0.828	0.99154	0.34	no reported evidence	1.0	5	0	1999.0	2017.0
+Heart failure	C0018801	IL1B	3553	P01584	interleukin 1 beta		1035	0.312	0.931	0.12568	0.34	no reported evidence	1.0	5	0	2004.0	2014.0
+Heart failure	C0018801	AVP	551	P01185	arginine vasopressin	signaling molecule	238	0.486	0.759	0.075195	0.34	no reported evidence	1.0	5	0	2000.0	2018.0
+Heart failure	C0018801	SIRT1	23411	Q96EB6	sirtuin 1	hydrolase; nucleic acid binding	325	0.432	0.828	0.081958	0.34	no reported evidence	1.0	5	0	2010.0	2016.0
+Heart failure	C0018801	NRG1	3084	Q02297	neuregulin 1	signaling molecule	173	0.506	0.759	0.99553	0.34	no reported evidence	0.75	4	0	2005.0	2013.0
+Heart failure	C0018801	PPARG	5468	P37231	peroxisome proliferator activated receptor gamma	nucleic acid binding; receptor; transcription factor	540	0.388	0.828	0.1447	0.34	no reported evidence	1.0	5	0	2003.0	2017.0
+Heart failure	C0018801	EDNRB	1910	P24530	endothelin receptor type B		223	0.492	0.793	0.012005	0.33	no reported evidence	1.0	4	0	2000.0	2017.0
+Heart failure	C0018801	PIK3CG	5294	P48736	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit gamma	kinase; transferase	490	0.385	0.862	1.4942e-06	0.33	no reported evidence	1.0	4	0	2003.0	2012.0
+Heart failure	C0018801	GDF15	9518	Q99988	growth differentiation factor 15	signaling molecule	174	0.496	0.621	2.851e-07	0.33	no reported evidence	1.0	4	0	2010.0	2017.0
+Heart failure	C0018801	MYH7	4625	P12883	myosin heavy chain 7		146	0.564	0.483	3.748e-16	0.33	no reported evidence	1.0	4	1	2007.0	2014.0
+Heart failure	C0018801	NPR1	4881	P16066	natriuretic peptide receptor 1	lyase	42	0.672	0.414	0.00093819	0.32	no reported evidence	1.0	3	0	2006.0	2015.0
+Heart failure	C0018801	XDH	7498	P47989	xanthine dehydrogenase	oxidoreductase	101	0.567	0.655	5.0422e-22	0.32	no reported evidence	1.0	3	0	2004.0	2016.0
+Heart failure	C0018801	GHRL	51738	Q9UBU3	ghrelin and obestatin prepropeptide		157	0.511	0.655	1.2062e-11	0.32	no reported evidence	1.0	3	0	2004.0	2011.0
+Heart failure	C0018801	SLC9A1	6548	P19634	solute carrier family 9 member A1		89	0.6	0.448	0.7925	0.32	no reported evidence	1.0	3	0	2002.0	2009.0
+Heart failure	C0018801	EPHX2	2053	P34913	epoxide hydrolase 2	hydrolase; protease	47	0.633	0.448	1.3959e-21	0.32	no reported evidence	1.0	2	0	2008.0	2015.0
+Heart failure	C0018801	TNFRSF1A	7132	P19438	TNF receptor superfamily member 1A		307	0.443	0.862	0.99585	0.32	no reported evidence	1.0	3	0	2006.0	2015.0
+Heart failure	C0018801	MYH6	4624	P13533	myosin heavy chain 6		61	0.621	0.552	3.2416e-31	0.32	no reported evidence	1.0	3	0	1997.0	2015.0
+Heart failure	C0018801	SOD3	6649	P08294	superoxide dismutase 3	oxidoreductase	72	0.58	0.655	0.0007585	0.31	no reported evidence	1.0	2	0	2010.0	2016.0
+Heart failure	C0018801	SERPINE1	5054	P05121	serpin family E member 1	enzyme modulator	506	0.384	0.793	0.047491	0.31	no reported evidence	1.0	2	0	2012.0	2014.0
+Heart failure	C0018801	CAT	847	P04040	catalase	oxidoreductase	446	0.397	0.828	1.8782e-10	0.31	no reported evidence	1.0	2	0	2000.0	2006.0
+Heart failure	C0018801	NFE2L2	4780	Q16236	nuclear factor, erythroid 2 like 2	cytoskeletal protein; hydrolase; nucleic acid binding; transcription factor	376	0.42	0.862	0.0035489	0.31	no reported evidence	1.0	2	0	2015.0	2017.0
+Heart failure	C0018801	UCN2	90226	Q96RP3	urocortin 2		20	0.696	0.379	0.038845	0.31	no reported evidence	1.0	2	0	2006.0	2016.0
+Heart failure	C0018801	RETN	56729	Q9HD89	resistin		115	0.542	0.759	0.039671	0.31	no reported evidence	1.0	2	0	2014.0	2016.0
+Heart failure	C0018801	PEBP1	5037	P30086	phosphatidylethanolamine binding protein 1	enzyme modulator	125	0.525	0.724	0.083685	0.31	no reported evidence	1.0	2	0	2016.0	2016.0
+Heart failure	C0018801	AVPR2	554	P30518	arginine vasopressin receptor 2	receptor	78	0.616	0.483	0.48835	0.31	no reported evidence	1.0	2	0	2002.0	2015.0
+Heart failure	C0018801	POMC	5443	P01189	proopiomelanocortin		557	0.382	0.862	9.3851e-05	0.31	no reported evidence	1.0	3	0	1987.0	2005.0
+Heart failure	C0018801	CYBB	1536	P04839	cytochrome b-245 beta chain	oxidoreductase	187	0.503	0.793	0.99895	0.31	no reported evidence	1.0	2	0	2010.0	2013.0
+Heart failure	C0018801	GATM	2628	P50440	glycine amidinotransferase		52	0.672	0.517	0.054324	0.31	no reported evidence	1.0	1	0	2006.0	2006.0
+Heart failure	C0018801	ALB	213	P02768	albumin	transfer/carrier protein	402	0.412	0.828	0.60914	0.31	no reported evidence	1.0	2	0	2002.0	2012.0
+Heart failure	C0018801	PTGS2	5743	P35354	prostaglandin-endoperoxide synthase 2	oxidoreductase	832	0.338	0.897	0.99639	0.31	no reported evidence	1.0	2	0	2008.0	2010.0
+Heart failure	C0018801	NOX4	50507	Q9NPH5	NADPH oxidase 4	oxidoreductase	119	0.533	0.621	5.3366e-19	0.31	no reported evidence	1.0	2	0	2005.0	2010.0
+Heart failure	C0018801	PRL	5617	P01236	prolactin	signaling molecule	276	0.454	0.793	1.4767e-06	0.31	no reported evidence	0.0	2	0	2002.0	2009.0
+Heart failure	C0018801	CSF3	1440	P09919	colony stimulating factor 3		393	0.421	0.828	0.32663	0.31	no reported evidence	1.0	2	0	2005.0	2009.0
+Heart failure	C0018801	IFNG	3458	P01579	interferon gamma		901	0.323	0.897	0.47138	0.31	no reported evidence	1.0	3	0	1986.0	2013.0
+Heart failure	C0018801	FBLN5	10516	Q9UBX5	fibulin 5	calcium-binding protein; cell adhesion molecule; extracellular matrix protein; signaling molecule	119	0.57	0.586	0.99959	0.3	no reported evidence		1	0	2003.0	2003.0
+Heart failure	C0018801	NRIP1	8204	P48552	nuclear receptor interacting protein 1		41	0.659	0.414	0.99531	0.3	no reported evidence		1	0	2013.0	2013.0
+Heart failure	C0018801	CSF2	1437	P04141	colony stimulating factor 2	signaling molecule	670	0.356	0.966	0.84256	0.3	no reported evidence		1	0	2001.0	2001.0
+Heart failure	C0018801	ADIPOQ	9370	Q15848	adiponectin, C1Q and collagen domain containing		201	0.485	0.724	5.0074e-09	0.3	no reported evidence		2	0	2009.0	2016.0
+Heart failure	C0018801	GCG	2641	P01275	glucagon		152	0.529	0.655	0.025209	0.3	no reported evidence		1	0	1995.0	1995.0
+Heart failure	C0018801	GSK3B	2932	P49841	glycogen synthase kinase 3 beta	kinase; transferase	185	0.488	0.793	0.96265	0.3	no reported evidence		1	0	2008.0	2008.0
+Heart failure	C0018801	CXCL2	2920	P19875	C-X-C motif chemokine ligand 2	signaling molecule	101	0.555	0.69	4.2169e-07	0.3	no reported evidence		1	0	2012.0	2012.0
+Heart failure	C0018801	GPX4	2879	P36969	glutathione peroxidase 4	oxidoreductase	126	0.579	0.655	0.00025046	0.3	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	FASN	2194	P49327	fatty acid synthase	hydrolase; ligase; oxidoreductase; transferase	150	0.516	0.793	1.0	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	HSPB1	3315	P04792	heat shock protein family B (small) member 1		261	0.468	0.69	1.7685e-06	0.3	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	CS	1431	O75390	citrate synthase	lyase; transferase	44	0.659	0.517	0.98285	0.3	no reported evidence		1	0	1997.0	1997.0
+Heart failure	C0018801	ITGB1	3688	P05556	integrin subunit beta 1	cell adhesion molecule; extracellular matrix protein; receptor	127	0.536	0.655	0.99941	0.3	no reported evidence		1	0	2002.0	2002.0
+Heart failure	C0018801	UCP1	7350	P25874	uncoupling protein 1		60	0.616	0.552	2.0636e-11	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	INS	3630	P01308	insulin		309	0.458	0.828	0.32169	0.3	no reported evidence		1	0	2005.0	2005.0
+Heart failure	C0018801	CFD	1675	P00746	complement factor D	hydrolase; protease	33	0.672	0.448	5.7434e-05	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	NOX1	27035	Q9Y5S8	NADPH oxidase 1	oxidoreductase	68	0.607	0.586	9.9376e-08	0.3	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	VWF	7450	P04275	von Willebrand factor	enzyme modulator	260	0.462	0.724	7.8464e-24	0.3	no reported evidence		1	0	2012.0	2012.0
+Heart failure	C0018801	RBP4	5950	P02753	retinol binding protein 4	transfer/carrier protein	134	0.534	0.724	0.56477	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	CIDEA	1149	O60543	cell death-inducing DFFA-like effector a		14	0.752	0.207	3.1562e-05	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	ELOVL6	79071	Q9H5J4	ELOVL fatty acid elongase 6	transferase	21	0.69	0.345	0.95647	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	KAT8	84148	Q9H7Z6	lysine acetyltransferase 8	nucleic acid binding; transcription factor; transferase	31	0.672	0.345	0.25846	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	ACACA	31	Q13085	acetyl-CoA carboxylase alpha		93	0.552	0.759	1.0	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	ATP2A1	487	O14983	ATPase sarcoplasmic/endoplasmic reticulum Ca2+ transporting 1	hydrolase; transporter	28	0.707	0.276	1.2361e-14	0.3	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	PCK1	5105	P35558	phosphoenolpyruvate carboxykinase 1	lyase	43	0.642	0.414	1.422e-14	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	ACLY	47	P53396	ATP citrate lyase	ligase; lyase; transferase	36	0.652	0.414	0.048709	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	SOD1	6647	P00441	superoxide dismutase 1	oxidoreductase	456	0.406	0.931	0.12829	0.3	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	MAP2K7	5609	O14733	mitogen-activated protein kinase kinase 7		231	0.462	0.759	0.99908	0.3	no reported evidence		1	0	2011.0	2011.0
+Heart failure	C0018801	PTGS1	5742	P23219	prostaglandin-endoperoxide synthase 1	oxidoreductase	199	0.495	0.828	2.6476e-06	0.3	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	ADRB2	154	P07550	adrenoceptor beta 2	receptor	254	0.479	0.793	0.58042	0.3	no reported evidence	0.909090909090909	14	1	1996.0	2013.0
+Heart failure	C0018801	ATP1A3	478	P13637	ATPase Na+/K+ transporting subunit alpha 3		122	0.58	0.379	1.0	0.3	no reported evidence		1	0	2008.0	2008.0
+Heart failure	C0018801	PON1	5444	P27169	paraoxonase 1		324	0.443	0.828	8.9806e-11	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	PDPK1	5170	O15530	3-phosphoinositide dependent protein kinase 1	calcium-binding protein; kinase; transfer/carrier protein; transferase	41	0.639	0.31	0.9709	0.3	no reported evidence		1	0	2009.0	2009.0
+Heart failure	C0018801	RYR2	6262	Q92736	ryanodine receptor 2	receptor; transporter	102	0.575	0.414	0.99999	0.3	no reported evidence	1.0	25	1	2002.0	2016.0
+Heart failure	C0018801	PLN	5350	P26678	phospholamban		53	0.627	0.379	0.46545	0.3	no reported evidence	0.9032258	33	1	1991.0	2018.0
+Heart failure	C0018801	APCS	325	P02743	amyloid P component, serum		88	0.565	0.655	0.030048	0.3	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	APOC1	341	P02654	apolipoprotein C1		64	0.604	0.552	0.20177	0.3	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	OLR1	4973	P78380	oxidized low density lipoprotein receptor 1		74	0.59	0.552	0.0088964	0.3	no reported evidence		1	0	2012.0	2012.0
+Heart failure	C0018801	PRKAR2B	5577	P31323	protein kinase cAMP-dependent type II regulatory subunit beta		14	0.762	0.345	0.99923	0.3	no reported evidence		1	0	2016.0	2016.0
+Heart failure	C0018801	PLAT	5327	P00750	plasminogen activator, tissue type	hydrolase; protease	267	0.459	0.828	3.4642e-05	0.3	no reported evidence		1	0	2012.0	2012.0
+Heart failure	C0018801	SCN5A	6331	Q14524	sodium voltage-gated channel alpha subunit 5	transporter	158	0.527	0.552	0.88219	0.3	no reported evidence	1.0	11	1	2005.0	2018.0
+Heart failure	C0018801	PTH	5741	P01270	parathyroid hormone		244	0.457	0.793	0.011614	0.3	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	CSRP3	8048	P50461	cysteine and glycine rich protein 3	cytoskeletal protein	54	0.633	0.517	0.00018494	0.29	no reported evidence	1.0	9	0	1997.0	2015.0
+Heart failure	C0018801	ACE2	59272	Q9BYF1	angiotensin I converting enzyme 2	hydrolase; protease	118	0.542	0.655	0.99813	0.29	no reported evidence	0.8888889	9	0	2000.0	2017.0
+Heart failure	C0018801	IGF1	3479	P05019	insulin like growth factor 1		715	0.355	0.828	0.28843	0.28	no reported evidence	1.0	9	0	2003.0	2012.0
+Heart failure	C0018801	TP53	7157	P04637	tumor protein p53	transcription factor	1773	0.251	0.897	0.16862	0.28	no reported evidence	1.0	9	0	2003.0	2014.0
+Heart failure	C0018801	LGALS3	3958	P17931	galectin 3	cell adhesion molecule; signaling molecule	231	0.466	0.759	2.3862e-05	0.26	no reported evidence	1.0	6	0	2005.0	2017.0
+Heart failure	C0018801	SLC8A1	6546	P32418	solute carrier family 8 member A1		66	0.609	0.483	0.99605	0.25	no reported evidence	1.0	6	0	2000.0	2015.0
+Heart failure	C0018801	MMP9	4318	P14780	matrix metallopeptidase 9	hydrolase; protease	790	0.339	0.862	7.0286e-18	0.25	no reported evidence	1.0	7	0	2001.0	2016.0
+Heart failure	C0018801	CASQ2	845	O14958	calsequestrin 2		38	0.667	0.345	1.0895e-12	0.25	no reported evidence	1.0	6	0	2010.0	2016.0
+Heart failure	C0018801	ADM	133	P35318	adrenomedullin	signaling molecule	246	0.471	0.724	0.034615	0.24	no reported evidence	0.5	5	0	2002.0	2006.0
+Heart failure	C0018801	CCL2	6347	P13500	C-C motif chemokine ligand 2	signaling molecule	691	0.353	0.897	0.61778	0.23	no reported evidence	1.0	4	0	2003.0	2012.0
+Heart failure	C0018801	NOS1	4842	P29475	nitric oxide synthase 1		305	0.445	0.793	1.0	0.23	no reported evidence	0.6666667	5	0	1998.0	2013.0
+Heart failure	C0018801	IL10	3586	P22301	interleukin 10		961	0.32	0.931	0.0065063	0.23	no reported evidence	1.0	5	0	1996.0	2014.0
+Heart failure	C0018801	ERBB2	2064	P04626	erb-b2 receptor tyrosine kinase 2		650	0.352	0.862	0.0018012	0.23	no reported evidence	0.666666666666667	4	0	1999.0	2007.0
+Heart failure	C0018801	MMP1	4312	P03956	matrix metallopeptidase 1	hydrolase; protease	388	0.415	0.793	6.2409e-18	0.22	no reported evidence	1.0	3	0	2004.0	2013.0
+Heart failure	C0018801	ECE1	1889	P42892	endothelin converting enzyme 1	hydrolase; protease	102	0.58	0.483	0.95596	0.22	no reported evidence	0.5	4	0	1998.0	2009.0
+Heart failure	C0018801	NCAM1	4684	P13591	neural cell adhesion molecule 1		287	0.445	0.759	0.99999	0.22	no reported evidence	1.0	3	0	2010.0	2014.0
+Heart failure	C0018801	HP	3240	P00738	haptoglobin	hydrolase; protease	228	0.461	0.793	7.4325e-05	0.22	no reported evidence	1.0	3	0	2005.0	2015.0
+Heart failure	C0018801	POSTN	10631	Q15063	periostin	cell adhesion molecule; signaling molecule	63	0.598	0.724	3.6193e-09	0.22	no reported evidence	1.0	3	0	2005.0	2015.0
+Heart failure	C0018801	AGTR2	186	P50052	angiotensin II receptor type 2	receptor	110	0.554	0.621	0.0081935	0.22	no reported evidence	0.0	4	0	2002.0	2012.0
+Heart failure	C0018801	DDR1	780	Q08345	discoidin domain receptor tyrosine kinase 1		118	0.533	0.69	5.1755e-06	0.21	no reported evidence	1.0	2	0	2002.0	2006.0
+Heart failure	C0018801	NPY	4852	P01303	neuropeptide Y	signaling molecule	243	0.469	0.69	0.15508	0.21	no reported evidence	1.0	2	0	2003.0	2008.0
+Heart failure	C0018801	CORIN	10699	Q9Y5Q5	corin, serine peptidase		19	0.773	0.207	9.0905e-33	0.21	no reported evidence	1.0	3	0	2004.0	2013.0
+Heart failure	C0018801	SRI	6717	P30626	sorcin		32	0.667	0.345	2.9621e-10	0.21	no reported evidence	1.0	3	0	2003.0	2012.0
+Heart failure	C0018801	KCNE1	3753	P15382	potassium voltage-gated channel subfamily E regulatory subunit 1		47	0.642	0.31	0.0037418	0.21	no reported evidence	1.0	2	2	2006.0	2010.0
+Heart failure	C0018801	ARRB1	408	P49407	arrestin beta 1	enzyme modulator	52	0.616	0.552	0.99368	0.21	no reported evidence	1.0	2	0	1994.0	2011.0
+Heart failure	C0018801	SCD	6319	O00767	stearoyl-CoA desaturase		131	0.538	0.586	0.9581	0.21	no reported evidence	1.0	2	0	2016.0	2016.0
+Heart failure	C0018801	UCP3	7352	P55916	uncoupling protein 3		43	0.652	0.414	1.0316e-09	0.21	no reported evidence	1.0	2	0	2002.0	2011.0
+Heart failure	C0018801	ALOX15	246	P16050	arachidonate 15-lipoxygenase	oxidoreductase	115	0.543	0.69	3.9512e-24	0.21	no reported evidence	1.0	2	0	2006.0	2009.0
+Heart failure	C0018801	HTR2A	3356	P28223	5-hydroxytryptamine receptor 2A	receptor	211	0.488	0.759	0.47959	0.21	no reported evidence	1.0	2	0	2005.0	2008.0
+Heart failure	C0018801	GNAQ	2776	P50148	G protein subunit alpha q	enzyme modulator	87	0.586	0.483	0.99639	0.21	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	HMGB1	3146	P09429	high mobility group box 1	nucleic acid binding; signaling molecule; transcription factor	322	0.433	0.828	0.83018	0.21	no reported evidence	1.0	2	0	2013.0	2014.0
+Heart failure	C0018801	CALR	811	P27797	calreticulin	calcium-binding protein	196	0.492	0.793	0.89633	0.21	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	BNIP3	664	Q12983	BCL2 interacting protein 3		84	0.569	0.621	2.0562e-05	0.21	no reported evidence	1.0	2	0	2009.0	2013.0
+Heart failure	C0018801	TIMP1	7076	P01033	TIMP metallopeptidase inhibitor 1	enzyme modulator	353	0.418	0.759	0.48258	0.21	no reported evidence	1.0	2	0	2000.0	2004.0
+Heart failure	C0018801	NR3C1	2908	P04150	nuclear receptor subfamily 3 group C member 1	nucleic acid binding; receptor; transcription factor	349	0.427	0.793	0.97882	0.21	no reported evidence	1.0	2	0	2010.0	2011.0
+Heart failure	C0018801	PARP1	142	P09874	poly(ADP-ribose) polymerase 1		312	0.432	0.862	0.00055174	0.21	no reported evidence	1.0	2	0	2005.0	2009.0
+Heart failure	C0018801	APLN	8862	Q9ULZ1	apelin		17	0.762	0.241	0.46318	0.21	no reported evidence		3	0	2003.0	2007.0
+Heart failure	C0018801	CX3CR1	1524	P49238	C-X3-C motif chemokine receptor 1		185	0.496	0.828	0.056757	0.21	no reported evidence	1.0	2	0	2008.0	2014.0
+Heart failure	C0018801	NOS1AP	9722	O75052	nitric oxide synthase 1 adaptor protein	signaling molecule	41	0.652	0.345	0.6235	0.2	no reported evidence		1	0	2012.0	2012.0
+Heart failure	C0018801	GRK1	6011	Q15835	G protein-coupled receptor kinase 1	kinase; transferase	22	0.707	0.31	3.4044e-05	0.2	no reported evidence		1	0	2002.0	2002.0
+Heart failure	C0018801	ENG	2022	P17813	endoglin		249	0.477	0.655	0.99877	0.2	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	ENDOG	2021	Q14249	endonuclease G		33	0.663	0.414	0.0001828	0.2	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	FTH1	2495	P02794	ferritin heavy chain 1	storage protein	50	0.627	0.517	0.16058	0.2	no reported evidence		1	0	2009.0	2009.0
+Heart failure	C0018801	DYNLL1	8655	P63167	dynein light chain LC8-type 1	cytoskeletal protein; enzyme modulator	50	0.63	0.586	0.70691	0.2	no reported evidence		1	0	2013.0	2013.0
+Heart failure	C0018801	SIRT3	23410	Q9NTG7	sirtuin 3	hydrolase; nucleic acid binding	73	0.598	0.586	0.00017098	0.2	no reported evidence		1	0	2012.0	2012.0
+Heart failure	C0018801	TOMM70	9868	O94826	translocase of outer mitochondrial membrane 70		4	0.857	0.207		0.2	no reported evidence		1	0	2014.0	2014.0
+Heart failure	C0018801	BECN1	8678	Q14457	beclin 1	enzyme modulator	164	0.497	0.759	0.91207	0.2	no reported evidence		1	0	2009.0	2009.0
+Heart failure	C0018801	ALOX12	239	P18054	arachidonate 12-lipoxygenase, 12S type	oxidoreductase	76	0.596	0.621	6.6067e-16	0.2	no reported evidence		1	0	2005.0	2005.0
+Heart failure	C0018801	FOS	2353	P01100	Fos proto-oncogene, AP-1 transcription factor subunit	transcription factor	350	0.436	0.862	0.23302	0.2	no reported evidence		1	0	2005.0	2005.0
+Heart failure	C0018801	FOSL1	8061	P15407	FOS like 1, AP-1 transcription factor subunit	transcription factor	99	0.548	0.724	0.17418	0.2	no reported evidence		1	0	2005.0	2005.0
+Heart failure	C0018801	PRKCA	5578	P17252	protein kinase C alpha	calcium-binding protein; kinase; transfer/carrier protein; transferase	125	0.535	0.655	0.33866	0.2	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	FKBP1B	2281	P68106	FK506 binding protein 1B	calcium-binding protein; chaperone; isomerase	9	0.834	0.069	0.39557	0.2	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	PRKCB	5579	P05771	protein kinase C beta	calcium-binding protein; kinase; transfer/carrier protein; transferase	88	0.564	0.69	1.0	0.2	no reported evidence		1	0	2002.0	2002.0
+Heart failure	C0018801	CASP12	100506742	Q6UXS9	caspase 12 (gene/pseudogene)	enzyme modulator; hydrolase; protease	38	0.633	0.69	0.00038679	0.2	no reported evidence		1	0	2008.0	2008.0
+Heart failure	C0018801	HSF1	3297	Q00613	heat shock transcription factor 1	transcription factor	101	0.552	0.655	0.94525	0.2	no reported evidence		1	0	2014.0	2014.0
+Heart failure	C0018801	RAMP2	10266	O60895	receptor activity modifying protein 2	receptor	35	0.663	0.517	0.0481	0.2	no reported evidence		1	0	2003.0	2003.0
+Heart failure	C0018801	OGT	8473	O15294	O-linked N-acetylglucosamine (GlcNAc) transferase		32	0.672	0.448	1.0	0.2	no reported evidence		1	0	2012.0	2012.0
+Heart failure	C0018801	ERBB4	2066	Q15303	erb-b2 receptor tyrosine kinase 4		185	0.494	0.69	0.99892	0.2	no reported evidence		1	0	1999.0	1999.0
+Heart failure	C0018801	ACAN	176	P16112	aggrecan	extracellular matrix protein	129	0.562	0.724	1.0	0.2	no reported evidence		1	0	2015.0	2015.0
+Heart failure	C0018801	MMP14	4323	P50281	matrix metallopeptidase 14	hydrolase; protease	240	0.466	0.724	0.99515	0.2	no reported evidence		1	0	2000.0	2000.0
+Heart failure	C0018801	NGFR	4804	P08138	nerve growth factor receptor	receptor	160	0.508	0.724	0.29947	0.2	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	MAS1	4142	P04201	MAS1 proto-oncogene, G protein-coupled receptor		56	0.609	0.586	9.8353e-05	0.2	no reported evidence		1	0	2012.0	2012.0
+Heart failure	C0018801	MDH2	4191	P40926	malate dehydrogenase 2	oxidoreductase	89	0.627	0.483	0.0067243	0.2	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	MYOD1	4654	P15172	myogenic differentiation 1	nucleic acid binding; transcription factor	80	0.604	0.621	0.15146	0.2	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	BCL2	596	P10415	BCL2, apoptosis regulator	signaling molecule	987	0.312	0.862	0.56705	0.2	no reported evidence		1	0	2008.0	2008.0
+Heart failure	C0018801	P2RX4	5025	Q99571	purinergic receptor P2X 4	receptor; transporter	49	0.645	0.414	5.6415e-12	0.2	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	MMP2	4313	P08253	matrix metallopeptidase 2	hydrolase; protease	628	0.373	0.862	0.83952	0.2	no reported evidence		1	0	2000.0	2000.0
+Heart failure	C0018801	TIMP4	7079	Q99727	TIMP metallopeptidase inhibitor 4	enzyme modulator	62	0.607	0.621	0.00032907	0.2	no reported evidence		1	0	2000.0	2000.0
+Heart failure	C0018801	MMP8	4317	P22894	matrix metallopeptidase 8	hydrolase; protease	107	0.552	0.724	1.0411e-24	0.2	no reported evidence		1	0	2000.0	2000.0
+Heart failure	C0018801	RNLS	55328	Q5VYX0	renalase, FAD dependent amine oxidase		21	0.701	0.379	4.4412e-06	0.2	no reported evidence		1	0	2011.0	2011.0
+Heart failure	C0018801	MED1	5469	Q15648	mediator complex subunit 1	nucleic acid binding	51	0.607	0.552	1.0	0.2	no reported evidence		0	0		
+Heart failure	C0018801	MMP13	4322	P45452	matrix metallopeptidase 13	hydrolase; protease	234	0.479	0.759	7.37e-18	0.2	no reported evidence		2	0	2000.0	2000.0
+Heart failure	C0018801	SELP	6403	P16109	selectin P		151	0.519	0.724	4.2701e-32	0.2	no reported evidence		1	0	2009.0	2009.0
+Heart failure	C0018801	CHRNA4	1137	P43681	cholinergic receptor nicotinic alpha 4 subunit	receptor; transporter	153	0.521	0.586	0.00011281	0.2	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	TIMP2	7077	P16035	TIMP metallopeptidase inhibitor 2	enzyme modulator	224	0.467	0.759	0.80818	0.2	no reported evidence		1	0	2000.0	2000.0
+Heart failure	C0018801	TNFRSF11B	4982	O00300	TNF receptor superfamily member 11b		270	0.467	0.69	0.21052	0.2	no reported evidence		1	0	2005.0	2005.0
+Heart failure	C0018801	TH	7054	P07101	tyrosine hydroxylase		203	0.498	0.759	2.4899e-06	0.2	no reported evidence		1	0	2011.0	2011.0
+Heart failure	C0018801	OPA1	4976	O60313	OPA1, mitochondrial dynamin like GTPase	cytoskeletal protein; enzyme modulator; hydrolase	150	0.555	0.621	0.99792	0.2	no reported evidence		1	0	2009.0	2009.0
+Heart failure	C0018801	UCP2	7351	P55851	uncoupling protein 2		148	0.53	0.69	1.3475e-10	0.2	no reported evidence		2	0	2010.0	2011.0
+Heart failure	C0018801	CHRM4	1132	P08173	cholinergic receptor muscarinic 4	receptor	31	0.799	0.172	0.97315	0.2	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	BAX	581	Q07812	BCL2 associated X, apoptosis regulator	signaling molecule	267	0.45	0.862	0.30181	0.2	no reported evidence		1	0	2008.0	2008.0
+Heart failure	C0018801	PLCD1	5333	P51178	phospholipase C delta 1	enzyme modulator; signaling molecule	41	0.667	0.517	1.2262e-18	0.2	no reported evidence		1	0	2001.0	2001.0
+Heart failure	C0018801	IL6R	3570	P08887	interleukin 6 receptor	defense/immunity protein; signaling molecule	165	0.496	0.724	2.8446e-05	0.2	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	NPTXR	23467	O95502	neuronal pentraxin receptor		6	0.815	0.172	0.74461	0.2	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	DNMT1	1786	P26358	DNA methyltransferase 1		299	0.438	0.759	1.0	0.2	no reported evidence		1	0	2014.0	2014.0
+Heart failure	C0018801	PLD2	5338	O14939	phospholipase D2		43	0.652	0.483	2.2893e-27	0.2	no reported evidence		1	0	2004.0	2004.0
+Heart failure	C0018801	BIRC5	332	O15392	baculoviral IAP repeat containing 5	enzyme modulator	191	0.479	0.655	0.056738	0.2	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	MTPN	136319	P58546	myotrophin		5	0.857	0.069	0.82909	0.2	no reported evidence		0	0		
+Heart failure	C0018801	TUBB	203068	P07437	tubulin beta class I	cytoskeletal protein	84	0.611	0.655	0.98045	0.2	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	DMD	1756	P11532	dystrophin		299	0.477	0.724	1.0	0.2	no reported evidence	0.928571428571429	14	0	1996.0	2016.0
+Heart failure	C0018801	DIO3	1735	P55073	iodothyronine deiodinase 3		34	0.663	0.517	0.59525	0.2	no reported evidence		1	0	2008.0	2008.0
+Heart failure	C0018801	IL17A	3605	Q16552	interleukin 17A		468	0.391	0.862	0.044037	0.2	no reported evidence		2	0	2009.0	2010.0
+Heart failure	C0018801	SCN8A	6334	Q9UQD0	sodium voltage-gated channel alpha subunit 8	transporter	168	0.557	0.552	1.0	0.2	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	CYP11B1	1584	P15538	cytochrome P450 family 11 subfamily B member 1		99	0.588	0.552	7.597e-07	0.2	no reported evidence		1	0	2009.0	2009.0
+Heart failure	C0018801	KCNK2	3776	O95069	potassium two pore domain channel subfamily K member 2		38	0.667	0.276	0.020969	0.2	no reported evidence		1	0	2015.0	2015.0
+Heart failure	C0018801	PGF	5228	P49763	placental growth factor	signaling molecule	142	0.52	0.621	0.135	0.2	no reported evidence		1	0	2009.0	2009.0
+Heart failure	C0018801	LIF	3976	P15018	LIF, interleukin 6 family cytokine	signaling molecule	138	0.528	0.655	0.50007	0.2	no reported evidence		1	0	2010.0	2010.0
+Heart failure	C0018801	LMNA	4000	P02545	lamin A/C		727	0.406	0.724	0.9983	0.18	no reported evidence	0.875	8	2	2006.0	2014.0
+Heart failure	C0018801	GJA1	2697	P17302	gap junction protein alpha 1	cell junction protein	496	0.431	0.793	0.1384	0.16	no reported evidence	0.8	6	0	2003.0	2015.0
+Heart failure	C0018801	BAG3	9531	O95817	BCL2 associated athanogene 3		117	0.558	0.69	0.55659	0.15	no reported evidence	1.0	5	0	2011.0	2016.0
+Heart failure	C0018801	DSP	1832	P15924	desmoplakin	cytoskeletal protein	155	0.532	0.69	0.99971	0.14	no reported evidence	1.0	4	1	2006.0	2015.0
+Heart failure	C0018801	TNNI3	7137	P19429	troponin I3, cardiac type	cytoskeletal protein	65	0.6	0.586	0.086984	0.12	no reported evidence	1.0	2	0	2005.0	2008.0
+Heart failure	C0018801	TAZ	6901	Q16635	tafazzin	transferase	144	0.543	0.655	0.72339	0.12	no reported evidence	1.0	2	0	2009.0	2013.0
+Heart failure	C0018801	PSEN1	5663	P49768	presenilin 1	calcium-binding protein; hydrolase; protease; signaling molecule	268	0.49	0.69	0.97833	0.11	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	TPM1	7168	P09493	tropomyosin 1	cytoskeletal protein	74	0.592	0.448	0.0011646	0.11	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	HFE	3077	Q30201	homeostatic iron regulator		334	0.44	0.69	3.0065e-08	0.11	no reported evidence	1.0	1	1	2009.0	2009.0
+Heart failure	C0018801	PSEN2	5664	P49810	presenilin 2	hydrolase; protease; signaling molecule	108	0.567	0.517	0.002428	0.11	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	COX2	4513	P00403	cytochrome c oxidase subunit II	oxidoreductase	494	0.397	0.862		0.11	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	SLC22A5	6584	O76082	solute carrier family 22 member 5		71	0.663	0.552	1.5303e-15	0.11	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	EYA4	2070	O95677	EYA transcriptional coactivator and phosphatase 4		52	0.645	0.414	0.062531	0.11	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	ACTC1	70	P68032	actin, alpha, cardiac muscle 1	cytoskeletal protein	43	0.656	0.414	0.77606	0.11	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	PRKAG2	51422	Q9UGJ0	protein kinase AMP-activated non-catalytic subunit gamma 2	enzyme modulator	87	0.614	0.414	0.99578	0.11	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	GLB1	2720	P16278	galactosidase beta 1	hydrolase	341	0.457	0.828	7.639e-10	0.11	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	FBN1	2200	P35555	fibrillin 1	calcium-binding protein; cell adhesion molecule; extracellular matrix protein; signaling molecule	413	0.469	0.69	1.0	0.11	no reported evidence	1.0	1	0	1994.0	1994.0
+Heart failure	C0018801	PRDM16	63976	Q9HAZ2	PR/SET domain 16		132	0.573	0.621	0.99999	0.11	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	RBM20	282996	Q5T481	RNA binding motif protein 20		13	0.785	0.138	0.98966	0.11	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	GCKR	2646	Q14397	glucokinase regulator		100	0.636	0.414	6.0992e-18	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	TRNS2	4575		tRNA		105	0.611	0.517		0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRNS1	4574		tRNA		142	0.584	0.586		0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRNQ	4572		tRNA		90	0.624	0.517		0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRNK	4566		tRNA		106	0.611	0.552		0.1	no reported evidence		0	0		
+Heart failure	C0018801	FADS1	3992	O60427	fatty acid desaturase 1		72	0.636	0.621	0.41321	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	TRNV	4577		tRNA		35	0.713	0.345		0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRNW	4578		tRNA		91	0.633	0.483		0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRIM37	4591	O94972	tripartite motif containing 37		79	0.627	0.586	1.223e-11	0.1	no reported evidence		0	0		
+Heart failure	C0018801	EPG5	57724	Q9HCE0	ectopic P-granules autophagy protein 5 homolog		107	0.624	0.69	2.3938e-13	0.1	no reported evidence		0	0		
+Heart failure	C0018801	SUGP1	57794	Q8IWZ8	SURP and G-patch domain containing 1	nucleic acid binding	54	0.642	0.517	0.99446	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	CDH15	1013	P55291	cadherin 15		25	0.696	0.517	1.8446e-13	0.1	no reported evidence		0	1		
+Heart failure	C0018801	GATAD1	57798	Q8WUU5	GATA zinc finger domain containing 1		9	0.799	0.172	0.42558	0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRNF	4558		tRNA		100	0.616	0.517		0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRNE	4556		tRNA		37	0.735	0.414		0.1	no reported evidence		0	0		
+Heart failure	C0018801	ND6	4541	P03923	NADH dehydrogenase, subunit 6 (complex I)		126	0.59	0.552		0.1	no reported evidence		0	0		
+Heart failure	C0018801	TPI1	7167	P60174	triosephosphate isomerase 1	isomerase	120	0.564	0.655	0.020478	0.1	no reported evidence		0	0		
+Heart failure	C0018801	POLK	51426	Q9UBT6	DNA polymerase kappa		29	0.743	0.207	3.682e-12	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	CAV3	859	P56539	caveolin 3	enzyme modulator; membrane traffic protein; structural protein; transmembrane receptor regulatory/adaptor protein	101	0.592	0.414	0.0058792	0.1	no reported evidence		0	0		
+Heart failure	C0018801	SEMA5B	54437	Q9P283	semaphorin 5B	signaling molecule	18	0.815	0.241	2.8781e-10	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	COL1A2	1278	P08123	collagen type I alpha 2 chain		216	0.526	0.724	1.0	0.1	no reported evidence		0	0		
+Heart failure	C0018801	COL1A1	1277	P02452	collagen type I alpha 1 chain		336	0.472	0.724	1.0	0.1	no reported evidence		0	0		
+Heart failure	C0018801	TMEM70	54968	Q9BUB7	transmembrane protein 70		91	0.656	0.586	0.017223	0.1	no reported evidence		0	0		
+Heart failure	C0018801	CLIC2	1193	O15247	chloride intracellular channel 2		24	0.735	0.207	0.055822	0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRNC	4511		tRNA		33	0.713	0.345		0.1	no reported evidence		0	0		
+Heart failure	C0018801	COX1	4512	P00395	cytochrome c oxidase subunit I	oxidoreductase	228	0.494	0.862		0.1	no reported evidence		0	0		
+Heart failure	C0018801	ZCCHC8	55596	Q6NZY4	zinc finger CCHC-type containing 8	nucleic acid binding	19	0.815	0.172	0.99962	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	COX3	4514	P00414	cytochrome c oxidase III	oxidoreductase	125	0.592	0.517		0.1	no reported evidence		0	0		
+Heart failure	C0018801	CYTB	4519	P00156	cytochrome b		112	0.569	0.724		0.1	no reported evidence		0	0		
+Heart failure	C0018801	ND1	4535	P03886	NADH dehydrogenase, subunit 1 (complex I)	oxidoreductase	148	0.557	0.655		0.1	no reported evidence		0	0		
+Heart failure	C0018801	ND5	4540	P03915	NADH dehydrogenase, subunit 5 (complex I)	oxidoreductase	147	0.561	0.552		0.1	no reported evidence		0	0		
+Heart failure	C0018801	HAMP	57817	P81172	hepcidin antimicrobial peptide		181	0.499	0.759	0.0082683	0.1	no reported evidence		0	0		
+Heart failure	C0018801	TF	7018	P02787	transferrin	hydrolase; protease; receptor; transfer/carrier protein	121	0.548	0.724	4.2941e-08	0.1	no reported evidence		0	0		
+Heart failure	C0018801	TCF7L2	6934	Q9NQB0	transcription factor 7 like 2		145	0.538	0.621	0.99457	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	ZFHX3	463	Q15911	zinc finger homeobox 3		51	0.656	0.517	1.0	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	PHYH	5264	O14832	phytanoyl-CoA 2-hydroxylase		71	0.667	0.517	1.7832e-06	0.1	no reported evidence		0	0		
+Heart failure	C0018801	CMTM7	112616	Q96FZ5	CKLF like MARVEL transmembrane domain containing 7		3	0.886	0.138	0.042982	0.1	no reported evidence		1	1	2010.0	2010.0
+Heart failure	C0018801	ABCC6	368	O95255	ATP binding cassette subfamily C member 6	transporter	111	0.59	0.552	4.832e-35	0.1	no reported evidence		0	0		
+Heart failure	C0018801	SLC25A26	115286	Q70HW3	solute carrier family 25 member 26		29	0.762	0.207	1.4923e-06	0.1	no reported evidence		0	0		
+Heart failure	C0018801	S100A1	6271	P23297	S100 calcium binding protein A1	calcium-binding protein; signaling molecule	201	0.479	0.759	0.0065463	0.1	no reported evidence	1.0	11	0	1996.0	2014.0
+Heart failure	C0018801	DNAJC19	131118	Q96DA6	DnaJ heat shock protein family (Hsp40) member C19		36	0.743	0.414	0.00042845	0.1	no reported evidence		0	0		
+Heart failure	C0018801	PLCG1	5335	P19174	phospholipase C gamma 1	calcium-binding protein; enzyme modulator; hydrolase; signaling molecule	62	0.611	0.517	0.00017898	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	PLOD1	5351	Q02809	procollagen-lysine,2-oxoglutarate 5-dioxygenase 1	oxidoreductase	112	0.609	0.448	1.1703e-14	0.1	no reported evidence		0	0		
+Heart failure	C0018801	RPS19	6223	P39019	ribosomal protein S19	nucleic acid binding	166	0.527	0.793	0.82234	0.1	no reported evidence		0	0		
+Heart failure	C0018801	NSMCE2	286053	Q96MF7	NSE2 (MMS21) homolog, SMC5-SMC6 complex SUMO ligase		44	0.681	0.448	0.038591	0.1	no reported evidence		0	0		
+Heart failure	C0018801	RET	5979	P07949	ret proto-oncogene		452	0.418	0.724	1.0	0.1	no reported evidence		0	0		
+Heart failure	C0018801	PRKAR1A	5573	P10644	protein kinase cAMP-dependent type I regulatory subunit alpha		349	0.466	0.69	0.9999	0.1	no reported evidence		0	0		
+Heart failure	C0018801	PSMB8	5696	P28062	proteasome subunit beta 8	hydrolase; protease	125	0.586	0.759	0.025478	0.1	no reported evidence		0	0		
+Heart failure	C0018801	PEX7	5191	O00628	peroxisomal biogenesis factor 7		132	0.592	0.655	1.2668e-12	0.1	no reported evidence		0	0		
+Heart failure	C0018801	ADAMTSL1	92949	Q8N6G6	ADAMTS like 1	enzyme modulator; extracellular matrix protein; hydrolase; protease	8	0.799	0.276	3.2373e-12	0.1	no reported evidence		1	1	2010.0	2010.0
+Heart failure	C0018801	ENPP1	5167	P22413	ectonucleotide pyrophosphatase/phosphodiesterase 1	hydrolase; phosphatase	145	0.54	0.69	3.1738e-08	0.1	no reported evidence		0	0		
+Heart failure	C0018801	ELAC2	60528	Q9BQ52	elaC ribonuclease Z 2		33	0.707	0.276	3.0912e-20	0.1	no reported evidence		0	0		
+Heart failure	C0018801	MYLK2	85366	Q9H1R3	myosin light chain kinase 2		21	0.785	0.103	0.23795	0.1	no reported evidence		0	0		
+Heart failure	C0018801	IFIH1	64135	Q9BYX4	interferon induced with helicase C domain 1		184	0.524	0.759	5.478e-44	0.1	no reported evidence		0	0		
+Heart failure	C0018801	FTO	79068	Q9C0B1	FTO, alpha-ketoglutarate dependent dioxygenase		192	0.519	0.828	1.077e-07	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	GNPTAB	79158	Q3T906	N-acetylglucosamine-1-phosphate transferase subunits alpha and beta		139	0.624	0.655	8.0635e-19	0.1	no reported evidence		0	0		
+Heart failure	C0018801	TMEM43	79188	Q9BTV4	transmembrane protein 43		38	0.69	0.276	1.2714e-12	0.1	no reported evidence		0	0		
+Heart failure	C0018801	SLC2A10	81031	O95528	solute carrier family 2 member 10	transporter	99	0.594	0.621	2.3828e-08	0.1	no reported evidence		0	0		
+Heart failure	C0018801	GTPBP3	84705	Q969Y2	GTP binding protein 3, mitochondrial		30	0.785	0.138	1.3218e-08	0.1	no reported evidence		0	0		
+Heart failure	C0018801	CEP19	84984	Q96LK0	centrosomal protein 19		10	0.785	0.138	0.011609	0.1	no reported evidence		0	0		
+Heart failure	C0018801	ATP5F1A	498	P25705	ATP synthase F1 subunit alpha	hydrolase; nucleic acid binding; receptor; transporter	49	0.639	0.448		0.1	no reported evidence		0	0		
+Heart failure	C0018801	ATP2B1	490	P20020	ATPase plasma membrane Ca2+ transporting 1	hydrolase; transporter	38	0.707	0.379	1.0	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	MAML3	55534	Q96JK9	mastermind like transcriptional coactivator 3	transcription factor	35	0.696	0.414	0.9999	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	SDHD	6392	O14521	succinate dehydrogenase complex subunit D	transfer/carrier protein	248	0.499	0.793	0.21474	0.1	no reported evidence		0	0		
+Heart failure	C0018801	SDHB	6390	P21912	succinate dehydrogenase complex iron sulfur subunit B	oxidoreductase	207	0.513	0.69	0.00033529	0.1	no reported evidence		0	0		
+Heart failure	C0018801	TRNL1	4567		tRNA		147	0.58	0.552		0.1	no reported evidence		0	0		
+Heart failure	C0018801	LIPC	3990	P11150	lipase C, hepatic type	hydrolase; storage protein	91	0.611	0.517	2.1581e-07	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	KCNJ5	3762	P48544	potassium voltage-gated channel subfamily J member 5		79	0.579	0.517	0.00045518	0.1	no reported evidence		0	0		
+Heart failure	C0018801	IDS	3423	P22304	iduronate 2-sulfatase		92	0.616	0.655	0.94354	0.1	no reported evidence		0	0		
+Heart failure	C0018801	RAB3GAP2	25782	Q9H2M9	RAB3 GTPase activating non-catalytic protein subunit 2	enzyme modulator	164	0.592	0.586	0.99931	0.1	no reported evidence		0	0		
+Heart failure	C0018801	BAZ1B	9031	Q9UIG0	bromodomain adjacent to zinc finger domain 1B		165	0.609	0.552	1.0	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	WRN	7486	Q14191	Werner syndrome RecQ like helicase	nucleic acid binding	138	0.545	0.586	3.0975e-33	0.1	no reported evidence		0	0		
+Heart failure	C0018801	DTNA	1837	Q9Y4J8	dystrobrevin alpha		27	0.696	0.241	0.69399	0.1	no reported evidence		0	0		
+Heart failure	C0018801	JUP	3728	P14923	junction plakoglobin		73	0.619	0.414	0.00059417	0.1	no reported evidence		0	0		
+Heart failure	C0018801	GLA	2717	P06280	galactosidase alpha		135	0.588	0.621	0.99705	0.1	no reported evidence		0	0		
+Heart failure	C0018801	SLC17A5	26503	Q9NRA2	solute carrier family 17 member 5	transporter	158	0.547	0.759	8.355e-10	0.1	no reported evidence		0	0		
+Heart failure	C0018801	PPA2	27068	Q9H2U2	pyrophosphatase (inorganic) 2	hydrolase	12	0.815	0.103	1.0518e-10	0.1	no reported evidence		0	0		
+Heart failure	C0018801	ITPK1	3705	Q13572	inositol-tetrakisphosphate 1-kinase		21	0.834	0.138	0.99442	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	VHL	7428	P40337	von Hippel-Lindau tumor suppressor		293	0.464	0.586	0.0554	0.1	no reported evidence		0	0		
+Heart failure	C0018801	ACAD9	28976	Q9H845	acyl-CoA dehydrogenase family member 9	oxidoreductase; transferase	54	0.727	0.345	2.563e-08	0.1	no reported evidence		0	0		
+Heart failure	C0018801	DNAH8	1769	Q96JB1	dynein axonemal heavy chain 8	cytoskeletal protein; hydrolase	156	0.51	0.759	4.9502e-57	0.1	no reported evidence	1.0	11	0	1999.0	2016.0
+Heart failure	C0018801	VCL	7414	P18206	vinculin		53	0.63	0.414	0.079751	0.1	no reported evidence		0	0		
+Heart failure	C0018801	SIK3	23387	Q9Y2K2	SIK family kinase 3	kinase; transferase	32	0.752	0.31	1.0	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	FLNA	2316	P21333	filamin A		509	0.456	0.793	1.0	0.1	no reported evidence		0	0		
+Heart failure	C0018801	GRHL1	29841	Q9NZI5	grainyhead like transcription factor 1	transcription factor	13	0.799	0.241	0.21276	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	FXN	2395	Q16595	frataxin	kinase; transferase; transporter	162	0.527	0.586	0.33258	0.1	no reported evidence		0	0		
+Heart failure	C0018801	FLNC	2318	Q14315	filamin C		73	0.624	0.448	0.99984	0.1	no reported evidence		0	0		
+Heart failure	C0018801	HADHA	3030	P40939	hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex subunit alpha	isomerase; lyase; oxidoreductase	87	0.616	0.552	4.4307e-06	0.1	no reported evidence		0	0		
+Heart failure	C0018801	HJV	148738	Q6ZVN8	hemojuvelin BMP co-receptor		51	0.685	0.414		0.1	no reported evidence		0	0		
+Heart failure	C0018801	HBA2	3040	P69905	hemoglobin subunit alpha 2		158	0.524	0.724	0.0030968	0.1	no reported evidence		0	0		
+Heart failure	C0018801	KIF1B	23095	O60333	kinesin family member 1B	cytoskeletal protein	140	0.548	0.586	1.0	0.1	no reported evidence		0	0		
+Heart failure	C0018801	HADHB	3032	P55084	hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex subunit beta	transferase	54	0.685	0.552	2.0154e-11	0.1	no reported evidence		0	0		
+Heart failure	C0018801	ALMS1	7840	Q8TCU4	ALMS1, centrosome and basal body associated protein		121	0.59	0.621	7.8121e-58	0.1	no reported evidence		0	0		
+Heart failure	C0018801	ADAMTSL2	9719	Q86TH1	ADAMTS like 2	enzyme modulator; extracellular matrix protein; hydrolase; protease	65	0.676	0.276	0.0014003	0.1	no reported evidence		0	0		
+Heart failure	C0018801	SLC30A3	7781	Q99726	solute carrier family 30 member 3	transporter	26	0.762	0.207	0.44044	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	HBA1	3039	P69905	hemoglobin subunit alpha 1		183	0.508	0.759	0.0063423	0.1	no reported evidence		0	0		
+Heart failure	C0018801	COL4A3BP	10087	Q9Y5P4	collagen type IV alpha 3 binding protein	kinase; transfer/carrier protein; transferase	71	0.672	0.552	0.65902	0.1	no reported evidence		1	1	2016.0	2016.0
+Heart failure	C0018801	CALM3	808	P0DP23;P0DP24;P0DP25	calmodulin 3		182	0.479	0.793	0.922	0.09	no reported evidence	1.0	9	0	1994.0	2014.0
+Heart failure	C0018801	CALM2	805	P0DP23;P0DP24;P0DP25	calmodulin 2		198	0.472	0.793	0.92487	0.09	no reported evidence	1.0	9	0	1994.0	2014.0
+Heart failure	C0018801	CALM1	801	P0DP23;P0DP24;P0DP25	calmodulin 1		203	0.469	0.793	0.94658	0.09	no reported evidence	1.0	9	0	1994.0	2014.0
+Heart failure	C0018801	AMPD1	270	P23109	adenosine monophosphate deaminase 1	hydrolase	68	0.616	0.517	3.8618e-21	0.09	no reported evidence	1.0	9	0	1999.0	2017.0
+Heart failure	C0018801	TTN	7273	Q8WZ42	titin		159	0.534	0.655	6.4333e-84	0.09	no reported evidence	1.0	9	0	1995.0	2016.0
+Heart failure	C0018801	IL18	3606	Q14116	interleukin 18		437	0.404	0.862	0.029184	0.07	no reported evidence	1.0	7	0	2005.0	2016.0
+Heart failure	C0018801	APLNR	187	P35414	apelin receptor	receptor	41	0.652	0.345	0.75834	0.07	no reported evidence	1.0	7	1	2007.0	2018.0
+Heart failure	C0018801	SLC3A2	6520	P08195	solute carrier family 3 member 2		227	0.462	0.724	3.523e-08	0.06	no reported evidence	0.8333333	6	0	1991.0	2015.0
+Heart failure	C0018801	CYP11B2	1585	P19099	cytochrome P450 family 11 subfamily B member 2		103	0.572	0.483	9.5436e-19	0.06	no reported evidence	1.0	6	1	2002.0	2014.0
+Heart failure	C0018801	PPARA	5465	Q07869	peroxisome proliferator activated receptor alpha	nucleic acid binding; receptor; transcription factor	247	0.465	0.793	0.037307	0.06	no reported evidence	1.0	6	1	2006.0	2013.0
+Heart failure	C0018801	SRF	6722	P11831	serum response factor	transcription factor	75	0.598	0.69	0.97512	0.05	no reported evidence	1.0	5	0	2002.0	2013.0
+Heart failure	C0018801	CASP3	836	P42574	caspase 3	enzyme modulator; hydrolase; protease	462	0.391	0.862	0.28359	0.05	no reported evidence	1.0	5	0	2003.0	2016.0
+Heart failure	C0018801	TTR	7276	P02766	transthyretin	transfer/carrier protein; transporter	258	0.471	0.897	0.54676	0.05	no reported evidence	1.0	5	0	2000.0	2015.0
+Heart failure	C0018801	MARCKSL1	65108	P49006	MARCKS like 1		112	0.535	0.69	0.014771	0.05	no reported evidence	1.0	5	0	1997.0	2011.0
+Heart failure	C0018801	MUC2	4583	Q02817	mucin 2, oligomeric mucus/gel-forming	enzyme modulator	158	0.505	0.724	1.3598e-07	0.05	no reported evidence	1.0	5	0	1997.0	2011.0
+Heart failure	C0018801	DES	1674	P17661	desmin		201	0.503	0.759	0.0076905	0.05	no reported evidence	1.0	5	1	2003.0	2015.0
+Heart failure	C0018801	PPARGC1B	133522	Q86YN6	PPARG coactivator 1 beta	transcription factor	45	0.642	0.552	0.54291	0.05	no reported evidence	1.0	5	0	2004.0	2013.0
+Heart failure	C0018801	DECR1	1666	Q16698	2,4-dienoyl-CoA reductase 1	oxidoreductase	213	0.472	0.759	5.9544e-13	0.04	no reported evidence	1.0	4	0	2010.0	2013.0
+Heart failure	C0018801	MIR21	406991		microRNA 21		400	0.407	0.759		0.04	no reported evidence	1.0	4	0	2009.0	2018.0
+Heart failure	C0018801	GH1	2688	P01241	growth hormone 1	signaling molecule	316	0.438	0.793	0.031578	0.04	no reported evidence	1.0	4	0	1999.0	2006.0
+Heart failure	C0018801	SGCD	6444	Q92629	sarcoglycan delta		62	0.633	0.414	0.0070207	0.04	no reported evidence	1.0	4	0	2006.0	2015.0
+Heart failure	C0018801	NM	4827		neutrophil migration		124	0.533	0.69		0.04	no reported evidence	1.0	4	0	2001.0	2008.0
+Heart failure	C0018801	KNG1	3827	P01042	kininogen 1	enzyme modulator	159	0.53	0.862	3.6137e-10	0.04	no reported evidence	1.0	4	0	2002.0	2009.0
+Heart failure	C0018801	FSD1	79187	Q9BTV5	fibronectin type III and SPRY domain containing 1		119	0.53	0.69	0.25968	0.04	no reported evidence	1.0	4	0	2012.0	2016.0
+Heart failure	C0018801	GATA4	2626	P43694	GATA binding protein 4	nucleic acid binding; transcription factor	250	0.482	0.724	0.48748	0.04	no reported evidence	0.75	4	0	2003.0	2012.0
+Heart failure	C0018801	GRK5	2869	P34947	G protein-coupled receptor kinase 5	kinase; transferase	46	0.642	0.621	0.73575	0.04	no reported evidence	1.0	4	0	2008.0	2016.0
+Heart failure	C0018801	LRPPRC	10128	P42704	leucine rich pentatricopeptide repeat containing		138	0.554	0.724	1.4484e-10	0.04	no reported evidence	1.0	4	0	2001.0	2008.0
+Heart failure	C0018801	PRH2	5555	P02810	proline rich protein HaeIII subfamily 2		190	0.48	0.759	0.073818	0.04	no reported evidence	1.0	4	0	2009.0	2015.0
+Heart failure	C0018801	IL6ST	3572	P40189	interleukin 6 signal transducer	defense/immunity protein; signaling molecule	140	0.522	0.759	0.99996	0.04	no reported evidence	1.0	4	0	2001.0	2008.0
+Heart failure	C0018801	FSD1L	83856	Q9BXM9	fibronectin type III and SPRY domain containing 1 like		115	0.534	0.69	0.18598	0.04	no reported evidence	1.0	4	0	2012.0	2016.0
+Heart failure	C0018801	LOX	4015	P28300	lysyl oxidase		187	0.488	0.793	0.98966	0.04	no reported evidence	1.0	4	0	2008.0	2017.0
+Heart failure	C0018801	LCN2	3934	P80188	lipocalin 2	isomerase; transfer/carrier protein	230	0.469	0.793	1.4431e-09	0.04	no reported evidence	1.0	4	0	2010.0	2018.0
+Heart failure	C0018801	PIK3CA	5290	P42336	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha	kinase; transferase	835	0.341	0.897	1.0	0.04	no reported evidence	1.0	4	0	2004.0	2012.0
+Heart failure	C0018801	MYBPC3	4607	Q14896	myosin binding protein C, cardiac		64	0.621	0.31	8.2926e-09	0.04	no reported evidence	1.0	4	0	2008.0	2014.0
+Heart failure	C0018801	ANXA5	308	P08758	annexin A5		175	0.49	0.69	3.9933e-13	0.03	no reported evidence	1.0	3	0	1998.0	2011.0
+Heart failure	C0018801	UTS2	10911	O95399	urotensin 2		71	0.609	0.586	0.029311	0.03	no reported evidence	1.0	3	0	2003.0	2009.0
+Heart failure	C0018801	MEF2A	4205	Q02078	myocyte enhancer factor 2A	transcription factor	47	0.648	0.483	0.98872	0.03	no reported evidence	1.0	3	0	2006.0	2012.0
+Heart failure	C0018801	DNER	92737	Q8NFT8	delta/notch like EGF repeat containing		72	0.582	0.586	0.14659	0.03	no reported evidence	1.0	3	0	2013.0	2018.0
+Heart failure	C0018801	MIR499A	574501		microRNA 499a		81	0.562	0.69		0.03	no reported evidence	1.0	3	0	2011.0	2012.0
+Heart failure	C0018801	PITX2	5308	Q99697	paired like homeodomain 2		197	0.51	0.724	0.97909	0.03	no reported evidence	1.0	3	0	2002.0	2014.0
+Heart failure	C0018801	RND3	390	P61587	Rho family GTPase 3	enzyme modulator	30	0.681	0.276	0.95708	0.03	no reported evidence	1.0	3	0	2015.0	2016.0
+Heart failure	C0018801	PIK3CD	5293	O00329	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit delta	kinase; transferase	487	0.386	0.862	0.99999	0.03	no reported evidence	1.0	3	0	2004.0	2012.0
+Heart failure	C0018801	PIK3CB	5291	P42338	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit beta	kinase; transferase	468	0.389	0.862	0.99993	0.03	no reported evidence	1.0	3	0	2004.0	2012.0
+Heart failure	C0018801	IL18BP	10068	O95998	interleukin 18 binding protein		30	0.663	0.517	6.8077e-09	0.03	no reported evidence	1.0	3	0	2005.0	2015.0
+Heart failure	C0018801	PGR-AS1	101054525		PGR antisense RNA 1		86	0.57	0.586		0.03	no reported evidence	1.0	3	0	1997.0	2005.0
+Heart failure	C0018801	CYP2D6	1565	P10635	cytochrome P450 family 2 subfamily D member 6		312	0.461	0.724	2.1514e-23	0.03	no reported evidence	0.666666666666667	3	0	2010.0	2014.0
+Heart failure	C0018801	APRT	353	P07741	adenine phosphoribosyltransferase		255	0.453	0.724	2.5437e-11	0.03	no reported evidence	1.0	3	0	2004.0	2012.0
+Heart failure	C0018801	MAPK14	1432	Q16539	mitogen-activated protein kinase 14	kinase; transferase	270	0.449	0.862	0.77511	0.03	no reported evidence	1.0	3	0	2001.0	2011.0
+Heart failure	C0018801	PTPA	5524	Q15257	protein phosphatase 2 phosphatase activator	enzyme modulator	115	0.54	0.655		0.03	no reported evidence	1.0	3	0	2005.0	2014.0
+Heart failure	C0018801	HSPA4	3308	P34932	heat shock protein family A (Hsp70) member 4		292	0.441	0.793	0.9999	0.03	no reported evidence	1.0	3	0	2007.0	2015.0
+Heart failure	C0018801	STAT3	6774	P40763	signal transducer and activator of transcription 3	nucleic acid binding; transcription factor	706	0.358	0.862	1.0	0.03	no reported evidence	1.0	3	0	2001.0	2014.0
+Heart failure	C0018801	CAD	790	P27708	carbamoyl-phosphate synthetase 2, aspartate transcarbamylase, and dihydroorotase	hydrolase; ligase; protease; transferase	109	0.557	0.655	0.99998	0.03	no reported evidence	1.0	3	0	2013.0	2016.0
+Heart failure	C0018801	TFAM	7019	Q00059	transcription factor A, mitochondrial		98	0.565	0.655	0.1946	0.03	no reported evidence	1.0	3	0	2006.0	2011.0
+Heart failure	C0018801	MIR25	407014		microRNA 25		56	0.6	0.414		0.03	no reported evidence	1.0	3	0	2014.0	2015.0
+Heart failure	C0018801	IL4	3565	P05112	interleukin 4		615	0.364	0.931	0.0052963	0.03	no reported evidence	1.0	3	0	1996.0	2014.0
+Heart failure	C0018801	ANKRD1	27063	Q15327	ankyrin repeat domain 1		37	0.656	0.552	3.6075e-10	0.03	no reported evidence	1.0	3	0	2009.0	2014.0
+Heart failure	C0018801	SLC33A1	9197	O00400	solute carrier family 33 member 1	transporter	117	0.551	0.655	9.1436e-05	0.03	no reported evidence	1.0	3	0	1997.0	2005.0
+Heart failure	C0018801	HSPB7	27129	Q9UBY9	heat shock protein family B (small) member 7		8	0.815	0.207	0.066239	0.03	no reported evidence	1.0	3	1	2010.0	2011.0
+Heart failure	C0018801	AKT1	207	P31749	AKT serine/threonine kinase 1	calcium-binding protein; kinase; transfer/carrier protein; transferase	760	0.355	0.862	0.97917	0.03	no reported evidence	0.666666666666667	3	0	2010.0	2015.0
+Heart failure	C0018801	NPR2	4882	P20594	natriuretic peptide receptor 2	lyase	97	0.624	0.552	0.00014769	0.03	no reported evidence	1.0	3	0	2010.0	2014.0
+Heart failure	C0018801	NPPC	4880	P23582	natriuretic peptide C	signaling molecule	44	0.663	0.448	0.062561	0.03	no reported evidence	1.0	3	0	2014.0	2014.0
+Heart failure	C0018801	MIR423	494335		microRNA 423		40	0.642	0.448		0.03	no reported evidence	1.0	3	0	2010.0	2016.0
+Heart failure	C0018801	VPS51	738	Q9UID3	VPS51, GARP complex subunit		116	0.543	0.655	9.6864e-09	0.03	no reported evidence	1.0	3	0	2000.0	2016.0
+Heart failure	C0018801	ATM	472	Q13315	ATM serine/threonine kinase	kinase; nucleic acid binding; transferase	486	0.401	0.862	5.9771e-46	0.03	no reported evidence	1.0	3	0	1997.0	2005.0
+Heart failure	C0018801	AIMP2	7965	Q13155	aminoacyl tRNA synthetase complex interacting multifunctional protein 2		184	0.486	0.862	0.0072446	0.02	no reported evidence	1.0	2	0	2001.0	2011.0
+Heart failure	C0018801	RYR1	6261	P21817	ryanodine receptor 1	receptor; transporter	183	0.545	0.621	2.2962e-28	0.02	no reported evidence	1.0	2	0	2004.0	2011.0
+Heart failure	C0018801	MOK	5891	Q9UQ07	MOK protein kinase	kinase; transferase	104	0.554	0.655	9.9196e-22	0.02	no reported evidence	1.0	2	0	2010.0	2013.0
+Heart failure	C0018801	RNF111	54778	Q6ZNA4	ring finger protein 111		15	0.752	0.276	0.99984	0.02	no reported evidence	0.5	2	0	1993.0	1994.0
+Heart failure	C0018801	MIR199A1	406976		microRNA 199a-1		41	0.642	0.31		0.02	no reported evidence	1.0	2	0	2012.0	2014.0
+Heart failure	C0018801	MIR199A2	406977		microRNA 199a-2		41	0.642	0.31		0.02	no reported evidence	1.0	2	0	2012.0	2014.0
+Heart failure	C0018801	MIR216A	406998		microRNA 216a		30	0.676	0.379		0.02	no reported evidence	1.0	2	0	2012.0	2014.0
+Heart failure	C0018801	MIR214	406996		microRNA 214		109	0.536	0.655		0.02	no reported evidence	1.0	2	0	2015.0	2016.0
+Heart failure	C0018801	LGALS16	148003	A8MUM7	galectin 16	cell adhesion molecule; signaling molecule	18	0.727	0.379	0.00011262	0.02	no reported evidence	1.0	2	0	2013.0	2017.0
+Heart failure	C0018801	MIR150	406942		microRNA 150		147	0.51	0.69		0.02	no reported evidence	1.0	2	0	2014.0	2018.0
+Heart failure	C0018801	GRAP2	9402	O75791	GRB2 related adaptor protein 2		185	0.484	0.862	0.00066402	0.02	no reported evidence	1.0	2	0	2001.0	2011.0
+Heart failure	C0018801	HDAC4	9759	P56524	histone deacetylase 4		133	0.558	0.655	1.0	0.02	no reported evidence	1.0	2	0	2007.0	2013.0
+Heart failure	C0018801	HDAC5	10014	Q9UQL6	histone deacetylase 5		48	0.636	0.552	1.0	0.02	no reported evidence	1.0	2	0	2008.0	2011.0
+Heart failure	C0018801	PPIG	9360	Q13427	peptidylprolyl isomerase G		114	0.537	0.793	0.9649	0.02	no reported evidence	1.0	2	0	2003.0	2008.0
+Heart failure	C0018801	KLF15	28999	Q9UIH9	Kruppel like factor 15	nucleic acid binding; transcription factor	34	0.659	0.552	0.47586	0.02	no reported evidence	1.0	2	0	2010.0	2014.0
+Heart failure	C0018801	TWIST1	7291	Q15672	twist family bHLH transcription factor 1	nucleic acid binding; transcription factor	292	0.464	0.759	0.35682	0.02	no reported evidence	1.0	2	0	2011.0	2016.0
+Heart failure	C0018801	TIMP3	7078	P35625	TIMP metallopeptidase inhibitor 3	enzyme modulator	207	0.473	0.793	0.6567	0.02	no reported evidence	1.0	2	0	2003.0	2009.0
+Heart failure	C0018801	TRPC6	7225	Q9Y210	transient receptor potential cation channel subfamily C member 6	transporter	85	0.567	0.552	2.879e-07	0.02	no reported evidence	1.0	2	0	2007.0	2007.0
+Heart failure	C0018801	CHDH	55349	Q8NE62	choline dehydrogenase	oxidoreductase	62	0.616	0.517	1.3847e-06	0.02	no reported evidence	1.0	2	0	1996.0	2012.0
+Heart failure	C0018801	QRSL1	55278	Q9H0R6	glutaminyl-tRNA synthase (glutamine-hydrolyzing)-like 1		79	0.579	0.552	4.0335e-08	0.02	no reported evidence	1.0	2	0	2006.0	2007.0
+Heart failure	C0018801	SETD2	29072	Q9BYW2	SET domain containing 2		297	0.465	0.724	1.0	0.02	no reported evidence	1.0	2	0	2014.0	2016.0
+Heart failure	C0018801	TLR4	7099	O00206	toll like receptor 4		674	0.359	0.931	5.5849e-09	0.02	no reported evidence	0.0	2	0	2007.0	2012.0
+Heart failure	C0018801	RBFOX1	54715	Q9NWB1	RNA binding fox-1 homolog 1	nucleic acid binding	73	0.604	0.552	0.95549	0.02	no reported evidence	1.0	2	0	2016.0	2016.0
+Heart failure	C0018801	TM7SF2	7108	O76062	transmembrane 7 superfamily member 2	oxidoreductase; receptor	103	0.55	0.69	6.6952e-07	0.02	no reported evidence	1.0	2	0	2012.0	2016.0
+Heart failure	C0018801	DUOX1	53905	Q9NRD9	dual oxidase 1	oxidoreductase	38	0.656	0.517	1.5802e-30	0.02	no reported evidence	1.0	2	0	2013.0	2013.0
+Heart failure	C0018801	TRPC3	7222	Q13507	transient receptor potential cation channel subfamily C member 3	transporter	42	0.633	0.379	1.1328e-07	0.02	no reported evidence	1.0	2	0	2007.0	2013.0
+Heart failure	C0018801	ISYNA1	51477	Q9NPH2	inositol-3-phosphate synthase 1		95	0.548	0.69	2.8453e-05	0.02	no reported evidence	1.0	2	0	1996.0	2014.0
+Heart failure	C0018801	DUOX2	50506	Q9NRD8	dual oxidase 2	oxidoreductase	82	0.598	0.69	2.6436e-56	0.02	no reported evidence	1.0	2	0	2013.0	2013.0
+Heart failure	C0018801	ERBIN	55914	Q96RT1	erbb2 interacting protein		18	0.735	0.172		0.02	no reported evidence	1.0	2	0	2014.0	2016.0
+Heart failure	C0018801	SEMA6A	57556	Q9H2E6	semaphorin 6A	signaling molecule	219	0.468	0.793	0.99993	0.02	no reported evidence	1.0	2	0	2005.0	2013.0
+Heart failure	C0018801	POLDIP2	26073	Q9Y2S7	DNA polymerase delta interacting protein 2		178	0.489	0.862	0.40515	0.02	no reported evidence	1.0	2	0	2001.0	2011.0
+Heart failure	C0018801	PDE5A	8654	O76074	phosphodiesterase 5A		68	0.611	0.517	0.00011726	0.02	no reported evidence	1.0	2	0	2009.0	2014.0
+Heart failure	C0018801	PRRT2	112476	Q7Z6L0	proline rich transmembrane protein 2		196	0.491	0.793	0.56604	0.02	no reported evidence	1.0	2	0	2002.0	2011.0
+Heart failure	C0018801	SDC4	6385	P31431	syndecan 4	cell adhesion molecule; cytoskeletal protein; defense/immunity protein; extracellular matrix protein; signaling molecule	30	0.667	0.276	0.0046694	0.02	no reported evidence	1.0	2	0	2013.0	2016.0
+Heart failure	C0018801	CXCL12	6387	P48061	C-X-C motif chemokine ligand 12		350	0.421	0.724	0.12736	0.02	no reported evidence	1.0	2	0	2013.0	2016.0
+Heart failure	C0018801	FSTL3	10272	O95633	follistatin like 3	enzyme modulator	15	0.735	0.345	0.91405	0.02	no reported evidence	1.0	2	0	2009.0	2013.0
+Heart failure	C0018801	AHSA1	10598	O95433	activator of HSP90 ATPase activity 1		174	0.491	0.862	0.99881	0.02	no reported evidence	1.0	2	0	2001.0	2011.0
+Heart failure	C0018801	SLC2A1	6513	P11166	solute carrier family 2 member 1		358	0.441	0.69	0.99175	0.02	no reported evidence	1.0	2	0	2002.0	2008.0
+Heart failure	C0018801	SLC6A2	6530	P23975	solute carrier family 6 member 2	transporter	130	0.534	0.724	0.065408	0.02	no reported evidence	1.0	2	0	2004.0	2005.0
+Heart failure	C0018801	CHEK2	11200	O96017	checkpoint kinase 2		195	0.494	0.621	1.2033e-23	0.02	no reported evidence	1.0	2	0	2003.0	2009.0
+Heart failure	C0018801	MMRN1	22915	Q13201	multimerin 1	extracellular matrix protein	137	0.523	0.655	2.251e-24	0.02	no reported evidence	0.5	2	0	1998.0	2012.0
+Heart failure	C0018801	HOPX	84525	Q9BPY8	HOP homeobox		40	0.642	0.483	4.8751e-06	0.02	no reported evidence	1.0	2	0	2004.0	2011.0
+Heart failure	C0018801	RNF19A	25897	Q9NV58	ring finger protein 19A, RBR E3 ubiquitin protein ligase	ligase	179	0.488	0.862	0.023982	0.02	no reported evidence	1.0	2	0	2001.0	2011.0
+Heart failure	C0018801	SPP1	6696	P10451	secreted phosphoprotein 1		481	0.391	0.862	1.0484e-06	0.02	no reported evidence	1.0	2	0	2011.0	2015.0
+Heart failure	C0018801	LUC7L3	51747	O95232	LUC7 like 3 pre-mRNA splicing factor		9	0.785	0.207	0.99999	0.02	no reported evidence	1.0	2	0	2011.0	2013.0
+Heart failure	C0018801	XBP1	7494	P17861	X-box binding protein 1		113	0.54	0.69	0.022838	0.02	no reported evidence	1.0	2	0	2015.0	2016.0
+Heart failure	C0018801	TNNI3K	51086	Q59H18	TNNI3 interacting kinase		26	0.743	0.172	2.4815e-47	0.02	no reported evidence	1.0	2	0	2013.0	2016.0
+Heart failure	C0018801	G6PD	2539	P11413	glucose-6-phosphate dehydrogenase	oxidoreductase	225	0.476	0.724	0.94422	0.02	no reported evidence	1.0	2	0	2007.0	2008.0
+Heart failure	C0018801	ALAS2	212	P22557	5'-aminolevulinate synthase 2	transferase	59	0.616	0.414	0.99619	0.02	no reported evidence	1.0	2	0	2013.0	2016.0
+Heart failure	C0018801	AGER	177	Q15109	advanced glycosylation end-product specific receptor	cell adhesion molecule; receptor	232	0.472	0.724	3.4363e-16	0.02	no reported evidence	1.0	2	0	2010.0	2013.0
+Heart failure	C0018801	AXL	558	P30530	AXL receptor tyrosine kinase		121	0.529	0.517	0.018513	0.02	no reported evidence	0.5	2	0	1993.0	1994.0
+Heart failure	C0018801	ABCB1	5243	P08183	ATP binding cassette subfamily B member 1	hydrolase; protease	606	0.371	0.828	1.3094e-05	0.02	no reported evidence	1.0	2	0	2011.0	2013.0
+Heart failure	C0018801	MYLK	4638	Q15746	myosin light chain kinase		105	0.565	0.621	7.5427e-11	0.02	no reported evidence	1.0	2	0	2007.0	2009.0
+Heart failure	C0018801	TLX2	3196	O43763	T cell leukemia homeobox 2		24	0.72	0.414	0.25881	0.02	no reported evidence	1.0	2	0	2004.0	2013.0
+Heart failure	C0018801	MPO	4353	P05164	myeloperoxidase	oxidoreductase	327	0.435	0.931	6.8206e-15	0.02	no reported evidence	1.0	2	0	2006.0	2007.0
+Heart failure	C0018801	MME	4311	P08473	membrane metalloendopeptidase	hydrolase; protease	237	0.461	0.69	6.9777e-17	0.02	no reported evidence	0.5	2	0	2002.0	2016.0
+Heart failure	C0018801	PKD2	5311	Q13563	polycystin 2, transient receptor potential cation channel	enzyme modulator; hydrolase; protease; signaling molecule; transporter	95	0.575	0.655	0.0001935	0.02	no reported evidence	1.0	2	0	2011.0	2013.0
+Heart failure	C0018801	BIN1	274	O00499	bridging integrator 1		109	0.573	0.621	0.76923	0.02	no reported evidence	1.0	2	0	2014.0	2016.0
+Heart failure	C0018801	HGF	3082	P14210	hepatocyte growth factor	hydrolase; protease	478	0.394	0.793	0.99958	0.02	no reported evidence	1.0	2	0	2002.0	2002.0
+Heart failure	C0018801	SERPINA3	12	P01011	serpin family A member 3	enzyme modulator	92	0.572	0.69	8.0723e-14	0.02	no reported evidence	1.0	2	0	2009.0	2013.0
+Heart failure	C0018801	ANXA2	302	P07355	annexin A2		179	0.485	0.793	0.0004819	0.02	no reported evidence	1.0	2	0	1998.0	2014.0
+Heart failure	C0018801	CRK	1398	P46108	CRK proto-oncogene, adaptor protein		188	0.486	0.862	0.95784	0.02	no reported evidence	1.0	2	0	2001.0	2011.0
+Heart failure	C0018801	CTF1	1489	Q16619	cardiotrophin 1		40	0.667	0.345	0.035655	0.02	no reported evidence	1.0	2	0	2002.0	2014.0
+Heart failure	C0018801	GNB3	2784	P16520	G protein subunit beta 3	enzyme modulator; hydrolase	139	0.533	0.724	2.9246e-11	0.02	no reported evidence	1.0	2	1	2010.0	2015.0
+Heart failure	C0018801	ANGPT2	285	O15123	angiopoietin 2	signaling molecule	211	0.479	0.724	0.85572	0.02	no reported evidence	1.0	2	0	2013.0	2016.0
+Heart failure	C0018801	NFKB1	4790	P19838	nuclear factor kappa B subunit 1		611	0.365	0.931	1.0	0.02	no reported evidence	1.0	2	1	2011.0	2013.0
+Heart failure	C0018801	CYP2B6	1555	P20813	cytochrome P450 family 2 subfamily B member 6		306	0.437	0.828	3.4958e-10	0.02	no reported evidence	1.0	2	1	2008.0	2016.0
+Heart failure	C0018801	CNP	1267	P09543	2',3'-cyclic nucleotide 3' phosphodiesterase	hydrolase	36	0.652	0.483	0.97395	0.02	no reported evidence	1.0	2	0	2010.0	2015.0
+Heart failure	C0018801	ANG	283	P03950	angiogenin		118	0.547	0.69	0.29469	0.02	no reported evidence	1.0	2	0	2010.0	2015.0
+Heart failure	C0018801	ALDH2	217	P05091	aldehyde dehydrogenase 2 family member	oxidoreductase	236	0.481	0.862	2.464e-09	0.02	no reported evidence	1.0	2	1	2015.0	2015.0
+Heart failure	C0018801	CHGA	1113	P10645	chromogranin A		115	0.54	0.621	0.032323	0.02	no reported evidence	1.0	2	0	2004.0	2012.0
+Heart failure	C0018801	PRKD1	5587	Q15139	protein kinase D1		117	0.569	0.655	4.4224e-07	0.02	no reported evidence	1.0	2	0	2012.0	2013.0
+Heart failure	C0018801	EGFR	1956	P00533	epidermal growth factor receptor		892	0.325	0.862	0.49889	0.02	no reported evidence	0.5	2	0	2005.0	2009.0
+Heart failure	C0018801	CDK9	1025	P50750	cyclin dependent kinase 9	kinase; transferase	61	0.616	0.586	0.00010632	0.02	no reported evidence	1.0	2	0	2004.0	2005.0
+Heart failure	C0018801	BRCA1	672	P38398	BRCA1, DNA repair associated	ligase	411	0.41	0.862	1.795e-28	0.02	no reported evidence	1.0	2	0	2012.0	2016.0
+Heart failure	C0018801	TGFB1	7040	P01137	transforming growth factor beta 1	signaling molecule	847	0.336	0.931	0.17182	0.02	no reported evidence	1.0	2	0	2005.0	2015.0
+Heart failure	C0018801	MAPK1	5594	P28482	mitogen-activated protein kinase 1	kinase; transferase	525	0.387	0.862	0.9973	0.02	no reported evidence	1.0	2	0	2001.0	2011.0
+Heart failure	C0018801	MAPK8	5599	P45983	mitogen-activated protein kinase 8	kinase; transferase	250	0.458	0.793	0.99827	0.02	no reported evidence	1.0	2	0	2002.0	2010.0
+Heart failure	C0018801	ANGPT1	284	Q15389	angiopoietin 1	signaling molecule	184	0.495	0.69	0.99071	0.02	no reported evidence	1.0	2	0	2012.0	2016.0
+Heart failure	C0018801	EPO	2056	P01588	erythropoietin		360	0.425	0.759	0.012147	0.02	no reported evidence	1.0	2	0	2010.0	2012.0
+Heart failure	C0018801	PKP2	5318	Q99959	plakophilin 2	cytoskeletal protein	39	0.681	0.241	5.1869e-18	0.02	no reported evidence	1.0	2	1	2015.0	2016.0
+Heart failure	C0018801	TRPM4	54795	Q8TD43	transient receptor potential cation channel subfamily M member 4	receptor; transporter	34	0.69	0.379	5.9176e-33	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	RMDN3	55177	Q96TC7	regulator of microtubule dynamics 3		59	0.602	0.69	3.4123e-05	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	SLC52A1	55065	Q9NWF4	solute carrier family 52 member 1	receptor	92	0.572	0.621	4.7885e-06	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	CNR2	1269	P34972	cannabinoid receptor 2	receptor	110	0.554	0.621	6.9778e-06	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	MYL7	58498	Q01449	myosin light chain 7	calcium-binding protein; cytoskeletal protein	5	0.834	0.207	1.6172e-05	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	TPCN1	53373	Q9ULQ1	two pore segment channel 1		12	0.752	0.138	0.015032	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	UGT1A1	54658	P22309	UDP glucuronosyltransferase family 1 member A1		195	0.491	0.724	3.5614e-06	0.01	no reported evidence	0.0	1	0	2010.0	2010.0
+Heart failure	C0018801	CP	1356	P00450	ceruloplasmin	oxidoreductase	190	0.5	0.586	2.7933e-09	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	COL11A2	1302	P13942	collagen type XI alpha 2 chain		281	0.478	0.69	0.41511	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	CPT1A	1374	P50416	carnitine palmitoyltransferase 1A	transferase	91	0.621	0.448	5.6939e-09	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	RBM25	58517	P49756	RNA binding motif protein 25		2	0.928	0.034	1.0	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	CD44	960	P16070	CD44 molecule (Indian blood group)		467	0.389	0.862	2.0978e-07	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	RHOU	58480	Q7L0Q8	ras homolog family member U	enzyme modulator	10	0.785	0.172	0.30149	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	CXCL16	58191	Q9H2A7	C-X-C motif chemokine ligand 16	signaling molecule	77	0.58	0.448	3.4573e-05	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	CD68	968	P34810	CD68 molecule	membrane traffic protein	192	0.48	0.793	1.2196e-06	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	CHPT1	56994	Q8WUD6	choline phosphotransferase 1	transferase	130	0.524	0.655	0.00023115	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	PBK	55872	Q96KB5	PDZ binding kinase	kinase; transferase	61	0.607	0.621	7.6861e-06	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	ENAH	55740	Q8N8S7	ENAH, actin regulator		11	0.773	0.172	0.99985	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	SYBU	55638	Q9NX95	syntabulin	enzyme modulator; membrane traffic protein	54	0.616	0.69	0.00011437	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	NLN	57486	Q9BYT8	neurolysin	hydrolase; protease	28	0.667	0.448	4.337e-12	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	CLCN3	1182	P51790	chloride voltage-gated channel 3	transporter	35	0.667	0.483	0.99976	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	CLCNKA	1187	P51800	chloride voltage-gated channel Ka		41	0.713	0.379	8.4285e-18	0.01	no reported evidence	1.0	1	1	2011.0	2011.0
+Heart failure	C0018801	CDS1	1040	Q92903	CDP-diacylglycerol synthase 1		23	0.701	0.414	0.00053705	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	CFAP97	57587	Q9P2B7	cilia and flagella associated protein 97		15	0.72	0.414		0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	CMA1	1215	P23946	chymase 1	hydrolase; protease	80	0.575	0.517	9.4048e-09	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	CDKN1A	1026	P38936	cyclin dependent kinase inhibitor 1A		369	0.415	0.724	0.0020695	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	ZKSCAN7	55888	Q9P0L1	zinc finger with KRAB and SCAN domains 7		10	0.857	0.138	1.2464e-05	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	CCR7	1236	P32248	C-C motif chemokine receptor 7		193	0.477	0.759	0.052849	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	CNN1	1264	P51911	calponin 1	cytoskeletal protein	13	0.762	0.207	0.10733	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	CD69	969	Q07108	CD69 molecule		83	0.562	0.759	0.033698	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	CTTN	2017	Q14247	cortactin	cytoskeletal protein; transcription factor	67	0.6	0.586	0.057609	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	CISH	1154	Q9NSE2	cytokine inducible SH2 containing protein	enzyme modulator	109	0.541	0.724	0.0030568	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	MAP3K20	51776	Q9NYL2	mitogen-activated protein kinase kinase kinase 20	kinase; transferase	46	0.645	0.448		0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	ICK	22858	Q9UPZ9	intestinal cell kinase	kinase; transferase	88	0.602	0.621	6.7292e-06	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	BRD1	23774	O95696	bromodomain containing 1	nucleic acid binding; transcription factor	23	0.696	0.345	0.99952	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	S1PR1	1901	P21453	sphingosine-1-phosphate receptor 1	receptor	45	0.639	0.483	0.73859	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	DUSP1	1843	P28562	dual specificity phosphatase 1		120	0.528	0.69	0.011226	0.01	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	DPYS	1807	Q14117	dihydropyrimidinase	hydrolase; protease	58	0.681	0.414	4.78e-11	0.01	no reported evidence	1.0	1	0	1992.0	1992.0
+Heart failure	C0018801	DPYD	1806	Q12882	dihydropyrimidine dehydrogenase	oxidoreductase	191	0.52	0.69	5.6873e-22	0.01	no reported evidence	1.0	1	0	1992.0	1992.0
+Heart failure	C0018801	DPP4	1803	P27487	dipeptidyl peptidase 4	enzyme modulator; hydrolase; protease	169	0.5	0.69	8.483e-09	0.01	no reported evidence	1.0	1	0	2017.0	2017.0
+Heart failure	C0018801	ECD	11319	O95905	ecdysoneless cell cycle regulator		15	0.735	0.345	1.3321e-12	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	DNM2	1785	P50570	dynamin 2	cytoskeletal protein; enzyme modulator; hydrolase	155	0.54	0.655	0.99997	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	DNASE1	1773	P24855	deoxyribonuclease 1		72	0.588	0.552	1.0454e-20	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	DAPK2	23604	Q9UIK4	death associated protein kinase 2	kinase; transferase	42	0.636	0.552	4.3645e-10	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	NNT	23530	Q13423	nicotinamide nucleotide transhydrogenase	oxidoreductase	20	0.72	0.241	0.99246	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	ERN1	2081	O75460	endoplasmic reticulum to nucleus signaling 1	kinase; transferase	67	0.588	0.69	0.9972	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	PDS5B	23047	Q9NTI5	PDS5 cohesin associated factor B	nucleic acid binding	14	0.743	0.345	1.0	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	FRMD4B	23150	Q9Y2L6	FERM domain containing 4B		6	0.857	0.172	0.27266	0.01	no reported evidence	1.0	1	1	2010.0	2010.0
+Heart failure	C0018801	GPD1L	23171	Q8N335	glycerol-3-phosphate dehydrogenase 1 like	oxidoreductase	18	0.707	0.207	0.044216	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	ARC	23237	Q7LC44	activity regulated cytoskeleton associated protein		41	0.636	0.517	0.60187	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	PDS5A	23244	Q29RF7	PDS5 cohesin associated factor A	nucleic acid binding	8	0.834	0.276	1.0	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	EPHA3	2042	P29320	EPH receptor A3		95	0.552	0.586	1.4417e-05	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	ELN	2006	P15502	elastin		412	0.455	0.828	2.3421e-14	0.01	no reported evidence	1.0	1	0	1994.0	1994.0
+Heart failure	C0018801	ZFPM2	23414	Q8WW38	zinc finger protein, FOG family member 2	nucleic acid binding; transcription factor	107	0.582	0.552	1.0	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	DCN	1634	P07585	decorin		164	0.505	0.69	0.23191	0.01	no reported evidence	1.0	1	0	1998.0	1998.0
+Heart failure	C0018801	CPT2	1376	P23786	carnitine palmitoyltransferase 2	transferase	150	0.596	0.483	5.0588e-10	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	EHD3	30845	Q9NZN3	EH domain containing 3	calcium-binding protein; enzyme modulator; membrane traffic protein	20	0.743	0.138	0.047606	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	CTSB	1508	P07858	cathepsin B	enzyme modulator; hydrolase; protease	192	0.49	0.828	3.3349e-11	0.01	no reported evidence	1.0	1	0	2006.0	2006.0
+Heart failure	C0018801	NR1I2	8856	O75469	nuclear receptor subfamily 1 group I member 2	nucleic acid binding; receptor; transcription factor	263	0.455	0.793	6.153e-09	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	RMDN1	51115	Q96DB5	regulator of microtubule dynamics 1		54	0.616	0.69	3.5432e-09	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	GP6	51206	Q9HCN6	glycoprotein VI platelet	defense/immunity protein; enzyme modulator; receptor	55	0.639	0.448	1.5587e-11	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	CST3	1471	P01034	cystatin C		167	0.5	0.724	0.0038631	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	CSF1	1435	P09603	colony stimulating factor 1		153	0.51	0.655	0.99155	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	CRMP1	1400	Q14194	collapsin response mediator protein 1	hydrolase; protease	45	0.624	0.621	0.99289	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	GDE1	51573	Q9NZC3	glycerophosphodiester phosphodiesterase 1		134	0.524	0.724	6.7784e-06	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	KCNIP2	30819	Q9NS61	potassium voltage-gated channel interacting protein 2		4	0.857	0.103	0.013333	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	RMC1	29919	Q96DM3	regulator of MON1-CCZ1		65	0.598	0.483		0.01	no reported evidence	1.0	1	0	2017.0	2017.0
+Heart failure	C0018801	VPS4A	27183	Q9UN37	vacuolar protein sorting 4 homolog A	cytoskeletal protein	7	0.815	0.172	0.92763	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	EIF3K	27335	Q9UBQ5	eukaryotic translation initiation factor 3 subunit K		53	0.639	0.483	0.0018322	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	SLC27A6	28965	Q9Y2P4	solute carrier family 27 member 6	ligase	9	0.785	0.207	2.4441e-16	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	DBH	1621	P09172	dopamine beta-hydroxylase		105	0.557	0.621	3.9275e-10	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	DAG1	1605	Q14118	dystroglycan 1	receptor	180	0.522	0.655	0.96884	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	CYP2J2	1573	P51589	cytochrome P450 family 2 subfamily J member 2		45	0.659	0.414	1.8323e-15	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	TBK1	29110	Q9UHD2	TANK binding kinase 1	kinase; transferase	104	0.569	0.69	0.19715	0.01	no reported evidence	0.0	1	0	2015.0	2015.0
+Heart failure	C0018801	CYP2E1	1571	P05181	cytochrome P450 family 2 subfamily E member 1		212	0.473	0.759	3.8507e-07	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	GNL2	29889	Q13823	G protein nucleolar 2		2	0.928	0.034	0.00012348	0.01	no reported evidence	1.0	1	0	2003.0	2003.0
+Heart failure	C0018801	RTEL1	51750	Q9NZ71	regulator of telomere elongation helicase 1	nucleic acid binding	213	0.509	0.621	1.6477e-08	0.01	no reported evidence	1.0	1	0	2006.0	2006.0
+Heart failure	C0018801	COPD	260431		Pulmonary disease, chronic obstructive, severe early-onset		68	0.609	0.552		0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	MIR199B	406978		microRNA 199b		29	0.676	0.345		0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	MIR22	407004		microRNA 22		94	0.554	0.621		0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	MIR23A	407010		microRNA 23a		75	0.572	0.621		0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	GRK3	157	P35626	G protein-coupled receptor kinase 3	kinase; transferase	29	0.672	0.448		0.01	no reported evidence	0.0	1	0	1994.0	1994.0
+Heart failure	C0018801	MIR27B	407019		microRNA 27b		65	0.59	0.552		0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	MIR34A	407040		microRNA 34a		220	0.47	0.759		0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	MIR99A	407055		microRNA 99a		46	0.621	0.517		0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	MIR324	442898		microRNA 324		20	0.72	0.379		0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	MIR328	442901		microRNA 328		39	0.63	0.414		0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	AKR1B1	231	P15121	aldo-keto reductase family 1 member B	oxidoreductase	132	0.536	0.621	0.00014514	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	MIR195	406971		microRNA 195		93	0.547	0.552		0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	GIGYF1	64599	O75420	GRB10 interacting GYF protein 1		9	0.799	0.138	1.0725e-06	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	MALAT1	378938		metastasis associated lung adenocarcinoma transcript 1		129	0.519	0.724		0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	MIR100	406892		microRNA 100		90	0.551	0.69		0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	MIR126	406913		microRNA 126		142	0.51	0.621		0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	MIR134	406924		microRNA 134		57	0.614	0.517		0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	MIR137	406928		microRNA 137		97	0.561	0.621		0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	MIR142	406934		microRNA 142		91	0.557	0.621		0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	MIR17	406952		microRNA 17		123	0.524	0.724		0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	MIR18A	406953		microRNA 18a		66	0.586	0.621		0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	MIR340	442908		microRNA 340		42	0.642	0.345		0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	MIR342	442909		microRNA 342		44	0.636	0.483		0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	TRIM72	493829	Q6ZMU5	tripartite motif containing 72		9	0.815	0.138	0.00021778	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	BACE1-AS	100379571		BACE1 antisense RNA		5	0.857	0.138		0.01	no reported evidence	1.0	1	0	2017.0	2017.0
+Heart failure	C0018801	APELA	100506013	P0DMC3	apelin receptor early endogenous ligand		17	0.752	0.517		0.01	no reported evidence	1.0	1	0	2018.0	2018.0
+Heart failure	C0018801	ADCY6	112	O43306	adenylate cyclase 6		26	0.743	0.379	0.0036724	0.01	no reported evidence		1	0	2006.0	2006.0
+Heart failure	C0018801	MIR4491	100616330		microRNA 4491		2	0.928	0.034		0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	NPY4R2	100996758	P50391	neuropeptide Y receptor Y4-2		2	0.928	0.034		0.01	no reported evidence	0.0	1	0	2004.0	2004.0
+Heart failure	C0018801	ABCA4	24	P78363	ATP binding cassette subfamily A member 4	transporter	180	0.52	0.793	5.8485e-47	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	OPN1MW3	101060233	P04001;P0DN77;P0DN78	opsin 1, medium wave sensitive 3	receptor	15	0.743	0.31		0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	AK6	102157402	Q9Y3D8	adenylate kinase 6		10	0.785	0.241		0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	LOC105379861	105379861		neuropeptide Y receptor type 4		2	0.928	0.034		0.01	no reported evidence	0.0	1	0	2004.0	2004.0
+Heart failure	C0018801	MIR208B	100126336		microRNA 208b		13	0.752	0.31		0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	MIR665	100126315		microRNA 665		7	0.834	0.138		0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	ADORA2A	135	P29274	adenosine A2a receptor	receptor	163	0.537	0.69	0.59913	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	MIR425	494337		microRNA 425		32	0.676	0.276		0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	ADD1	118	P35611	adducin 1	cytoskeletal protein	56	0.607	0.517	0.99071	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	NCF1	653361	P14598	neutrophil cytosolic factor 1		129	0.546	0.759	0.00017128	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	MIR539	664612		microRNA 539		21	0.72	0.172		0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	OPN1MW2	728458	P04001;P0DN77;P0DN78	opsin 1, medium wave sensitive 2	receptor	16	0.735	0.379	0.2439	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	CCR2	729230	P41597	C-C motif chemokine receptor 2		225	0.471	0.793	0.024811	0.01	no reported evidence	1.0	1	0	2004.0	2004.0
+Heart failure	C0018801	RNA18SN5	100008588		RNA, 18S ribosomal N5		10	0.762	0.379		0.01	no reported evidence	1.0	1	0	1990.0	1990.0
+Heart failure	C0018801	MIR675	100033819		microRNA 675		36	0.656	0.379		0.01	no reported evidence	1.0	1	0	2017.0	2017.0
+Heart failure	C0018801	LOC107984055	107984055		medium-wave-sensitive opsin 1		16	0.735	0.379		0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	SCARB2	950	Q14108	scavenger receptor class B member 2	receptor	84	0.633	0.483	0.0001125	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	BNIP3L	665	O60238	BCL2 interacting protein 3 like		30	0.696	0.379	0.16727	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	NOX5	79400	Q96PH1	NADPH oxidase 5	oxidoreductase	41	0.652	0.345	8.1044e-28	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	ZC3H12A	80149	Q5D1E8	zinc finger CCCH-type containing 12A	nucleic acid binding	51	0.636	0.552	0.14187	0.01	no reported evidence	1.0	1	0	2006.0	2006.0
+Heart failure	C0018801	BMPR2	659	Q13873	bone morphogenetic protein receptor type 2	kinase; receptor; transferase	96	0.573	0.552	0.99996	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	BMPR1A	657	P36894	bone morphogenetic protein receptor type 1A	kinase; receptor; transferase	87	0.58	0.517	0.85155	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	BMP4	652	P12644	bone morphogenetic protein 4	signaling molecule	224	0.477	0.724	0.95584	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	TCHP	84260	Q9BT92	trichoplein keratin filament binding		124	0.52	0.759	2.52e-16	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	BDNF	627	P23560	brain derived neurotrophic factor	signaling molecule	591	0.382	0.828	0.69969	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	SPZ1	84654	Q9BXG8	spermatogenic leucine zipper 1		101	0.538	0.655		0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	CALCR	799	P30988	calcitonin receptor		73	0.588	0.586	3.3373e-07	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	FKRP	79147	Q9H9S5	fukutin related protein		227	0.514	0.586	6.35e-05	0.01	no reported evidence	1.0	1	0	2004.0	2004.0
+Heart failure	C0018801	CD36	948	P16671	CD36 molecule	receptor	180	0.505	0.828	6.5675e-61	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	CCK	885	P06307	cholecystokinin		164	0.513	0.655	3.9318e-05	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	GORASP1	64689	Q9BQQ3	golgi reassembly stacking protein 1		159	0.499	0.793	0.019605	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	PINK1	65018	Q9BXM7	PTEN induced putative kinase 1	kinase; receptor; transferase	96	0.577	0.586	1.034e-10	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	CDK15	65061	Q96Q40	cyclin dependent kinase 15	kinase; transferase	19	0.727	0.448	1.4399e-17	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	CASP1	834	P29466	caspase 1	enzyme modulator; hydrolase; protease	213	0.468	0.828	0.00018521	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	WNK1	65125	Q9H4A3	WNK lysine deficient protein kinase 1	kinase; transferase	253	0.472	0.793	1.0	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	CAST	831	P20810	calpastatin		92	0.565	0.724	3.8746e-12	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	CAMK2D	817	Q13557	calcium/calmodulin dependent protein kinase II delta		10	0.773	0.276	0.0080475	0.01	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	HCN2	610	Q9UL51	hyperpolarization activated cyclic nucleotide gated potassium and sodium channel 2		16	0.713	0.172	0.84401	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	BAD	572	Q92934	BCL2 associated agonist of cell death		77	0.579	0.552	0.0049369	0.01	no reported evidence	1.0	1	0	2003.0	2003.0
+Heart failure	C0018801	AVPR1A	552	P37288	arginine vasopressin receptor 1A	receptor	33	0.681	0.414	5.4627e-06	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	APOE	348	P02649	apolipoprotein E		770	0.352	0.931	0.0017371	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	APOA1	335	P02647	apolipoprotein A1		255	0.463	0.759	0.00054889	0.01	no reported evidence	1.0	1	0	1999.0	1999.0
+Heart failure	C0018801	KLF14	136259	Q8TD94	Kruppel like factor 14	nucleic acid binding; transcription factor	21	0.743	0.172	0.016592	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	XIAP	331	P98170	X-linked inhibitor of apoptosis	enzyme modulator	184	0.499	0.759	0.93063	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	ANXA6	309	P08133	annexin A6		79	0.569	0.724	1.0657e-08	0.01	no reported evidence	1.0	1	0	1998.0	1998.0
+Heart failure	C0018801	RMDN2	151393	Q96LZ7	regulator of microtubule dynamics 2		58	0.604	0.69	5.6468e-23	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	DHRS7C	201140	A6NNS2	dehydrogenase/reductase 7C		2	0.928	0.034	2.228e-07	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	ANK2	287	Q01484	ankyrin 2		40	0.663	0.345	1.0	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	PRSS55	203074	Q6UWB4	serine protease 55	hydrolase; protease	94	0.547	0.655	2.9141e-11	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	XIRP2	129446	A4UGR9	xin actin binding repeat containing 2	cytoskeletal protein	7	0.834	0.207	4.5599e-51	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	AQP2	359	P41181	aquaporin 2	transporter	71	0.648	0.448	2.4372e-06	0.01	no reported evidence		1	0	2004.0	2004.0
+Heart failure	C0018801	MLIP	90523	Q5VWP3	muscular LMNA interacting protein		11	0.785	0.241	3.3341e-16	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	NEXN	91624	Q0ZGT2	nexilin F-actin binding protein	transmembrane receptor regulatory/adaptor protein	17	0.743	0.138	4.6118e-11	0.01	no reported evidence	0.0	1	0	2009.0	2009.0
+Heart failure	C0018801	ATP2B4	493	P23634	ATPase plasma membrane Ca2+ transporting 4	hydrolase; transporter	27	0.713	0.483	0.00075748	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	ATF3	467	P18847	activating transcription factor 3	transcription factor	136	0.517	0.69	0.1029	0.01	no reported evidence	1.0	1	0	2017.0	2017.0
+Heart failure	C0018801	MYOCD	93649	Q8IZQ8	myocardin		42	0.659	0.483	0.39276	0.01	no reported evidence	1.0	1	0	2004.0	2004.0
+Heart failure	C0018801	MUC16	94025	Q8WXI7	mucin 16, cell surface associated		80	0.58	0.517	1.1209e-109	0.01	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	OPN4	94233	Q9UHM6	opsin 4	receptor	29	0.672	0.448	4.2466e-13	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	ARRB2	409	P32121	arrestin beta 2	enzyme modulator	62	0.604	0.621	0.43396	0.01	no reported evidence	0.0	1	0	1994.0	1994.0
+Heart failure	C0018801	ARG1	383	P05089	arginase 1	hydrolase	128	0.551	0.724	0.000326	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	TPCN2	219931	Q8NHX9	two pore segment channel 2		13	0.799	0.207	2.9989e-10	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	ESRRA	2101	P11474	estrogen related receptor alpha	nucleic acid binding; receptor; transcription factor	52	0.619	0.414	0.56156	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	P2RX7	5027	Q99572	purinergic receptor P2X 7	receptor; transporter	165	0.503	0.759	3.0454e-11	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	CNOT3	4849	O75175	CCR4-NOT transcription complex subunit 3	transcription factor	8	0.815	0.276	1.0	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	NME3	4832	Q13232	NME/NM23 nucleoside diphosphate kinase 3		9	0.815	0.172	5.2545e-06	0.01	no reported evidence	1.0	1	0	2017.0	2017.0
+Heart failure	C0018801	NGF	4803	P01138	nerve growth factor	signaling molecule	353	0.426	0.862	0.76021	0.01	no reported evidence	1.0	1	0	2000.0	2000.0
+Heart failure	C0018801	STAT4	6775	Q14765	signal transducer and activator of transcription 4	nucleic acid binding; transcription factor	161	0.515	0.69	0.78288	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	STC1	6781	P52823	stanniocalcin 1	signaling molecule	83	0.575	0.621	0.1889	0.01	no reported evidence	1.0	1	0	2003.0	2003.0
+Heart failure	C0018801	STIM1	6786	Q13586	stromal interaction molecule 1		147	0.554	0.655	0.95692	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	SYT1	6857	P21579	synaptotagmin 1	membrane traffic protein	183	0.484	0.828	0.60372	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	NFE2L1	4779	Q14494	nuclear factor, erythroid 2 like 1	cytoskeletal protein; hydrolase; nucleic acid binding; transcription factor	11	0.752	0.345	0.99883	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	TERF2	7014	Q15554	telomeric repeat binding factor 2		69	0.59	0.552	0.98871	0.01	no reported evidence	1.0	1	0	2003.0	2003.0
+Heart failure	C0018801	SPTBN1	6711	Q01082	spectrin beta, non-erythrocytic 1		36	0.667	0.483	1.0	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	NOTCH3	4854	Q9UM47	notch 3		312	0.469	0.69	0.86965	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	SOX3	6658	P41225	SRY-box 3	transcription factor	93	0.559	0.655	0.47456	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	SLC18A3	6572	Q16572	solute carrier family 18 member A3		30	0.713	0.379	0.4593	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	P2RX1	5023	P51575	purinergic receptor P2X 1	receptor; transporter	33	0.696	0.414	8.8049e-11	0.01	no reported evidence	1.0	1	0	1999.0	1999.0
+Heart failure	C0018801	SLN	6588	O00631	sarcolipin		22	0.707	0.31	0.29431	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	SUMO3	6612	P55854	small ubiquitin-like modifier 3		21	0.701	0.517	0.33442	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	SUMO2	6613	P61956	small ubiquitin-like modifier 2		24	0.696	0.448	0.87233	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	SOAT1	6646	P35610	sterol O-acyltransferase 1	transferase	185	0.484	0.793	1.3725e-08	0.01	no reported evidence	1.0	1	0	2001.0	2001.0
+Heart failure	C0018801	OPRM1	4988	P35372	opioid receptor mu 1	receptor	247	0.479	0.759	4.5135e-11	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	OGN	4969	P20774	osteoglycin		12	0.785	0.172	0.00077228	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	NRF1	4899	Q16656	nuclear respiratory factor 1		33	0.659	0.586	0.99937	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	NFATC4	4776	Q14934	nuclear factor of activated T cells 4	transcription factor	20	0.727	0.345	0.83367	0.01	no reported evidence	1.0	1	0	2004.0	2004.0
+Heart failure	C0018801	NFATC2	4773	Q13469	nuclear factor of activated T cells 2	transcription factor	74	0.588	0.517	0.99995	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	TNFRSF1B	7133	P20333	TNF receptor superfamily member 1B		230	0.467	0.828	0.82467	0.01	no reported evidence	0.0	1	1	2013.0	2013.0
+Heart failure	C0018801	SMAD1	4086	Q15797	SMAD family member 1	transcription factor	77	0.572	0.552	0.98839	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	LY75	4065	O60449	lymphocyte antigen 75		16	0.735	0.414	1.3575e-45	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	TOP2B	7155	Q02880	DNA topoisomerase II beta		38	0.639	0.621	0.99997	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	LUM	4060	P51884	lumican		71	0.59	0.586	0.080652	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	LPA	4018	P08519	lipoprotein(a)	hydrolase; protease	198	0.489	0.655	5.8068e-88	0.01	no reported evidence	1.0	1	2	2016.0	2016.0
+Heart failure	C0018801	LIFR	3977	P42702	LIF receptor alpha	defense/immunity protein; signaling molecule	171	0.569	0.621	2.3311e-13	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	CRISP2	7180	P16562	cysteine rich secretory protein 2	defense/immunity protein	97	0.545	0.655	1.142e-12	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	TRAF3	7187	Q13114	TNF receptor associated factor 3	signaling molecule	47	0.639	0.621	0.99904	0.01	no reported evidence	0.0	1	0	2015.0	2015.0
+Heart failure	C0018801	MECP2	4204	P51608	methyl-CpG binding protein 2	nucleic acid binding; transferase	403	0.463	0.862	0.7829	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	MEF2C	4208	Q06413	myocyte enhancer factor 2C	transcription factor	128	0.57	0.483	0.015729	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	MITF	4286	O75030	melanogenesis associated transcription factor		168	0.526	0.69	0.99746	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	TFR2	7036	Q9UP52	transferrin receptor 2	hydrolase; protease	88	0.594	0.517	1.772e-08	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	TFRC	7037	P02786	transferrin receptor	hydrolase; protease	211	0.471	0.759	0.00029785	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	MMP12	4321	P39900	matrix metallopeptidase 12	hydrolase; protease	134	0.516	0.862		0.01	no reported evidence	0.0	1	1	2012.0	2012.0
+Heart failure	C0018801	NDUFS6	4726	O75380	NADH:ubiquinone oxidoreductase subunit S6	oxidoreductase	74	0.639	0.448	0.093939	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	THBS1	7057	P07996	thrombospondin 1		288	0.448	0.759	0.99996	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	THBS2	7058	P35442	thrombospondin 2		76	0.582	0.586	0.66149	0.01	no reported evidence	0.0	1	0	2005.0	2005.0
+Heart failure	C0018801	TRNT	4576		tRNA		10	0.815	0.276		0.01	no reported evidence	0.0	1	0	2015.0	2015.0
+Heart failure	C0018801	MMP3	4314	P08254	matrix metallopeptidase 3	hydrolase; protease	309	0.439	0.793	4.9293e-15	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	TJP1	7082	Q07157	tight junction protein 1	cell junction protein	44	0.63	0.552	1.0	0.01	no reported evidence		1	0	2008.0	2008.0
+Heart failure	C0018801	TRPC1	7220	P48995	transient receptor potential cation channel subfamily C member 1	transporter	46	0.616	0.586	0.010187	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	MAP2K3	5606	P46734	mitogen-activated protein kinase kinase 3		25	0.69	0.379	0.37797	0.01	no reported evidence	0.0	1	0	2003.0	2003.0
+Heart failure	C0018801	RENBP	5973	P51606	renin binding protein	isomerase	82	0.588	0.655	0.46158	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	PPP2R1A	5518	P30153	protein phosphatase 2 scaffold subunit Aalpha	hydrolase; phosphatase	95	0.59	0.517	0.98564	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	RGS4	5999	P49798	regulator of G protein signaling 4	enzyme modulator	27	0.685	0.345	5.3895e-08	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	ROCK1	6093	Q13464	Rho associated coiled-coil containing protein kinase 1	kinase; transferase	77	0.579	0.517	1.0	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	RPL32	6161	P62910	ribosomal protein L32	nucleic acid binding	6	0.886	0.069	0.75407	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	PPARD	5467	Q03181	peroxisome proliferator activated receptor delta	nucleic acid binding; receptor; transcription factor	122	0.551	0.621	0.99399	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	PPA1	5464	Q15181	pyrophosphatase (inorganic) 1	hydrolase	11	0.752	0.345	1.836e-05	0.01	no reported evidence	0.0	1	0	2004.0	2004.0
+Heart failure	C0018801	POLR2A	5430	P24928	RNA polymerase II subunit A	nucleic acid binding; transferase	15	0.743	0.276	1.0	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	RYR3	6263	Q15413	ryanodine receptor 3	receptor; transporter	23	0.701	0.241	0.77648	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	PPP3CA	5530	Q08209	protein phosphatase 3 catalytic subunit alpha		91	0.569	0.724	0.9999	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	RELA	5970	Q04206	RELA proto-oncogene, NF-kB subunit	nucleic acid binding; transcription factor	245	0.456	0.828	0.99942	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	NPY4R	5540	P50391	neuropeptide Y receptor Y4		3	0.886	0.103	4.2363e-05	0.01	no reported evidence	0.0	1	0	2004.0	2004.0
+Heart failure	C0018801	MAPK9	5601	P45984	mitogen-activated protein kinase 9	kinase; transferase	70	0.607	0.586	0.16297	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	PTEN	5728	P60484	phosphatase and tensin homolog	hydrolase; phosphatase	915	0.334	0.828	0.81793	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	PTHLH	5744	P12272	parathyroid hormone like hormone		238	0.472	0.793	0.83368	0.01	no reported evidence		1	0	2002.0	2002.0
+Heart failure	C0018801	PTN	5764	P21246	pleiotrophin	signaling molecule	97	0.565	0.586	0.008119	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	PTX3	5806	P26022	pentraxin 3		118	0.543	0.69	7.5491e-05	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	PURB	5814	Q96QR8	purine rich element binding protein B	nucleic acid binding; transcription factor	4	0.886	0.069	0.63892	0.01	no reported evidence	1.0	1	0	2004.0	2004.0
+Heart failure	C0018801	RAB1A	5861	P62820	RAB1A, member RAS oncogene family		24	0.696	0.517	0.81923	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	PRKACG	5568	P22612	protein kinase cAMP-activated catalytic subunit gamma		29	0.701	0.414		0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	PRH1	5554	P02810	proline rich protein HaeIII subfamily 1		104	0.543	0.69	0.0044498	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	S100B	6285	P04271	S100 calcium binding protein B	calcium-binding protein; signaling molecule	301	0.443	0.862	0.046548	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	ATXN1	6310	P54253	ataxin 1		137	0.55	0.517	0.98201	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	SGK1	6446	O00141	serum/glucocorticoid regulated kinase 1	calcium-binding protein; kinase; transfer/carrier protein; transferase	128	0.53	0.621	0.040926	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	SGTA	6449	O43765	small glutamine rich tetratricopeptide repeat containing alpha		12	0.762	0.207	0.93693	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	PDC	5132	P20941	phosducin		46	0.642	0.552	6.8596e-05	0.01	no reported evidence	1.0	1	0	2003.0	2003.0
+Heart failure	C0018801	SLC2A4	6517	P14672	solute carrier family 2 member 4		90	0.564	0.586	3.188e-05	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	CDK16	5127	Q00536	cyclin dependent kinase 16	kinase; transferase	29	0.696	0.414	0.9938	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	P4HB	5034	P07237	prolyl 4-hydroxylase subunit beta		122	0.57	0.759	0.99683	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	SLC6A4	6532	P31645	solute carrier family 6 member 4	transporter	329	0.446	0.724	0.25902	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	SLC6A8	6535	P48029	solute carrier family 6 member 8	transporter	141	0.567	0.655	0.99655	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	SLC7A1	6541	P30825	solute carrier family 7 member 1	transporter	22	0.701	0.448	0.99399	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	SGCG	6445	Q13326	sarcoglycan gamma	cytoskeletal protein	110	0.559	0.69	5.1318e-05	0.01	no reported evidence	1.0	1	1	2000.0	2000.0
+Heart failure	C0018801	PDE3A	5139	Q14432	phosphodiesterase 3A		28	0.752	0.345	0.0063708	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	PDE9A	5152	O76083	phosphodiesterase 9A		9	0.815	0.138	0.0026441	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	PKD1	5310	P98161	polycystin 1, transient receptor potential channel interacting		127	0.537	0.621	1.0	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	PIN1	5300	Q13526	peptidylprolyl cis/trans isomerase, NIMA-interacting 1		119	0.536	0.655	0.76129	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	PIM1	5292	P11309	Pim-1 proto-oncogene, serine/threonine kinase		115	0.532	0.621	0.85773	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	CCL19	6363	Q99731	C-C motif chemokine ligand 19	signaling molecule	76	0.575	0.586	0.24633	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	CCL21	6366	O00585	C-C motif chemokine ligand 21	signaling molecule	98	0.55	0.69	0.034342	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	CX3CL1	6376	P78423	C-X3-C motif chemokine ligand 1	signaling molecule	123	0.533	0.759	0.88477	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	PGK1	5230	P00558	phosphoglycerate kinase 1	kinase; transferase	82	0.6	0.69	0.78883	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	PDK4	5166	Q16654	pyruvate dehydrogenase kinase 4	kinase; transferase	36	0.652	0.31	5.6394e-12	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	PDK1	5163	Q15118	pyruvate dehydrogenase kinase 1	kinase; transferase	71	0.582	0.655	1.2346e-05	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	P2RY2	5029	P41231	purinergic receptor P2Y2		61	0.609	0.586	0.089984	0.01	no reported evidence	1.0	1	0	1999.0	1999.0
+Heart failure	C0018801	MAPKAPK2	9261	P49137	mitogen-activated protein kinase-activated protein kinase 2	cytoskeletal protein; kinase; transferase	35	0.659	0.586	0.99939	0.01	no reported evidence	1.0	1	0	2001.0	2001.0
+Heart failure	C0018801	MLEC	9761	Q14165	malectin		5	0.928	0.034	0.63124	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	GAB1	2549	Q13480	GRB2 associated binding protein 1	transmembrane receptor regulatory/adaptor protein	46	0.627	0.517	0.43829	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	TLK1	9874	Q9UKI8	tousled like kinase 1	kinase; transferase	25	0.713	0.414	0.99999	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	MFN2	9927	O95140	mitofusin 2	hydrolase; phosphatase	176	0.541	0.759	0.988	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	NR2E3	10002	Q9Y5X4	nuclear receptor subfamily 2 group E member 3	nucleic acid binding; receptor; transcription factor	75	0.616	0.517		0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	XRCC6	2547	P12956	X-ray repair cross complementing 6	nucleic acid binding	76	0.586	0.621	0.99875	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	DNM1L	10059	O00429	dynamin 1 like	cytoskeletal protein; enzyme modulator; hydrolase	105	0.57	0.655	0.00047522	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	ABCC9	10060	O60706	ATP binding cassette subfamily C member 9	transporter	156	0.59	0.517	1.5652e-08	0.01	no reported evidence	1.0	1	0	2004.0	2004.0
+Heart failure	C0018801	FRZB	2487	Q92765	frizzled related protein	enzyme modulator; receptor; signaling molecule	57	0.598	0.448	0.0012918	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	GABPA	2551	Q06546	GA binding protein transcription factor subunit alpha	nucleic acid binding; signaling molecule; transcription factor	262	0.454	0.828	0.99791	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	GC	2638	P02774	GC, vitamin D binding protein	transfer/carrier protein	134	0.525	0.793	2.0549e-10	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	ISG15	9636	P05161	ISG15 ubiquitin-like modifier		68	0.592	0.724	0.39557	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	GOLGB1	2804	Q14789	golgin B1		13	0.773	0.31	1.0115e-10	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	LONP1	9361	P36776	lon peptidase 1, mitochondrial	hydrolase; protease	139	0.557	0.655	0.9994	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	GLP1R	2740	P43220	glucagon like peptide 1 receptor		73	0.598	0.586	0.28	0.01	no reported evidence	1.0	1	0	2017.0	2017.0
+Heart failure	C0018801	HAND1	9421	O96004	heart and neural crest derivatives expressed 1		32	0.696	0.207	0.11424	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	ABCG2	9429	Q9UNQ0	ATP binding cassette subfamily G member 2 (Junior blood group)	transporter	265	0.449	0.793	1.2599e-32	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	HAND2	9464	P61296	heart and neural crest derivatives expressed 2		31	0.72	0.31	0.38989	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	GHSR	2693	Q92847	growth hormone secretagogue receptor	receptor	102	0.565	0.621	0.0073175	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	TBPL1	9519	P62380	TATA-box binding protein like 1	nucleic acid binding; transcription factor	90	0.575	0.586	0.39238	0.01	no reported evidence	1.0	1	0	2003.0	2003.0
+Heart failure	C0018801	OPN1MW	2652	P04001;P0DN77;P0DN78	opsin 1, medium wave sensitive	receptor	39	0.667	0.448	0.032803	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	MTOR	2475	P42345	mechanistic target of rapamycin kinase	kinase; nucleic acid binding; transferase	466	0.399	0.793	1.0	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	NAMPT	10135	P43490	nicotinamide phosphoribosyltransferase	signaling molecule	95	0.564	0.69	0.98206	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	NES	10763	P48681	nestin		158	0.51	0.655	0.00012366	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	LILRB1	10859	Q8NHL6	leukocyte immunoglobulin like receptor B1	defense/immunity protein; enzyme modulator; receptor; signaling molecule	93	0.559	0.655	3.5095e-14	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	FABP4	2167	P15090	fatty acid binding protein 4		71	0.59	0.552	3.6451e-05	0.01	no reported evidence	1.0	1	0	2017.0	2017.0
+Heart failure	C0018801	SUGT1	10910	Q9Y2Z0	SGT1 homolog, MIS12 kinetochore complex assembly cochaperone		2	0.928	0.034	0.45855	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	F2RL1	2150	P55085	F2R like trypsin receptor 1		165	0.514	0.724	0.00079765	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	PRDX3	10935	P30048	peroxiredoxin 3	oxidoreductase	48	0.614	0.517	0.0042869	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	SDS	10993	P20132	serine dehydratase	hydrolase; isomerase; lyase	116	0.54	0.69	0.00011134	0.01	no reported evidence	1.0	1	0	2005.0	2005.0
+Heart failure	C0018801	FSTL1	11167	Q12841	follistatin like 1	enzyme modulator	67	0.582	0.552	0.9059	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	MAP4K5	11183	Q9Y4K4	mitogen-activated protein kinase kinase kinase kinase 5		7	0.815	0.207	0.99958	0.01	no reported evidence	0.0	1	0	2003.0	2003.0
+Heart failure	C0018801	OGA	10724	O60502	O-GlcNAcase		74	0.584	0.517		0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	PTK2B	2185	Q14289	protein tyrosine kinase 2 beta		157	0.502	0.69	0.94209	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	FDPS	2224	P14324	farnesyl diphosphate synthase	transferase	21	0.72	0.448	0.0034763	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	ALYREF	10189	Q86V81	Aly/REF export factor	nucleic acid binding	11	0.785	0.414	0.9286	0.01	no reported evidence	0.0	1	0	2014.0	2014.0
+Heart failure	C0018801	FOXM1	2305	Q08050	forkhead box M1		190	0.484	0.724	0.00076948	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	FOXC1	2296	Q12948	forkhead box C1	nucleic acid binding; transcription factor	158	0.517	0.724	0.95504	0.01	no reported evidence	0.0	1	0	2006.0	2006.0
+Heart failure	C0018801	RACK1	10399	P63244	receptor for activated C kinase 1		56	0.611	0.552		0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	PRMT5	10419	O14744	protein arginine methyltransferase 5	signaling molecule	47	0.627	0.586	0.99999	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	FST	10468	P19883	follistatin	enzyme modulator	110	0.551	0.655	0.98109	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	SEMA4D	10507	Q92854	semaphorin 4D	signaling molecule	44	0.642	0.483	0.98109	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	FGF4	2249	P08620	fibroblast growth factor 4	signaling molecule	54	0.616	0.483	0.14176	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	FGF2	2247	P09038	fibroblast growth factor 2	signaling molecule	437	0.404	0.897	0.019149	0.01	no reported evidence		1	0	2005.0	2005.0
+Heart failure	C0018801	NISCH	11188	Q9Y2I1	nischarin	enzyme modulator	24	0.713	0.31	0.99904	0.01	no reported evidence		1	0	2002.0	2002.0
+Heart failure	C0018801	LEP	3952	P41159	leptin		498	0.4	0.793	0.38947	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	VEGFB	7423	P49765	vascular endothelial growth factor B	signaling molecule	45	0.642	0.379	1.2549e-09	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	IL13RA1	3597	P78552	interleukin 13 receptor subunit alpha 1	defense/immunity protein; signaling molecule	18	0.72	0.379	0.96292	0.01	no reported evidence	1.0	1	0	2018.0	2018.0
+Heart failure	C0018801	BEST1	7439	O76090	bestrophin 1		168	0.521	0.586	1.8481e-12	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	IL1A	3552	P01583	interleukin 1 alpha		596	0.366	0.931	0.00014857	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	IGFBP4	3487	P22692	insulin like growth factor binding protein 4	enzyme modulator	43	0.633	0.517	0.023738	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	IGF2	3481	P01344	insulin like growth factor 2		505	0.399	0.828	0.046895	0.01	no reported evidence	1.0	1	0	2003.0	2003.0
+Heart failure	C0018801	ID2	3398	Q02363	inhibitor of DNA binding 2	transcription factor	65	0.592	0.552	0.68757	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	YY1	7528	P25490	YY1 transcription factor	transcription factor	141	0.519	0.724	0.99457	0.01	no reported evidence	1.0	1	0	2003.0	2003.0
+Heart failure	C0018801	ZBTB17	7709	Q13105	zinc finger and BTB domain containing 17		16	0.785	0.276	0.98519	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	IL16	3603	Q14005	interleukin 16	signaling molecule	112	0.543	0.793	9.4106e-11	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	ILF3	3609	Q12906	interleukin enhancer binding factor 3	nucleic acid binding	27	0.69	0.448	1.0	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	UTRN	7402	P46939	utrophin		59	0.614	0.517	1.6194e-19	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	KCNH2	3757	Q12809	potassium voltage-gated channel subfamily H member 2		129	0.543	0.586	0.99046	0.01	no reported evidence		1	0	2007.0	2007.0
+Heart failure	C0018801	JARID2	3720	Q92833	jumonji and AT-rich interaction domain containing 2	transcription factor	32	0.672	0.414	1.0	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	ITPR2	3709	Q14571	inositol 1,4,5-trisphosphate receptor type 2	receptor; transporter	35	0.676	0.517	1.0945e-26	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	ITPR1	3708	Q14643	inositol 1,4,5-trisphosphate receptor type 1	receptor; transporter	97	0.577	0.69	1.0	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	TXN	7295	P10599	thioredoxin		177	0.503	0.793	0.21507	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	SUMO1	7341	P63165	small ubiquitin-like modifier 1		85	0.579	0.621	0.86399	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	ISL1	3670	P61371	ISL LIM homeobox 1	nucleic acid binding; transcription factor	54	0.621	0.586	0.8963	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	IRF1	3659	P10914	interferon regulatory factor 1	nucleic acid binding; transcription factor	165	0.503	0.724	0.99019	0.01	no reported evidence	1.0	1	0	1997.0	1997.0
+Heart failure	C0018801	ILK	3611	Q13418	integrin linked kinase		123	0.534	0.69	1.8227e-05	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	TNC	3371	P24821	tenascin C		215	0.475	0.759	5.6432e-07	0.01	no reported evidence	1.0	1	0	2014.0	2014.0
+Heart failure	C0018801	MAP3K12	7786	Q12852	mitogen-activated protein kinase kinase kinase 12		19	0.743	0.241	1.0	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	HCRTR2	3062	O43614	hypocretin receptor 2	receptor	17	0.743	0.448	0.0046813	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	GSR	2936	P00390	glutathione-disulfide reductase	oxidoreductase	98	0.548	0.759	8.365e-07	0.01	no reported evidence	1.0	1	0	2011.0	2011.0
+Heart failure	C0018801	DGAT1	8694	O75907	diacylglycerol O-acyltransferase 1	transferase	26	0.701	0.379	1.6314e-17	0.01	no reported evidence	1.0	1	0	2015.0	2015.0
+Heart failure	C0018801	CDS2	8760	O95674	CDP-diacylglycerol synthase 2		2	0.928	0.034	6.1445e-07	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	GSN	2934	P06396	gelsolin	cytoskeletal protein	168	0.498	0.828	3.4116e-11	0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	MAP3K14	9020	Q99558	mitogen-activated protein kinase kinase kinase 14		38	0.648	0.552		0.01	no reported evidence	1.0	1	0	2009.0	2009.0
+Heart failure	C0018801	GPT	2875	P24298	glutamic--pyruvic transaminase	transferase	155	0.51	0.828	7.1081e-19	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	MAP3K13	9175	O43283	mitogen-activated protein kinase kinase kinase 13		13	0.743	0.172	0.77644	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	GPR17	2840	Q13304	G protein-coupled receptor 17		11	0.752	0.138	0.00060973	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	HTT	3064	P42858	huntingtin		123	0.579	0.517	1.0	0.01	no reported evidence	1.0	1	0	2007.0	2007.0
+Heart failure	C0018801	DENR	8562	O43583	density regulated re-initiation and release factor	nucleic acid binding	34	0.656	0.483	0.83397	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	IKBKG	8517	Q9Y6K9	inhibitor of nuclear factor kappa B kinase subunit gamma		186	0.533	0.759	0.082872	0.01	no reported evidence	1.0	1	0	2010.0	2010.0
+Heart failure	C0018801	HTR4	3360	Q13639	5-hydroxytryptamine receptor 4	receptor	45	0.645	0.552	0.025586	0.01	no reported evidence	1.0	1	0	2008.0	2008.0
+Heart failure	C0018801	CXCR4	7852	P61073	C-X-C motif chemokine receptor 4		474	0.391	0.897	0.013942	0.01	no reported evidence	1.0	1	0	2004.0	2004.0
+Heart failure	C0018801	SCG2	7857	P13521	secretogranin II		30	0.672	0.379	0.00013921	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	MANF	7873	P55145	mesencephalic astrocyte derived neurotrophic factor		14	0.762	0.276	0.0013251	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	HRC	3270	P23327	histidine rich calcium binding protein		20	0.735	0.379	1.1109e-08	0.01	no reported evidence	1.0	1	1	2011.0	2011.0
+Heart failure	C0018801	HNRNPD	3184	Q14103	heterogeneous nuclear ribonucleoprotein D		28	0.685	0.483	0.99658	0.01	no reported evidence	1.0	1	0	2002.0	2002.0
+Heart failure	C0018801	TCL1A	8115	P56279	T cell leukemia/lymphoma 1A		62	0.607	0.414	7.7714e-10	0.01	no reported evidence	1.0	1	0	2013.0	2013.0
+Heart failure	C0018801	NR4A1	3164	P22736	nuclear receptor subfamily 4 group A member 1	receptor; transcription factor	96	0.558	0.621	0.33208	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
+Heart failure	C0018801	ARID1A	8289	O14497	AT-rich interaction domain 1A		211	0.505	0.724	1.0	0.01	no reported evidence	1.0	1	0	2012.0	2012.0
+Heart failure	C0018801	MSC	9242	O60682	musculin		123	0.526	0.655	0.022585	0.01	no reported evidence	1.0	1	0	2016.0	2016.0
