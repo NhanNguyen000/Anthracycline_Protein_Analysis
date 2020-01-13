@@ -16,13 +16,33 @@ Change_a_Part_in_Names <- function(list_input, select_chatacter, wanted_characte
   return(output)
 }
 
-Identify_if_have_speficic_symbol <- function(data, symbol) {
-  output <-data[which(grepl(symbol, data))]
+get.uniques_Uniprot <- function(input) {
+  output <- input[-which(grepl(":", rownames(input))),]
   return(output)
 }
 
-Remove_if_have_specific_symbol <- function (data, remove_list) {
-  output <- data[!rownames(data) %in% remove_list,]
+get.Uniprot_IDs <- function(list) {
+  output<-c()
+  for (i in 1: length(list)) output[i] <- strsplit(list[i], paste0("[|]"))[[1]][2]
+  return(output)
+}
+
+make.sample_names <- function(sample_names) {
+  convert_names <- matrix(unlist(strsplit(sample_names, "_")), ncol = 4, byrow = TRUE)
+  colnames(convert_names) <- c("Drug", "Dose", "Time", "Replicate")
+  
+  convert_names[which(convert_names[, "Drug"] == "Fluct"), 1]       <- "Con"
+  convert_names[which(convert_names[, "Dose"] == "Therapeutic"), 2] <- "The"
+  convert_names[which(convert_names[, "Dose"] == "Toxic"), 2]       <- "Tox"
+  convert_names[which(convert_names[, "Time"] == "T2"), 3]          <- "002"
+  convert_names[which(convert_names[, "Time"] == "T8"), 3]          <- "004"
+  convert_names[which(convert_names[, "Time"] == "T24"), 3]         <- "024"
+  convert_names[which(convert_names[, "Time"] == "T72"), 3]         <- "072"
+  convert_names[which(convert_names[, "Time"] == "T168"), 3]        <- "168"
+  convert_names[which(convert_names[, "Time"] == "T240"), 3]        <- "240"
+  convert_names[which(convert_names[, "Time"] == "T336"), 3]        <- "336"
+  
+  output <- apply(convert_names, 1, paste , collapse = "_" )
   return(output)
 }
 
@@ -30,15 +50,6 @@ Round_number_in_data <- function(data, singificant_number) {
   output <- signif(data, singificant_number)
   return(output)
 }
-
-
-Select_Part_Names <- function(list, separator, selected_position) {
-  # eg. for separator = "|" --> "[|]"
-  output<-c()
-  for (i in 1: length(list)) output[i] <- strsplit(list[i], paste0("[", separator, "]"))[[1]][selected_position]
-  return(output)
-}
-
 
 Filter_data <- function(data) {
   gsg <- goodSamplesGenes(data, verbose = 3);				# check data
@@ -54,7 +65,6 @@ Filter_data <- function(data) {
   output <- data
   return(output)
 }
-
 
 Made_sample_tree <- function(data) {
   sampleTree = hclust(dist(data), method = "average") 
@@ -149,6 +159,7 @@ get.High_ModuleMembership_proteins <- function(dataExpr, MEs, MElist, cutoff) {
   }
   return(HighMM_protein)
 }
+
 get.Module_proteins <- function(module_color) {
   Module_proteins <- list()
   for(color in unique(as.vector(module_color))) {
@@ -205,27 +216,6 @@ get.protein_without_missing_value <- function(Protein_data, select_list) {
   return(output)
 }
 
-
-make.sample_names <- function(sample_names) {
-  convert_names <- matrix(unlist(strsplit(sample_names, "_")), ncol = 4, byrow = TRUE)
-  colnames(convert_names) <- c("Drug", "Dose", "Time", "Replicate")
-  
-  convert_names[which(convert_names[, "Drug"] == "Fluct"), 1]       <- "Con"
-  convert_names[which(convert_names[, "Dose"] == "Therapeutic"), 2] <- "The"
-  convert_names[which(convert_names[, "Dose"] == "Toxic"), 2]       <- "Tox"
-  convert_names[which(convert_names[, "Time"] == "T2"), 3]          <- "002"
-  convert_names[which(convert_names[, "Time"] == "T8"), 3]          <- "004"
-  convert_names[which(convert_names[, "Time"] == "T24"), 3]         <- "024"
-  convert_names[which(convert_names[, "Time"] == "T72"), 3]         <- "072"
-  convert_names[which(convert_names[, "Time"] == "T168"), 3]        <- "168"
-  convert_names[which(convert_names[, "Time"] == "T240"), 3]        <- "240"
-  convert_names[which(convert_names[, "Time"] == "T336"), 3]        <- "336"
-  
-  output <- apply(convert_names, 1, paste , collapse = "_" )
-  return(output)
-}
-
-
 Print_ME_in_pdf <- function(MEs, metadata, save_folder, file_name) {
   if("plyr" %in% rownames(installed.packages()) == FALSE) print("Error!!! Install R package: plyr")
   if("ggplot2" %in% rownames(installed.packages()) == FALSE) print("Error!!! Install R package: ggplot2")
@@ -242,50 +232,6 @@ Print_ME_in_pdf <- function(MEs, metadata, save_folder, file_name) {
   for (i in colnames(MEs))	{
     ME_tem    <- as.data.frame(cbind(metadata, setNames(MEs[i], "MEs")))
     Mean_tem  <- ddply(ME_tem, ~Dose+Time, summarise, Mean = mean(MEs, na.rm = TRUE), sd = sd(MEs, na.rm = TRUE))
-    plist[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
-      geom_line() + geom_point() + geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
-      xlab("Time (hours)") + ylab("Eigengens value") + ggtitle(i) +  theme_bw() 
-  }
-  ml <- marrangeGrob(plist, nrow=3, ncol=2)
-  print(ml)
-  dev.off() # Close the pdf file
-}
-
-get.biopsies_type <- function(Biospies_info) {
-  Samples <- c()
-  Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Late onset cardiotoxicity"] <- "Cardiotoxicity"
-  Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Control patients"]          <- "Control"
-  
-  Samples$Drug[Biospies_info$Control...Cardiotoxicity == "Control patients"]           <- "" # control samples
-  Samples$Drug[Biospies_info$Chemotherapeutic.agents == ""]            <- "_no_data"
-  Samples$Drug[grep("rubicin", Biospies_info$Chemotherapeutic.agents)] <- "_with_ANT"
-  Samples$Drug[grep("cycline", Biospies_info$Chemotherapeutic.agents)] <- "_with_ANT"
-  Samples$Drug[is.na(Samples$Drug)]                                    <- "_without_ANT"
-  
-  summary_sample           <- matrix(unlist(Samples), ncol =2, byrow = FALSE)
-  output <- apply(summary_sample, 1, paste , collapse = "" )
-  return(output)
-}
-
-Print_protein_expression_in_pdf <- function(expression_data, selected_list, metadata, save_folder, file_name) {
-  if("plyr" %in% rownames(installed.packages()) == FALSE) print("Error!!! Install R package: plyr")
-  if("ggplot2" %in% rownames(installed.packages()) == FALSE) print("Error!!! Install R package: ggplot2")
-  if("gridExtra" %in% rownames(installed.packages()) == FALSE) print("Error!!! Install R package: gridExtra")
-  
-  library("plyr")						
-  library("ggplot2")		
-  library("gridExtra")
-  
-  
-  Protein_expression <- as.data.frame(t(Select_if_in_specific_list(t(expression_data), selected_list)))
-  
-  setwd(save_folder)
-  pdf(file_name, onefile = TRUE, width = 15) # set upt the pdf file
-  
-  plist<- list()
-  for (i in colnames(Protein_expression))	{
-    Protein_expression_tem    <- as.data.frame(cbind(metadata, setNames(Protein_expression[i], "MEs")))
-    Mean_tem  <- ddply(Protein_expression_tem, ~Dose+Time, summarise, Mean = mean(MEs, na.rm = TRUE), sd = sd(MEs, na.rm = TRUE))
     plist[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() + geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
       xlab("Time (hours)") + ylab("Eigengens value") + ggtitle(i) +  theme_bw() 
@@ -333,6 +279,24 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
 }
 
 
+get.biopsies_type <- function(Biospies_info) {
+  Samples <- c()
+  Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Late onset cardiotoxicity"] <- "Cardiotoxicity"
+  Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Control patients"]          <- "Control"
+  
+  Samples$Drug[Biospies_info$Control...Cardiotoxicity == "Control patients"]           <- "" # control samples
+  Samples$Drug[Biospies_info$Chemotherapeutic.agents == ""]            <- "_no_data"
+  Samples$Drug[grep("rubicin", Biospies_info$Chemotherapeutic.agents)] <- "_with_ANT"
+  Samples$Drug[grep("cycline", Biospies_info$Chemotherapeutic.agents)] <- "_with_ANT"
+  Samples$Drug[is.na(Samples$Drug)]                                    <- "_without_ANT"
+  
+  summary_sample           <- matrix(unlist(Samples), ncol =2, byrow = FALSE)
+  output <- apply(summary_sample, 1, paste , collapse = "" )
+  return(output)
+}
+
+
+
 get.Module_Proteins_overlap_DisGeNET <- function(module_color, DisGeNET, expression_data) {
   Module_Proteins_overlap_DisGeNET <- list()
   Module_Proteins_overlap_DisGeNET_no_mising_value <- list()
@@ -356,8 +320,8 @@ Print_protein_expression_log2FC_biopsies <- function(expression_data, selected_l
   Mean_expression_v1 <- Mean_expression[, grep("mean", colnames(Mean_expression))]
   
   op <- par(mar=c(14,4,4,2))
-  barplot(Mean_expression_v1, col=c("red", "green", "blue"),  las = 2, beside = TRUE)
-  barplot(Mean_expression_v1, col=c("red", "green", "blue"), legend = rownames(Mean_expression_v1),  las = 2, beside = TRUE)
+  barplot(Mean_expression_v1, ylab = "Expression", col=c("red", "green", "blue"),  las = 2, beside = TRUE)
+  barplot(Mean_expression_v1, ylab = "Expression", col=c("red", "green", "blue"), legend = rownames(Mean_expression_v1),  las = 2, beside = TRUE)
   rm(op)
   
   

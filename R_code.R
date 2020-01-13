@@ -1,22 +1,24 @@
-save_in_folder <- "D:/TGX/GitHub/"
-source(paste0(save_in_folder, "R_functions.R"))
-       
+# R scripts
+get.path <- function(list_categories) {
+  require("here")
+  library(here)
+  path <- here::here(list_categories)
+  return(path)
+}
+source(get.path("R_functions.R"))
+
 ## Proteomic data in vitro:
-Invitro_data_log <- Loaded_data(folder = paste0(save_in_folder , "Anthracycline_Protein_Analysis/data"), file_name = "Hecatos_Cardio_Px_ANTvsFluctDMSO_log2_median_normalized.txt")
+Invitro_data_log <- Loaded_data(folder = get.path("data"), file_name = "Hecatos_Cardio_Px_ANTvsFluctDMSO_log2_median_normalized.txt")
 Invitro_data_log <- get.rowname(Invitro_data_log)
 Invitro_data_log <- Invitro_data_log[, !colnames(Invitro_data_log) %in% c("Fluct.DMSO_T0_0959", "Fluct.DMSO_T0_0960", "Fluct.DMSO_T0_0958",
                                                                           "DOX_Therapeutic_T8_278.1", "DOX_Therapeutic_T8_279.1", "DOX_Therapeutic_T8_277.1")]
 Invitro_data_log <- Invitro_data_log[, -grep("^DAU", colnames(Invitro_data_log))]
 
-colnames(Invitro_data_log)       <- Change_a_Part_in_Names(list_input = colnames(Invitro_data_log), select_chatacter = "[.]", wanted_character = "_")
-#colnames(Invitro_data_log)       <- gsub('.{4}$', '', colnames(Invitro_data_log))
-#colnames(Invitro_data_log)[1:21] <- gsub('.{1}$', '', colnames(Invitro_data_log)[1:21])
-
-Removed_Proteins           <- Identify_if_have_speficic_symbol(data = rownames(Invitro_data_log), symbol = ":")
-Invitro_data_log           <- Remove_if_have_specific_symbol(data = Invitro_data_log, remove_list = Removed_Proteins)
-Invitro_data_log           <- Round_number_in_data(data = Invitro_data_log, singificant_number = 6) 
-rownames(Invitro_data_log) <- Select_Part_Names(rownames(Invitro_data_log), separator = "|", selected_position = 2)
+colnames(Invitro_data_log) <- Change_a_Part_in_Names(list_input = colnames(Invitro_data_log), select_chatacter = "[.]", wanted_character = "_")
+Invitro_data_log           <- get.uniques_Uniprot(Invitro_data_log)
+rownames(Invitro_data_log) <- get.Uniprot_IDs(rownames(Invitro_data_log))
 colnames(Invitro_data_log) <- make.sample_names(colnames(Invitro_data_log))
+Invitro_data_log           <- Round_number_in_data(data = Invitro_data_log, singificant_number = 6) 
 
 ## WGCNA for proteomics data in invitro:
 library(WGCNA)									# load WGCNA library
@@ -27,17 +29,13 @@ categorial_samples <- c(rep(1, 21), rep(2, 42), rep(3, 42), rep(4, 34))
 op <- par(mar=c(14,4,4,2))
 Made_sample_tree2(WGCNA_Invitro_data, categorial_samples)
 rm(op)
+
 Pick_WGCNA_power(data = WGCNA_Invitro_data)  # power = 2 --> R square = 0.64, mean connectivity = 59.6
 Protein_Module_color <- Build_WGCNA_geneTree(data = WGCNA_Invitro_data, network_type = "signed", picked_power = 2)
-# https://peterlangfelder.com/2018/11/25/signed-or-unsigned-which-network-type-is-preferable/
-
 
 MEList       <- moduleEigengenes(WGCNA_Invitro_data, Protein_Module_color$dynamicColors)	# Calculate eigengenes
 MEs          <- MEList$eigengenes
 get.MEtree_plot(MEs, 0.25) # no modules lower than threshold
-#MEs_v2       <- get.MEs_merge(WGCNA_Invitro_data, Protein_Module_color$dynamicColors, MEDissThres = 0.25, Protein_Module_color$geneTree)
-#get.MEtree_plot(MEs_v2$MEs, 0.25)
-#MEList_v2                <- moduleEigengenes(WGCNA_Invitro_data, MEs_v2$moduleColors)
 
 Invitro_Hub_proteins     <- get.Hub_proteins(WGCNA_Invitro_data, MEList)
 Invitro_High_MM_proteins <- get.High_ModuleMembership_proteins(WGCNA_Invitro_data, MEs, MEList, cutoff = 0.8)
@@ -46,26 +44,29 @@ for(module_color in names(Invitro_High_MM_proteins)) {
   Invitro_High_MM_proteins_no_missing_data[[module_color]]<- get.protein_without_missing_value(WGCNA_Invitro_data, rownames(Invitro_High_MM_proteins[[module_color]]))
 }
 
-Invitro_module_color_matrix           <- as.matrix(MEList$validColors)
-rownames(Invitro_module_color_matrix) <- colnames(WGCNA_Invitro_data)
-Invitro_module_color                  <- get.Module_proteins(Invitro_module_color_matrix)
 
 
 # plot the module eigengenes
-Protein_MEs<-Module_Eigengen_Tree(data = WGCNA_Invitro_data, Module_color = MEList$validColors)
+Protein_MEs      <- Module_Eigengen_Tree(data = WGCNA_Invitro_data, Module_color = MEList$validColors)
 Protein_metadata <- as.data.frame(get.metadata(rownames(WGCNA_Invitro_data)))
 rownames(Protein_metadata) <- rownames(WGCNA_Invitro_data)
-Protein_metadata$Dose <- paste0(Protein_metadata$Drug, "_", Protein_metadata$Dose)
+Protein_metadata$Dose      <- paste0(Protein_metadata$Drug, "_", Protein_metadata$Dose)
 
 #Print_ME_in_pdf(MEs = Protein_MEs, metadata = Protein_metadata, 
-#                save_folder = "I:/HeCaToS/Paper/Paper1_Protein_Anthacycline/Data_and_Code", file_name = "WGCNA_Protein_Anthacycline_new_code_NN_20191216.pdf")
+#                save_folder = get.path("outcome"), file_name = "WGCNA_Protein_Anthacycline_new_code_NN_2020Jan13.pdf")
 
 ## run PCA to identify the sample
 library(factoextra)
-pdf(file = "PCA_Invitro_NN_20191216.pdf")
+setwd(get.path("outcome"))
+
+pdf(file = "PCA_Invitro_NN_2020Jan13.pdf")
 get.pca(WGCNA_Invitro_data, substring(rownames(WGCNA_Invitro_data), 1,8), name = "Total Invitro")
 get.pca_with_time(WGCNA_Invitro_data, substring(rownames(WGCNA_Invitro_data), 1,8), name = "Total Invitro")
 get.pca_with_selected_time (WGCNA_Invitro_data, substring(rownames(WGCNA_Invitro_data), 1,8), name = "Total Invitro")
+
+Invitro_module_color_matrix           <- as.matrix(MEList$validColors)
+rownames(Invitro_module_color_matrix) <- colnames(WGCNA_Invitro_data)
+Invitro_module_color                  <- get.Module_proteins(Invitro_module_color_matrix)
 
 for (module in names(Invitro_module_color)) {
   data <- Select_if_in_specific_list(t(WGCNA_Invitro_data), 
@@ -78,55 +79,40 @@ for (module in names(Invitro_module_color)) {
 dev.off()
 
 # Print protein expression & Log2FC
-Print_protein_expression_in_pdf(WGCNA_Invitro_data, Invitro_Hub_proteins, Protein_metadata, 
-                                save_folder = "I:/HeCaToS/Paper/Paper1_Protein_Anthacycline/Data_and_Code", 
-                                file_name = "WGCNA_Hub_Protein_invitro_NN_20191217.pdf")
-
 Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, Invitro_Hub_proteins, Protein_metadata, 
-                                       save_folder = "I:/HeCaToS/Paper/Paper1_Protein_Anthacycline/Data_and_Code", 
-                                       file_name = "WGCNA_Hub_Protein_invitro_NN_20191218.pdf")
+                                       get.path("outcome"), "WGCNA_Hub_Protein_invitro_NN_2030Jan13.pdf")
 
 ## Proteomic data in biospies:
-Biospies_data_log <- Loaded_data(folder = paste0(save_in_folder , "Anthracycline_Protein_Analysis/data"), file_name = "Hecatos_Px_Cardio_Biopsies_21samples_log2_median_norm.txt")
+Biospies_data_log <- Loaded_data(folder = get.path("data"), file_name = "Hecatos_Px_Cardio_Biopsies_21samples_log2_median_norm.txt")
 Biospies_data_log <- get.rowname(Biospies_data_log)
+Biospies_data_log <- get.uniques_Uniprot(Biospies_data_log )
 
-Removed_Proteins             <- Identify_if_have_speficic_symbol(data = rownames(Biospies_data_log), symbol = ":")
-Biospies_data_log            <- Remove_if_have_specific_symbol(data = Biospies_data_log, remove_list = Removed_Proteins)
-Biospies_data_log            <- Round_number_in_data(data = Biospies_data_log , singificant_number = 6) 
-rownames(Biospies_data_log ) <- Select_Part_Names(rownames(Biospies_data_log ), separator = "|", selected_position = 2)
+rownames(Biospies_data_log) <- get.Uniprot_IDs(rownames(Biospies_data_log))
+Biospies_data_log           <- Round_number_in_data(data = Biospies_data_log , singificant_number = 6) 
 
-Biospies_info<- read.table(paste0(save_in_folder , "Anthracycline_Protein_Analysis/data/Hecatos_Px_Cardio_Biopsies_SampleAnnot.txt"),
-                           header = TRUE, sep = "\t", fill= TRUE)
-#Biospies_info<- read.csv("I:/HeCaToS/HeCaToS_info_Data/TGXdata/Human_Biopsies/Hecatos_Px_Cardio_Biopsies_SampleAnnot_NN_20191209.csv")
+Biospies_info <- read.table(paste0(get.path("data"), "/Hecatos_Px_Cardio_Biopsies_SampleAnnot.txt"), header = TRUE, sep = "\t", fill= TRUE)
 
 Biospies_info$Biopsies_type <- get.biopsies_type(Biospies_info)
 Sample_info                 <- Biospies_info[, c("SampleID", "Biopsies_type")]
 Sample_info$SampleID        <- paste0("X", Sample_info$SampleID)
-Biospies_data_log_rotate    <- merge(Sample_info, t(Biospies_data_log), by.x = "SampleID", by.y = "row.names")
-rownames(Biospies_data_log_rotate) <- make.names(Biospies_data_log_rotate[, 2], unique = TRUE)
-
+Biospies_data_log_withSampleInfo   <- merge(Sample_info, t(Biospies_data_log), by.x = "SampleID", by.y = "row.names")
+rownames(Biospies_data_log_withSampleInfo) <- make.names(Biospies_data_log_withSampleInfo[, 2], unique = TRUE)
 
 ## WGCNA for proteomics data in biospies:
 library(WGCNA)									# load WGCNA library
 options(stringsAsFactors = FALSE) 						# Set the global option for all functions
 
-#WGCNA_Biospies_data    <- Filter_data(data = t(Biospies_data_log))
-#Made_sample_tree(data = WGCNA_Biospies_data)
-#WGCNA_Biospies_data    <- WGCNA_Biospies_data[-grep("^X2017", rownames(WGCNA_Biospies_data)),]
-
-WGCNA_Biospies_data    <- Filter_data(data = Biospies_data_log_rotate[, -c(1,2)])
+WGCNA_Biospies_data    <- Filter_data(data = Biospies_data_log_withSampleInfo[, -c(1,2)])
 #Made_sample_tree(data = WGCNA_Biospies_data)
 categorial_samples <- c(1, 2, 3, rep(4, 6), 2, 3, 2, 4, rep(2, 3), rep(4, 2), 2, 4, 2)
 op <- par(mar=c(14,4,4,2))
 Made_sample_tree2(WGCNA_Biospies_data,categorial_samples)
 rm(op)
 
-Removed_samples        <- c("Control_no_data", "Control.8", "Cardiotoxicity_with_ANT.6", 
-                            "Control.9", "Cardiotoxicity_with_ANT.7")
-Biospies_data_log_rotate_v2 <- Remove_if_have_specific_symbol(data = Biospies_data_log_rotate, remove_list = Removed_samples)
+Removed_samples <- c("Control_no_data", "Control.8", "Cardiotoxicity_with_ANT.6", "Control.9", "Cardiotoxicity_with_ANT.7")
+Biospies_data_log_withSampleInfo_v2 <- Biospies_data_log_withSampleInfo[-which(rownames(Biospies_data_log_withSampleInfo) %in%Removed_samples),]
 
-
-WGCNA_Biospies_data_v2 <- Filter_data(data = Biospies_data_log_rotate_v2[, -c(1,2)])
+WGCNA_Biospies_data_v2 <- Filter_data(data = Biospies_data_log_withSampleInfo_v2[, -c(1,2)])
 #Made_sample_tree(data = WGCNA_Biospies_data_v2)
 categorial_samples <- c(rep(4, 5), 2, 3, 4, 2, 3, rep(2, 2), 4, rep(2,2), 4)
 op <- par(mar=c(14,4,4,2))
@@ -142,19 +128,13 @@ get.MEtree_plot(MEs, 0.25) # 2 modules lower than threshold
 MEs_v2  <- get.MEs_merge(WGCNA_Biospies_data_v2, Protein_Module_color$dynamicColors, MEDissThres = 0.25, Protein_Module_color$geneTree)
 get.MEtree_plot(MEs_v2$MEs, 0.25)
 
-
 MEList_v2                 <- moduleEigengenes(WGCNA_Biospies_data_v2, MEs_v2$moduleColors)
-#Biospies_Hub_proteins     <- get.Hub_proteins(WGCNA_Biospies_data_v2, MEList_v2)
 Biospies_Hub_proteins     <- chooseTopHubInEachModule(WGCNA_Biospies_data_v2, MEList_v2$validColors)
 Biospies_High_MM_proteins <- get.High_ModuleMembership_proteins(WGCNA_Biospies_data_v2, MEs_v2$MEs, MEList_v2, cutoff = 0.8)
 Biospies_High_MM_proteins_no_missing_data <- list()
 for(module_color in names(Biospies_High_MM_proteins)) {
   Biospies_High_MM_proteins_no_missing_data[[module_color]]<- get.protein_without_missing_value(WGCNA_Biospies_data_v2, rownames(Biospies_High_MM_proteins[[module_color]]))
 }
-
-Biospies_module_color_matrix           <- as.matrix(MEs_v2$moduleColors)
-rownames(Biospies_module_color_matrix) <- colnames(WGCNA_Biospies_data_v2)
-Biospies_module_color                  <- get.Module_proteins(Biospies_module_color_matrix)
 
 #Try use eigenegen to categorise the biospies data:
 condition_biospies <- unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[.]"), `[[`, 1))
@@ -173,10 +153,15 @@ rm(op)
 
 ## run PCA to identify the sample
 library(factoextra)
-condition_biospies <- unlist(lapply(strsplit(rownames(WGCNA_Biospies_data_v2), "[.]"), `[[`, 1))
+setwd(get.path("outcome"))
+pdf(file = "PCA_Biopsies_NN_2020Jan13.pdf")
 
-pdf(file = "PCA_Biopsies_NN_20191217.pdf")
+condition_biospies <- unlist(lapply(strsplit(rownames(WGCNA_Biospies_data_v2), "[.]"), `[[`, 1))
 get.pca(WGCNA_Biospies_data_v2, condition_biospies, name = "Total Biopsies")
+
+Biospies_module_color_matrix           <- as.matrix(MEs_v2$moduleColors)
+rownames(Biospies_module_color_matrix) <- colnames(WGCNA_Biospies_data_v2)
+Biospies_module_color                  <- get.Module_proteins(Biospies_module_color_matrix)
 
 for (module in names(Biospies_module_color)) {
   data <- Select_if_in_specific_list(t(WGCNA_Biospies_data_v2), 
@@ -191,14 +176,14 @@ Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, c("Q9Y5L4", "Q0
 
 
 ## DisGeNET database:
-Heart_Failure         <- Loaded_data(folder = paste0(save_in_folder , "Anthracycline_Protein_Analysis/data"), file_name = "C0018801_disease_gda_summary.tsv")
-Heart_Failure_Evidences <- Loaded_data(folder = paste0(save_in_folder , "Anthracycline_Protein_Analysis/data"), file_name = "C0018801_disease_gda_evidences.tsv")
+Heart_Failure           <- Loaded_data(folder = get.path("data"), file_name = "C0018801_disease_gda_summary.tsv")
+Heart_Failure_Evidences <- Loaded_data(folder = get.path("data"), file_name = "C0018801_disease_gda_evidences.tsv")
 Heart_Failure_Evidences <- Heart_Failure_Evidences[Heart_Failure_Evidences$Gene %in% Heart_Failure$Gene, ] 
 
 Heart_Failure_Type_of_Evidences <- list()
-Heart_Failure_Type_of_Evidences[["Unique_proteins"]] <- unique(Heart_Failure$UniProt)
-Heart_Failure_Type_of_Evidences[["Unique_genes"]] <- unique(Heart_Failure$Gene)
-Heart_Failure_Type_of_Evidences[["Unique_genes_have_evidence"]] <- intersect(Heart_Failure_Evidences$Gene, Heart_Failure$Gene)
+Heart_Failure_Type_of_Evidences[["All_proteins"]] <- unique(Heart_Failure$UniProt)
+Heart_Failure_Type_of_Evidences[["All_genes"]]    <- unique(Heart_Failure$Gene)
+Heart_Failure_Type_of_Evidences[["All_genes_have_evidence"]] <- intersect(Heart_Failure_Evidences$Gene, Heart_Failure$Gene)
 for (evidence_type in unique(Heart_Failure_Evidences$Association_Type)) {
   Heart_Failure_Type_of_Evidences[[evidence_type]] <- unique(Heart_Failure_Evidences$Gene[Heart_Failure_Evidences$Association_Type == evidence_type])
 }
@@ -237,8 +222,8 @@ unlist(Protein_High_MM_opverlap)
 intersect(unlist(Protein_High_MM_opverlap), unique(Heart_Failure$UniProt))
 
 Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, unlist(Protein_High_MM_opverlap), Protein_metadata, 
-                                       save_folder = "I:/HeCaToS/Paper/Paper1_Protein_Anthacycline/Data_and_Code", 
-                                       file_name = "WGCNA_Overlap_HighMM_Protein_invitro_NN_20191219.pdf")
+                                       save_folder = get.path("outcome"), 
+                                       file_name = "WGCNA_Overlap_HighMM_Protein_invitro_NN_2020Jan13.pdf")
 Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, unlist(Protein_High_MM_opverlap)) 
 
 ## Venn diagram
@@ -247,7 +232,7 @@ venn.diagram(
   x = list(colnames(WGCNA_Invitro_data), colnames(WGCNA_Biospies_data_v2), unique(Heart_Failure$UniProt)),
   fill = c("red", "orange", "blue"), sub.cex = 2,
   category.names = c("Invitro" , "Biopsies", "DisGeNet_Heart_Failure"),
-  filename = 'Venn_diagramm_total_protein_NN_20191218.png', lwd = 2, apha = 0.5,  output=FALSE
+  filename = 'Venn_diagramm_total_protein_NN_20120Jan13.png', lwd = 2, apha = 0.5,  output=FALSE
 )
 
 selected_module_inVitro <- c("turquoise", "green", "blue")
@@ -261,7 +246,7 @@ for(module_inVitro in selected_module_inVitro) {
                              category.names = c(paste0("Invitro_", module_inVitro),
                                                 paste0("Biopsies_", module_biospies),
                                                 "DisGeNet_Heart_Failure"),
-                             filename = paste0(module_inVitro, "_", module_biospies, "_DisGeNet", "_NN_20191218.png"),
+                             filename = paste0(module_inVitro, "_", module_biospies, "_DisGeNet", "_NN_2020Jan13.png"),
                              lwd = 2, apha = 0.5,  output=FALSE
     )
   }
@@ -297,7 +282,6 @@ value <- intersect(colnames(WGCNA_Invitro_data), colnames(WGCNA_Biospies_data_v2
 value2 <- length(intersect(value, unique(Heart_Failure$UniProt)))
 
 
-
 ## combine database
 Proteins <- merge(Invitro_module_color_matrix, Biospies_module_color_matrix, by = "row.names", all = TRUE)
 Proteins <- get.rowname(Proteins)
@@ -318,7 +302,7 @@ output <- cbind(Proteins,
                 Protein_only_in_invitro, Protein_only_in_biopsies,
                 Protein_in_both_invitro_biopsies, Heart_Failure_info_protein, 
                 High_MM_Protein_invitro, High_MM_Protein_biopsies)
-write.csv(output, "protein_data_NN_20191223.csv")
+write.csv(output, "protein_data_NN_2020Jan13.csv")
 
 
 Proteins <- merge(Invitro_module_color_matrix, Biospies_module_color_matrix, by = "row.names", all = TRUE)
@@ -339,7 +323,7 @@ Heart_Failure_info_protein  <- rownames(Proteins) %in% unique(Heart_Failure$UniP
 High_MM_Protein <- rownames(Proteins) %in% c(get.High_MM_proteins_list(Biospies_High_MM_proteins), get.High_MM_proteins_list(Invitro_High_MM_proteins))
 
 output <- cbind(Proteins, Protein_detection, Heart_Failure_info_protein, High_MM_Protein)
-write.csv(output, "protein_data_v2_NN_20191223.csv")
+write.csv(output, "protein_data_v2_NN_2020Jan13.csv")
 
 
 ## Check the overlap in proteomics data between in vitro vs. biospies:
@@ -347,37 +331,34 @@ library(VennDiagram)
 venn.diagram(
   x = list(rownames(Invitro_data_log), rownames(Biospies_data_log)),
   category.names = c("ANT_Proteins" , "Bio_Proteins"),
-  filename = '#14_venn_diagramm.png', lwd = 2,
-  output=TRUE
+  filename = 'Invitro_vs_Biopsies_NN_2020Jan13.png', lwd = 2, output= FALSE
 )
-
 
 
 library(VennDiagram)
 venn.diagram(
   x = list(colnames(WGCNA_Invitro_data), colnames(WGCNA_Biospies_data_v2)),
   category.names = c("ANT_Proteins" , "Bio_Proteins"),
-  filename = '#15_venn_diagramm.png', lwd = 2,
-  output=TRUE
+  filename = 'Invitro_vs_Biopsies_v2_NN_2020Jan13.png', lwd = 2, output= FALSE
 )
 
 
 
 library(VennDiagram)
 venn.diagram(
-  x = list(colnames(WGCNA_Invitro_data), colnames(WGCNA_Biospies_data_v2), unique(Sum_heart_disease_from_Disgenet$UniProt)),
+  x = list(colnames(WGCNA_Invitro_data), colnames(WGCNA_Biospies_data_v2), unique(Heart_Failure$UniProt)),
   category.names = c("ANT_Proteins" , "Bio_Proteins", "DisGeNet_Proteins"),
-  filename = '#16_venn_diagramm.png', lwd = 3,
-  output=TRUE
+  filename = 'Invitro_vs_Biopsies_v2_vs_DisGeNet_NN_2020Jan13.png', lwd = 3, output= FALSE
 )
 
 library(VennDiagram)
 venn.diagram(
-  x = list(Invitro_module_color$turquoise, colnames(WGCNA_Biospies_data_v2), unique(Sum_heart_disease_from_Disgenet$UniProt)),
+  x = list(Invitro_module_color$turquoise, colnames(WGCNA_Biospies_data_v2), unique(Heart_Failure$UniProt)),
   category.names = c("ANT_Proteins_Turquoise" , "Bio_Proteins", "DisGeNet_Proteins"),
-  filename = '#17_venn_diagramm.png', lwd = 3,
-  output=TRUE
+  filename = 'Invitro_Turquoise_vs_Biopsies_v2_vs_DisGeNet_NN_2020Jan13.png', lwd = 3, output= FALSE
 )
+
+## Test
 
 a<-intersect(Invitro_module_color$turquoise, colnames(WGCNA_Biospies_data_v2))
 data <- Select_if_in_specific_list(t(WGCNA_Biospies_data_v2), selected_list = a)
@@ -386,14 +367,14 @@ data <- Select_if_in_specific_list(t(WGCNA_Invitro_data), selected_list = a)
 heatmap(data)
 write.table(a, row.names = FALSE, "test.txt")
 
-a2<-intersect(a, unique(Sum_heart_disease_from_Disgenet$UniProt))
+a2<-intersect(a, unique(Heart_Failure$UniProt))
 write.table(a2, row.names = FALSE, "test2.txt")
 
 
 library(VennDiagram)
 venn.diagram(
   x = list(Invitro_module_color$turquoise, Biospies_module_color$turquoise,
-           unique(Sum_heart_disease_from_Disgenet$UniProt)),
+           unique(Heart_Failure$UniProt)),
   category.names = c("ANT_Proteins_Turquoise" , "Bio_Proteins_turquoise",
                      "DisGeNet_Proteins"),
   filename = '#18_venn_diagramm.png',
@@ -407,7 +388,7 @@ for(module_inVitro in names(Invitro_module_color)) {
   for(module_biospies in names(Biospies_module_color)) {
     venn.diagram(x = list(Invitro_module_color[[module_inVitro]], 
                           Biospies_module_color[[module_biospies]],
-                          unique(Sum_heart_disease_from_Disgenet$UniProt)),
+                          unique(Heart_Failure$UniProt)),
                  category.names = c(paste0("ANT_Proteins_", module_inVitro),
                                     paste0("Bio_Proteins_", module_biospies),
                                     "DisGeNet_Proteins"),
@@ -419,7 +400,7 @@ for(module_inVitro in names(Invitro_module_color)) {
 
 
 venn.diagram(x = list(Invitro_module_color$turquoise, rownames(Biospies_data_log), 
-                      unique(Heart_Failure$UniProt), unique(Sum_heart_disease_from_Disgenet$UniProt)),
+                      unique(Heart_Failure$UniProt), unique(Heart_Failure$UniProt)),
              category.names = c("ANT_Proteins_Turquoise", "Bio_Proteins", 
                                 "HeartFailure_Proteins", "DisGeNET_Protein"),
              filename = "ANT_Proteins_Turquoise_HeartFailure.png",  output=TRUE)
