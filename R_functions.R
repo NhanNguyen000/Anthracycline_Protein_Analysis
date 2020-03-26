@@ -27,6 +27,14 @@ get.Uniprot_IDs <- function(list) {
   return(output)
 }
 
+get.module_protein_number <- function(MEList) {
+  module_protein_number <- c()
+  for(i in unique(MEList$validColors)) {
+    module_protein_number[i]<- length(which(MEList$validColors == i))
+  }
+  return(module_protein_number)
+}
+
 make.sample_names <- function(sample_names) {
   convert_names <- matrix(unlist(strsplit(sample_names, "_")), ncol = 4, byrow = TRUE)
   colnames(convert_names) <- c("Drug", "Dose", "Time", "Replicate")
@@ -35,7 +43,7 @@ make.sample_names <- function(sample_names) {
   convert_names[which(convert_names[, "Dose"] == "Therapeutic"), 2] <- "The"
   convert_names[which(convert_names[, "Dose"] == "Toxic"), 2]       <- "Tox"
   convert_names[which(convert_names[, "Time"] == "T2"), 3]          <- "002"
-  convert_names[which(convert_names[, "Time"] == "T8"), 3]          <- "004"
+  convert_names[which(convert_names[, "Time"] == "T8"), 3]          <- "008"
   convert_names[which(convert_names[, "Time"] == "T24"), 3]         <- "024"
   convert_names[which(convert_names[, "Time"] == "T72"), 3]         <- "072"
   convert_names[which(convert_names[, "Time"] == "T168"), 3]        <- "168"

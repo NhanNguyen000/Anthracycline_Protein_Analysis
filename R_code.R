@@ -24,12 +24,14 @@ Invitro_data_log           <- Round_number_in_data(data = Invitro_data_log, sing
 library(WGCNA)									# load WGCNA library
 options(stringsAsFactors = FALSE) 						# Set the global option for all functions
 WGCNA_Invitro_data   <- Filter_data(data = t(Invitro_data_log))
+dev.off()
 #Made_sample_tree(data = WGCNA_Invitro_data)
 categorial_samples <- c(rep(1, 21), rep(2, 42), rep(3, 42), rep(4, 34))
 op <- par(mar=c(14,4,4,2))
 Made_sample_tree2(WGCNA_Invitro_data, categorial_samples)
 rm(op)
 
+dev.off()
 Pick_WGCNA_power(data = WGCNA_Invitro_data)  # power = 2 --> R square = 0.64, mean connectivity = 59.6
 Protein_Module_color <- Build_WGCNA_geneTree(data = WGCNA_Invitro_data, network_type = "signed", picked_power = 2)
 
@@ -37,12 +39,22 @@ MEList       <- moduleEigengenes(WGCNA_Invitro_data, Protein_Module_color$dynami
 MEs          <- MEList$eigengenes
 get.MEtree_plot(MEs, 0.25) # no modules lower than threshold
 
-Invitro_Hub_proteins     <- get.Hub_proteins(WGCNA_Invitro_data, MEList)
+get.module_protein_number(MEList)
+
+Invitro_module_color_matrix           <- as.matrix(MEList$validColors)
+rownames(Invitro_module_color_matrix) <- colnames(WGCNA_Invitro_data)
+Invitro_module_color                  <- get.Module_proteins(Invitro_module_color_matrix)
+write.table(Invitro_module_color$turquoise, "Invitro_module_turquoise_NN_2020Mar03.txt", col.names = FALSE, row.names = FALSE)
+write.table(Invitro_module_color$blue, "Invitro_module_blue_NN_2020Mar03.txt", col.names = FALSE, row.names = FALSE)
+write.table(Invitro_module_color$green, "Invitro_module_green_NN_2020Mar03.txt", col.names = FALSE, row.names = FALSE)
+
+
+#Invitro_Hub_proteins     <- get.Hub_proteins(WGCNA_Invitro_data, MEList)
 Invitro_High_MM_proteins <- get.High_ModuleMembership_proteins(WGCNA_Invitro_data, MEs, MEList, cutoff = 0.8)
-Invitro_High_MM_proteins_no_missing_data <- list()
-for(module_color in names(Invitro_High_MM_proteins)) {
-  Invitro_High_MM_proteins_no_missing_data[[module_color]]<- get.protein_without_missing_value(WGCNA_Invitro_data, rownames(Invitro_High_MM_proteins[[module_color]]))
-}
+#Invitro_High_MM_proteins_no_missing_data <- list()
+#for(module_color in names(Invitro_High_MM_proteins)) {
+#  Invitro_High_MM_proteins_no_missing_data[[module_color]]<- get.protein_without_missing_value(WGCNA_Invitro_data, rownames(Invitro_High_MM_proteins[[module_color]]))
+#}
 
 
 
@@ -52,14 +64,14 @@ Protein_metadata <- as.data.frame(get.metadata(rownames(WGCNA_Invitro_data)))
 rownames(Protein_metadata) <- rownames(WGCNA_Invitro_data)
 Protein_metadata$Dose      <- paste0(Protein_metadata$Drug, "_", Protein_metadata$Dose)
 
-#Print_ME_in_pdf(MEs = Protein_MEs, metadata = Protein_metadata, 
-#                save_folder = get.path("outcome"), file_name = "WGCNA_Protein_Anthacycline_new_code_NN_2020Jan13.pdf")
+Print_ME_in_pdf(MEs = Protein_MEs, metadata = Protein_metadata, 
+                save_folder = get.path("outcome"), file_name = "WGCNA_Protein_Anthacycline_new_code_NN_2020Mar26.pdf")
 
 ## run PCA to identify the sample
 library(factoextra)
 setwd(get.path("outcome"))
 
-pdf(file = "PCA_Invitro_NN_2020Jan13.pdf")
+pdf(file = "PCA_Invitro_NN_2020Mar26.pdf")
 get.pca(WGCNA_Invitro_data, substring(rownames(WGCNA_Invitro_data), 1,8), name = "Total Invitro")
 get.pca_with_time(WGCNA_Invitro_data, substring(rownames(WGCNA_Invitro_data), 1,8), name = "Total Invitro")
 get.pca_with_selected_time (WGCNA_Invitro_data, substring(rownames(WGCNA_Invitro_data), 1,8), name = "Total Invitro")
@@ -103,6 +115,7 @@ library(WGCNA)									# load WGCNA library
 options(stringsAsFactors = FALSE) 						# Set the global option for all functions
 
 WGCNA_Biospies_data    <- Filter_data(data = Biospies_data_log_withSampleInfo[, -c(1,2)])
+dev.off()
 #Made_sample_tree(data = WGCNA_Biospies_data)
 categorial_samples <- c(1, 2, 3, rep(4, 6), 2, 3, 2, 4, rep(2, 3), rep(4, 2), 2, 4, 2)
 op <- par(mar=c(14,4,4,2))
@@ -113,12 +126,14 @@ Removed_samples <- c("Control_no_data", "Control.8", "Cardiotoxicity_with_ANT.6"
 Biospies_data_log_withSampleInfo_v2 <- Biospies_data_log_withSampleInfo[-which(rownames(Biospies_data_log_withSampleInfo) %in%Removed_samples),]
 
 WGCNA_Biospies_data_v2 <- Filter_data(data = Biospies_data_log_withSampleInfo_v2[, -c(1,2)])
+dev.off()
 #Made_sample_tree(data = WGCNA_Biospies_data_v2)
 categorial_samples <- c(rep(4, 5), 2, 3, 4, 2, 3, rep(2, 2), 4, rep(2,2), 4)
 op <- par(mar=c(14,4,4,2))
 Made_sample_tree2(WGCNA_Biospies_data_v2,categorial_samples)
 rm(op)
 
+dev.off()
 Pick_WGCNA_power(data = WGCNA_Biospies_data_v2)  # power = 5 --> R square = 0.73, mean connectivity = 56.9
 Protein_Module_color   <- Build_WGCNA_geneTree(data = WGCNA_Biospies_data_v2, network_type = "signed", picked_power = 5)
 
@@ -129,6 +144,8 @@ MEs_v2  <- get.MEs_merge(WGCNA_Biospies_data_v2, Protein_Module_color$dynamicCol
 get.MEtree_plot(MEs_v2$MEs, 0.25)
 
 MEList_v2                 <- moduleEigengenes(WGCNA_Biospies_data_v2, MEs_v2$moduleColors)
+get.module_protein_number(MEList_v2) 
+
 Biospies_Hub_proteins     <- chooseTopHubInEachModule(WGCNA_Biospies_data_v2, MEList_v2$validColors)
 Biospies_High_MM_proteins <- get.High_ModuleMembership_proteins(WGCNA_Biospies_data_v2, MEs_v2$MEs, MEList_v2, cutoff = 0.8)
 Biospies_High_MM_proteins_no_missing_data <- list()
@@ -324,6 +341,29 @@ High_MM_Protein <- rownames(Proteins) %in% c(get.High_MM_proteins_list(Biospies_
 
 output <- cbind(Proteins, Protein_detection, Heart_Failure_info_protein, High_MM_Protein)
 write.csv(output, "protein_data_v2_NN_2020Jan13.csv")
+
+## Protein in both in vitro and biopsies data
+#a<-output[which(output$Protein_detection == 3),] # 704 proteins detected in both in vitro and biopsies data
+#b<-a[which(a$High_MM_Protein == TRUE),] # 242 proteins are high module membership
+#d<-b[which(b$Heart_Failure_info_protein ==TRUE),] # 36 protein are high module membership
+
+## Protein in DisGeNET
+#a<-output[which(output$Heart_Failure_info_protein == TRUE),] # 169 proteins are in DisGeNET
+#b<-a[which(a$High_MM_Protein == TRUE),] # 61 proteins are high module membership
+
+## Protein high module membership
+#a<-output[which(output$Heart_Failure_info_protein == TRUE),] # 477 proteins are in DisGeNET
+#b<-a[which(a$Heart_Failure_info_protein == TRUE),]  # 61 proteins are high module membership
+
+## protein in vitro
+a<-output[which(output$Protein_detection != 2),] # 810 protien in vitro
+b<-a[which(a$High_MM_Protein == TRUE),] # 247 proteins are high module membership
+d<-b[which(b$Heart_Failure_info_protein == TRUE),] # 36 proteins in DIsGeNET
+
+## protein in vitro
+a<-output[which(output$Protein_detection != 1),] # 1602 protien in vitro
+b<-a[which(a$High_MM_Protein == TRUE),] # 472 proteins are high module membership
+d<-b[which(b$Heart_Failure_info_protein == TRUE),] # 61 proteins in DIsGeNET
 
 
 ## Check the overlap in proteomics data between in vitro vs. biospies:
