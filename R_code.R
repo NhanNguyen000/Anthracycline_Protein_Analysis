@@ -30,8 +30,8 @@ categorial_samples <- c(rep(1, 21), rep(2, 42), rep(3, 42), rep(4, 34))
 op <- par(mar=c(14,4,4,2))
 Made_sample_tree2(WGCNA_Invitro_data, categorial_samples)
 rm(op)
-
 dev.off()
+
 Pick_WGCNA_power(data = WGCNA_Invitro_data)  # power = 2 --> R square = 0.64, mean connectivity = 59.6
 Protein_Module_color <- Build_WGCNA_geneTree(data = WGCNA_Invitro_data, network_type = "signed", picked_power = 2)
 
@@ -51,6 +51,11 @@ write.table(Invitro_module_color$green, "Invitro_module_green_NN_2020Mar03.txt",
 
 #Invitro_Hub_proteins     <- get.Hub_proteins(WGCNA_Invitro_data, MEList)
 Invitro_High_MM_proteins <- get.High_ModuleMembership_proteins(WGCNA_Invitro_data, MEs, MEList, cutoff = 0.8)
+write.table(rownames(Invitro_High_MM_proteins$turquoise), "Invitro_module_turquoise_HighMM_NN_2020Mar30.txt", col.names = FALSE, row.names = FALSE)
+write.table(rownames(Invitro_High_MM_proteins$blue), "Invitro_module_blue_HighMM_NN_2020Mar30.txt", col.names = FALSE, row.names = FALSE)
+write.table(rownames(Invitro_High_MM_proteins$green), "Invitro_module_green_HighMM_NN_2020Mar30.txt", col.names = FALSE, row.names = FALSE)
+
+
 #Invitro_High_MM_proteins_no_missing_data <- list()
 #for(module_color in names(Invitro_High_MM_proteins)) {
 #  Invitro_High_MM_proteins_no_missing_data[[module_color]]<- get.protein_without_missing_value(WGCNA_Invitro_data, rownames(Invitro_High_MM_proteins[[module_color]]))
@@ -91,8 +96,8 @@ for (module in names(Invitro_module_color)) {
 dev.off()
 
 # Print protein expression & Log2FC
-Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, Invitro_Hub_proteins, Protein_metadata, 
-                                       get.path("outcome"), "WGCNA_Hub_Protein_invitro_NN_2030Jan13.pdf")
+#Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, Invitro_Hub_proteins, Protein_metadata, 
+#                                       get.path("outcome"), "WGCNA_Hub_Protein_invitro_NN_2030Jan13.pdf")
 
 ## Proteomic data in biospies:
 Biospies_data_log <- Loaded_data(folder = get.path("data"), file_name = "Hecatos_Px_Cardio_Biopsies_21samples_log2_median_norm.txt")
@@ -146,13 +151,6 @@ get.MEtree_plot(MEs_v2$MEs, 0.25)
 MEList_v2                 <- moduleEigengenes(WGCNA_Biospies_data_v2, MEs_v2$moduleColors)
 get.module_protein_number(MEList_v2) 
 
-Biospies_Hub_proteins     <- chooseTopHubInEachModule(WGCNA_Biospies_data_v2, MEList_v2$validColors)
-Biospies_High_MM_proteins <- get.High_ModuleMembership_proteins(WGCNA_Biospies_data_v2, MEs_v2$MEs, MEList_v2, cutoff = 0.8)
-Biospies_High_MM_proteins_no_missing_data <- list()
-for(module_color in names(Biospies_High_MM_proteins)) {
-  Biospies_High_MM_proteins_no_missing_data[[module_color]]<- get.protein_without_missing_value(WGCNA_Biospies_data_v2, rownames(Biospies_High_MM_proteins[[module_color]]))
-}
-
 #Try use eigenegen to categorise the biospies data:
 condition_biospies <- unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[.]"), `[[`, 1))
 MEs_biopsies <- as.data.frame(cbind(condition_biospies, MEList_v2$eigengenes))
@@ -167,11 +165,32 @@ barplot(Mean_tem_v1, col=c("red", "green", "blue"),  las = 2, beside = TRUE)
 barplot(Mean_tem_v1, col=c("red", "green", "blue"), legend = rownames(Mean_tem_v1),  las = 2, beside = TRUE)
 rm(op)
 
+Biopsies_selected_module <- c("turquoise", "blue", "brown", "yellow", "green")
+# get protein from selected module
+Biopsies_module_color_matrix           <- as.matrix(MEs_v2$moduleColors)
+rownames(Biopsies_module_color_matrix) <- colnames(WGCNA_Biospies_data_v2)
+Biopsies_module_color                  <- get.Module_proteins(Biopsies_module_color_matrix)
+for(module in Biopsies_selected_module) {
+  write.table(Biopsies_module_color[[module]], paste0("Biopsies_module_", module, "_NN_2020Mar30.txt"),
+              col.names = FALSE, row.names = FALSE)
+}
+# get high module membership protein from selected module
+#Biospies_Hub_proteins     <- chooseTopHubInEachModule(WGCNA_Biospies_data_v2, MEList_v2$validColors)
+Biospies_High_MM_proteins <- get.High_ModuleMembership_proteins(WGCNA_Biospies_data_v2, MEs_v2$MEs, MEList_v2, cutoff = 0.8)
+for(module in Biopsies_selected_module) {
+  write.table(rownames(Biospies_High_MM_proteins[[module]]), paste0("Biopsies_module_", module, "_HighMM_NN_2020Mar30.txt"),
+              col.names = FALSE, row.names = FALSE)
+}
+
+#Biospies_High_MM_proteins_no_missing_data <- list()
+#for(module_color in names(Biospies_High_MM_proteins)) {
+#  Biospies_High_MM_proteins_no_missing_data[[module_color]]<- get.protein_without_missing_value(WGCNA_Biospies_data_v2, rownames(Biospies_High_MM_proteins[[module_color]]))
+#}
 
 ## run PCA to identify the sample
 library(factoextra)
 setwd(get.path("outcome"))
-pdf(file = "PCA_Biopsies_NN_2020Jan13.pdf")
+pdf(file = "PCA_Biopsies_NN_2020Mar30.pdf")
 
 condition_biospies <- unlist(lapply(strsplit(rownames(WGCNA_Biospies_data_v2), "[.]"), `[[`, 1))
 get.pca(WGCNA_Biospies_data_v2, condition_biospies, name = "Total Biopsies")
@@ -205,7 +224,7 @@ for (evidence_type in unique(Heart_Failure_Evidences$Association_Type)) {
   Heart_Failure_Type_of_Evidences[[evidence_type]] <- unique(Heart_Failure_Evidences$Gene[Heart_Failure_Evidences$Association_Type == evidence_type])
 }
 
-Proteins_Invitro_ovelap_Heart_Failure  <- Select_if_in_specific_list(t(WGCNA_Invitro_data), selected_list = unique(Heart_Failure$UniProt))
+Invitro_HeartFailure_Proteins  <- Select_if_in_specific_list(t(WGCNA_Invitro_data), selected_list = unique(Heart_Failure$UniProt))
 Proteins_Invitro_ovelap_Heart_Failure_no_mising_value <- get.protein_without_missing_value(WGCNA_Invitro_data, rownames(Proteins_Invitro_ovelap_Heart_Failure))
 Module_Invitro_ovelap_Heart_Failure <- get.Module_Proteins_overlap_DisGeNET(Invitro_module_color, Heart_Failure, WGCNA_Invitro_data)
 
