@@ -224,44 +224,83 @@ for (evidence_type in unique(Heart_Failure_Evidences$Association_Type)) {
   Heart_Failure_Type_of_Evidences[[evidence_type]] <- unique(Heart_Failure_Evidences$Gene[Heart_Failure_Evidences$Association_Type == evidence_type])
 }
 
-Invitro_HeartFailure_Proteins  <- Select_if_in_specific_list(t(WGCNA_Invitro_data), selected_list = unique(Heart_Failure$UniProt))
-Proteins_Invitro_ovelap_Heart_Failure_no_mising_value <- get.protein_without_missing_value(WGCNA_Invitro_data, rownames(Proteins_Invitro_ovelap_Heart_Failure))
-Module_Invitro_ovelap_Heart_Failure <- get.Module_Proteins_overlap_DisGeNET(Invitro_module_color, Heart_Failure, WGCNA_Invitro_data)
+Invitro_HeartFailure_Proteins  <- Select_if_in_specific_list(t(WGCNA_Invitro_data), 
+                                                             selected_list = unique(Heart_Failure$UniProt))
+Invitro_HeartFailure_Proteins_noMisingValue <- get.protein_without_missing_value(WGCNA_Invitro_data, 
+                                                                                 rownames(Invitro_HeartFailure_Proteins))
+Module_Invitro_ovelap_Heart_Failure <- get.Module_Proteins_overlap_DisGeNET(Invitro_module_color, 
+                                                                            Heart_Failure, 
+                                                                            WGCNA_Invitro_data)
 
-Proteins_Biospies_ovelap_Heart_Failure <- Select_if_in_specific_list(t(WGCNA_Biospies_data_v2), selected_list = unique(Heart_Failure$UniProt))
-Proteins_Biospies_ovelap_Heart_Failure_no_mising_value <- get.protein_without_missing_value(WGCNA_Biospies_data_v2, rownames(Proteins_Biospies_ovelap_Heart_Failure))
-Module_Biospies_ovelap_Heart_Failure <- get.Module_Proteins_overlap_DisGeNET(Biospies_module_color, Heart_Failure, WGCNA_Biospies_data_v2)
+Biospies_HeartFailure_Proteins <- Select_if_in_specific_list(t(WGCNA_Biospies_data_v2), 
+                                                             selected_list = unique(Heart_Failure$UniProt))
+Biospies_HeartFailure_Proteins_noMisingValue <- get.protein_without_missing_value(WGCNA_Biospies_data_v2, 
+                                                                                  rownames(Biospies_HeartFailure_Proteins))
+Module_Biospies_ovelap_Heart_Failure <- get.Module_Proteins_overlap_DisGeNET(Biospies_module_color, 
+                                                                             Heart_Failure, 
+                                                                             WGCNA_Biospies_data_v2)
 
 # module high MM vs. Heart failure
-Invitro_High_MM_Heart_Failure<-list()
+Invitro_HeartFailure_HighMM <-list()
 for (module_inVitro in names(Invitro_High_MM_proteins)) {
-  Invitro_High_MM_Heart_Failure[[module_inVitro]]<- intersect(rownames(Invitro_High_MM_proteins[[module_inVitro]]), 
+  Invitro_HeartFailure_HighMM[[module_inVitro]]<- intersect(rownames(Invitro_High_MM_proteins[[module_inVitro]]), 
                                                               Module_Invitro_ovelap_Heart_Failure$Protein_overlap_DisGeNet[[module_inVitro]])
 }
 
-Biopsies_High_MM_Heart_Failure<-list()
+Biopsies_HeartFailure_HighMM <-list()
 for (module_biospies in names(Biospies_High_MM_proteins)) {
-  Biopsies_High_MM_Heart_Failure[[module_biospies]]<- intersect(rownames(Biospies_High_MM_proteins[[module_biospies]]), 
+  Biopsies_HeartFailure_HighMM[[module_biospies]]<- intersect(rownames(Biospies_High_MM_proteins[[module_biospies]]), 
                                                                 Module_Biospies_ovelap_Heart_Failure$Protein_overlap_DisGeNet[[module_biospies]])
 }
 
-Protein_High_MM_opverlap<-list()
+Protein_HighMM_overlap<-list()
 for (module_inVitro in names(Invitro_High_MM_proteins)) {
   for (module_biospies in names(Biospies_High_MM_proteins)) {
     names_module <- paste0(module_inVitro, "_", module_biospies)
-    Protein_High_MM_opverlap[[names_module]] <- intersect(rownames(Invitro_High_MM_proteins[[module_inVitro]]), 
+    Protein_HighMM_overlap[[names_module]] <- intersect(rownames(Invitro_High_MM_proteins[[module_inVitro]]), 
                                                           rownames(Biospies_High_MM_proteins[[module_biospies]]))
   }
 }
-unlist(Protein_High_MM_opverlap)
+unlist(Protein_HighMM_overlap)
+intersect(unlist(Protein_HighMM_overlap), unique(Heart_Failure$UniProt))
 
-intersect(unlist(Protein_High_MM_opverlap), unique(Heart_Failure$UniProt))
 
-Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, unlist(Protein_High_MM_opverlap), Protein_metadata, 
-                                       save_folder = get.path("outcome"), 
-                                       file_name = "WGCNA_Overlap_HighMM_Protein_invitro_NN_2020Jan13.pdf")
-Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, unlist(Protein_High_MM_opverlap)) 
+#Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, unlist(Protein_High_MM_opverlap), Protein_metadata, 
+#                                       save_folder = get.path("outcome"), 
+#                                       file_name = "WGCNA_Overlap_HighMM_Protein_invitro_NN_2020Jan13.pdf")
+#Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, unlist(Protein_High_MM_opverlap)) 
 
+# save data for cytoscape
+Proteins <- merge(Invitro_module_color_matrix, Biospies_module_color_matrix, by = "row.names", all = TRUE)
+Proteins <- get.rowname(Proteins)
+colnames(Proteins) <- c("Invitro_protein", "Biopsies_protein")
+
+# 1 - Protein_detected_invitro, 2 - Protein_detected_biopsies, 3 - Protein_in_both_invitro_biopsies
+Protein_detected_invitro    <- rownames(Proteins) %in% colnames(WGCNA_Invitro_data)
+Protein_detected_biopsies   <- rownames(Proteins) %in% colnames(WGCNA_Biospies_data_v2)
+Protein_detection <- c()
+for(i in 1:length(rownames(Proteins))) {
+  if (Protein_detected_invitro[i] == TRUE & Protein_detected_biopsies[i] == FALSE) Protein_detection[i]     <- 1
+  else if (Protein_detected_invitro[i] == FALSE & Protein_detected_biopsies[i] ==TRUE) Protein_detection[i] <- 2
+  else if (Protein_detected_invitro[i] == TRUE & Protein_detected_biopsies[i] ==TRUE) Protein_detection[i] <- 3
+}
+
+Heart_Failure_info_protein  <- rownames(Proteins) %in% unique(Heart_Failure$UniProt)
+High_MM_Protein <- rownames(Proteins) %in% c(get.High_MM_proteins_list(Biospies_High_MM_proteins), 
+                                             get.High_MM_proteins_list(Invitro_High_MM_proteins))
+output <- cbind(Proteins, Protein_detection, Heart_Failure_info_protein, High_MM_Protein)
+write.csv(output, "Protein_inputCytoscape_NN_2020Mar31.csv")
+
+dim(output) # total 1708 protein used for WGCNA analysis in invitro and biopsies
+length(which(output$Protein_detection==3)) # 704 proteins detected in both invitro and biopsies
+
+a<-output[which(output$Protein_detection==3),] # 704 proteins detected in both invitro and biopsies
+dim(a)
+b<-a[which(a$High_MM_Protein ==TRUE),] # 242 proteins are high module membership
+dim(b)
+length(which(b$Heart_Failure_info_protein == TRUE))
+
+###================================= code not used
 ## Venn diagram
 library(VennDiagram)
 venn.diagram(
