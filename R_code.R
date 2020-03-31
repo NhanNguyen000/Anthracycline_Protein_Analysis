@@ -99,6 +99,10 @@ dev.off()
 #Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, Invitro_Hub_proteins, Protein_metadata, 
 #                                       get.path("outcome"), "WGCNA_Hub_Protein_invitro_NN_2030Jan13.pdf")
 
+Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, unlist(Protein_HighMM_overlap), Protein_metadata, 
+                                       get.path("outcome"), "WGCNA_Invitro_Protein_HighMMoverlap_NN_2020Mar31.pdf")
+
+
 ## Proteomic data in biospies:
 Biospies_data_log <- Loaded_data(folder = get.path("data"), file_name = "Hecatos_Px_Cardio_Biopsies_21samples_log2_median_norm.txt")
 Biospies_data_log <- get.rowname(Biospies_data_log)
@@ -288,7 +292,10 @@ for(i in 1:length(rownames(Proteins))) {
 Heart_Failure_info_protein  <- rownames(Proteins) %in% unique(Heart_Failure$UniProt)
 High_MM_Protein <- rownames(Proteins) %in% c(get.High_MM_proteins_list(Biospies_High_MM_proteins), 
                                              get.High_MM_proteins_list(Invitro_High_MM_proteins))
-output <- cbind(Proteins, Protein_detection, Heart_Failure_info_protein, High_MM_Protein)
+High_MM_Protein_overlap <- rownames(Proteins) %in% unlist(Protein_HighMM_overlap)
+output <- cbind(Proteins, Protein_detection, Heart_Failure_info_protein, High_MM_Protein, High_MM_Protein_overlap)
+
+output[which(rownames(Proteins) %in% unlist(Protein_HighMM_overlap)),] 
 write.csv(output, "Protein_inputCytoscape_NN_2020Mar31.csv")
 
 dim(output) # total 1708 protein used for WGCNA analysis in invitro and biopsies
