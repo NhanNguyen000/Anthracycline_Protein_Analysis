@@ -24,10 +24,9 @@ Invitro_data_log           <- Round_number_in_data(data = Invitro_data_log, sing
 library(WGCNA)									# load WGCNA library
 options(stringsAsFactors = FALSE) 						# Set the global option for all functions
 WGCNA_Invitro_data   <- Filter_data(data = t(Invitro_data_log))
-dev.off()
 #Made_sample_tree(data = WGCNA_Invitro_data)
 categorial_samples <- c(rep(1, 21), rep(2, 42), rep(3, 42), rep(4, 34))
-op <- par(mar=c(14,4,4,2))
+op <- par(mar=c(4,1,1,12))
 Made_sample_tree2(WGCNA_Invitro_data, categorial_samples)
 rm(op)
 dev.off()
@@ -95,13 +94,88 @@ for (module in names(Invitro_module_color)) {
 }
 dev.off()
 
+# made figure 2 in paper:
+#sampling
+dend <- as.dendrogram(hclust(dist(WGCNA_Invitro_data), method = "average"))
+conditions <- c("Con", "DOX_The", "DOX_Tox", "EPI_The", "EPI_Tox", "IDA_The", "IDA_Tox")
+plot_colors <- as.vector(unlist(unique(g$data[[1]]["colour"])))
+plot_colors_order <-rep(NA, length(labels(dend)))
+for(i in 1:length(conditions)) {
+  plot_colors_order[grep(conditions[i], labels(dend))] <- plot_colors[i]
+}
+
+labels_colors(dend) <- plot_colors_order
+
+pdf("Figure2A.pdf", width = 7, height = 11)
+op <- par(mar=c(4,1,1,12))
+plot(dend, xlab = "Height", xlim = c(40, 0), horiz = TRUE)
+rm(op)
+dev.off()
+
+# ME values
+library("plyr")	
+library("ggplot2")
+library("gridExtra")
+ME_tem    <- as.data.frame(cbind(Protein_metadata, setNames(Protein_MEs["MEturquoise"], "MEs")))
+Mean_tem  <- ddply(ME_tem, ~Dose+Time, summarise, Mean = mean(MEs, na.rm = TRUE), sd = sd(MEs, na.rm = TRUE))
+b1<-ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.25, ymax = 0.25, colour = Dose, group = Dose)) + 
+  geom_line() + geom_point() + 
+  geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
+  xlab("Time (hours)") + ylab("Eigengens value") + ggtitle("ME of turquoise") +  theme_bw() 
+ 
+g <- ggplot_build(b1); unique(g$data[[1]]["colour"]) # exrtact colors list for dendrogram
+
+ME_tem    <- as.data.frame(cbind(Protein_metadata, setNames(Protein_MEs["MEblue"], "MEs")))
+Mean_tem  <- ddply(ME_tem, ~Dose+Time, summarise, Mean = mean(MEs, na.rm = TRUE), sd = sd(MEs, na.rm = TRUE))
+b2<-ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.25, ymax = 0.25, colour = Dose, group = Dose)) + 
+  geom_line() + geom_point() + 
+  geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
+  xlab("Time (hours)") + ylab("Eigengens value") + ggtitle("ME of blue") +  theme_bw() 
+
+ME_tem    <- as.data.frame(cbind(Protein_metadata, setNames(Protein_MEs["MEgreen"], "MEs")))
+Mean_tem  <- ddply(ME_tem, ~Dose+Time, summarise, Mean = mean(MEs, na.rm = TRUE), sd = sd(MEs, na.rm = TRUE))
+b3<-ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.25, ymax = 0.25, colour = Dose, group = Dose)) + 
+  geom_line() + geom_point() + 
+  geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
+  xlab("Time (hours)") + ylab("Eigengens value") + ggtitle("ME of green") +  theme_bw() 
+
+pdf("Figure2B.pdf", width = 8, height = 2.5)
+ml <- marrangeGrob(list(b1,b2), nrow=1, ncol=2)
+print(ml)
+dev.off()
+#PCA
+library(factoextra)
+data <- t(Select_if_in_specific_list(t(WGCNA_Invitro_data), 
+                                   selected_list = Invitro_module_color[["turquoise"]]))
+c1<-plot(get.pca_with_selected_time(data, 
+                                c(substring(rownames(data)[1:21], 1,8), substring(rownames(data)[22:length(rownames(data))], 1,7)), 
+                                name = "turquoise"))
+
+data <- t(Select_if_in_specific_list(t(WGCNA_Invitro_data), 
+                                     selected_list = Invitro_module_color[["blue"]]))
+c2<-plot(get.pca_with_selected_time(data, 
+                                c(substring(rownames(data)[1:21], 1,8), substring(rownames(data)[22:length(rownames(data))], 1,7)), 
+                                name = "blue"))
+data <- t(Select_if_in_specific_list(t(WGCNA_Invitro_data), 
+                                     selected_list = Invitro_module_color[["green"]]))
+c3<-plot(get.pca_with_selected_time(data, 
+                                c(substring(rownames(data)[1:21], 1,8), substring(rownames(data)[22:length(rownames(data))], 1,7)), 
+                                name = "green"))
+pdf("Figure2C.pdf", width = 7, height = 12)
+ml <- marrangeGrob(list(c1,c2,c3), nrow=3, ncol=1)
+print(ml)
+dev.off()
+
 # Print protein expression & Log2FC
 #Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, Invitro_Hub_proteins, Protein_metadata, 
 #                                       get.path("outcome"), "WGCNA_Hub_Protein_invitro_NN_2030Jan13.pdf")
 
-Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, unlist(Protein_HighMM_overlap), Protein_metadata, 
-                                       get.path("outcome"), "WGCNA_Invitro_Protein_HighMMoverlap_NN_2020Mar31.pdf")
+#Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, unlist(Protein_HighMM_overlap), Protein_metadata, 
+#                                       get.path("outcome"), "WGCNA_Invitro_Protein_HighMMoverlap_NN_2020Mar31.pdf")
 
+selected_Proteins <- c("Q16698", "P06576", "P38117", "P29692") # DECR1, ATP5F1B, ETFB, EEF1D
+Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, selected_Proteins, Protein_metadata, 
+                                       get.path("outcome"), "WGCNA_selectedProteins_invitro_NN_2030April06.pdf")
 
 ## Proteomic data in biospies:
 Biospies_data_log <- Loaded_data(folder = get.path("data"), file_name = "Hecatos_Px_Cardio_Biopsies_21samples_log2_median_norm.txt")
@@ -114,6 +188,7 @@ Biospies_data_log           <- Round_number_in_data(data = Biospies_data_log , s
 Biospies_info <- read.table(paste0(get.path("data"), "/Hecatos_Px_Cardio_Biopsies_SampleAnnot.txt"), header = TRUE, sep = "\t", fill= TRUE)
 
 Biospies_info$Biopsies_type <- get.biopsies_type(Biospies_info)
+Biospies_info$Biopsies_type <- paste0(Biospies_info$Biopsies_type,"_", Biospies_info$SID)
 Sample_info                 <- Biospies_info[, c("SampleID", "Biopsies_type")]
 Sample_info$SampleID        <- paste0("X", Sample_info$SampleID)
 Biospies_data_log_withSampleInfo   <- merge(Sample_info, t(Biospies_data_log), by.x = "SampleID", by.y = "row.names")
@@ -127,22 +202,26 @@ WGCNA_Biospies_data    <- Filter_data(data = Biospies_data_log_withSampleInfo[, 
 dev.off()
 #Made_sample_tree(data = WGCNA_Biospies_data)
 categorial_samples <- c(1, 2, 3, rep(4, 6), 2, 3, 2, 4, rep(2, 3), rep(4, 2), 2, 4, 2)
-op <- par(mar=c(14,4,4,2))
+op <- par(mar=c(4,4,4,16))
 Made_sample_tree2(WGCNA_Biospies_data,categorial_samples)
 rm(op)
 
-Removed_samples <- c("Control_no_data", "Control.8", "Cardiotoxicity_with_ANT.6", "Control.9", "Cardiotoxicity_with_ANT.7")
+Removed_samples <- c("Control_patient_no_data_10033",
+                     "Patient_ANTtreatment_10027",
+                     "Control_patient_10059",
+                     "Patient_ANTtreatment_614",
+                     "Control_patient_10021")
 Biospies_data_log_withSampleInfo_v2 <- Biospies_data_log_withSampleInfo[-which(rownames(Biospies_data_log_withSampleInfo) %in%Removed_samples),]
 
 WGCNA_Biospies_data_v2 <- Filter_data(data = Biospies_data_log_withSampleInfo_v2[, -c(1,2)])
 dev.off()
 #Made_sample_tree(data = WGCNA_Biospies_data_v2)
 categorial_samples <- c(rep(4, 5), 2, 3, 4, 2, 3, rep(2, 2), 4, rep(2,2), 4)
-op <- par(mar=c(14,4,4,2))
+op <- par(mar=c(4,4,4,16))
 Made_sample_tree2(WGCNA_Biospies_data_v2,categorial_samples)
 rm(op)
-
 dev.off()
+
 Pick_WGCNA_power(data = WGCNA_Biospies_data_v2)  # power = 5 --> R square = 0.73, mean connectivity = 56.9
 Protein_Module_color   <- Build_WGCNA_geneTree(data = WGCNA_Biospies_data_v2, network_type = "signed", picked_power = 5)
 
@@ -156,7 +235,8 @@ MEList_v2                 <- moduleEigengenes(WGCNA_Biospies_data_v2, MEs_v2$mod
 get.module_protein_number(MEList_v2) 
 
 #Try use eigenegen to categorise the biospies data:
-condition_biospies <- unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[.]"), `[[`, 1))
+condition_biospies <- paste0(unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[_]"), `[[`, 1)),
+                             unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[_]"), `[[`, 2)))
 MEs_biopsies <- as.data.frame(cbind(condition_biospies, MEList_v2$eigengenes))
 
 library("plyr")	
@@ -213,6 +293,59 @@ dev.off()
 ## print protein expression
 Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, Biospies_Hub_proteins) 
 Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, c("Q9Y5L4", "Q07021", "P35232", "P15311", "P30044", "P14324")) 
+
+selected_Proteins <- c("Q16698", "P06576", "P38117", "P29692") # DECR1, ATP5F1B, ETFB, EEF1D
+Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, selected_Proteins) 
+expression_data <-WGCNA_Biospies_data_v2
+selected_list <-selected_Proteins
+
+# plot figure 3:
+pdf("Figure3.pdf", width = 12, height = 6)
+par(mfrow=c(1,2))
+#sampling 
+dend <- as.dendrogram(hclust(dist(WGCNA_Biospies_data_v2), method = "average"))
+conditions <- c("Control", "Patient_ANT", "Patient_nonANT")
+plot_colors <- c("#F8766D", "#C49A00", "#53B400")
+plot_colors_order <-rep(NA, length(labels(dend)))
+for(i in 1:length(conditions)) {
+  plot_colors_order[grep(conditions[i], labels(dend))] <- plot_colors[i]
+}
+
+labels_colors(dend) <- plot_colors_order
+par(mar=c(4,4,4,16))
+plot(dend, xlab = "Height",  horiz = TRUE)
+
+# ME values:
+condition_biospies <- paste0(unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[_]"), `[[`, 1)),
+                             "_", unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[_]"), `[[`, 2)))
+MEs_biopsies <- as.data.frame(cbind(condition_biospies, MEList_v2$eigengenes))
+
+library("plyr")	
+Mean_tem <- MEs_biopsies %>% dplyr::group_by(condition_biospies) %>% dplyr::summarise_all(.funs = c(mean = "mean", Sd="sd"), na.rm = TRUE)
+Mean_tem <- get.rowname(as.matrix(Mean_tem))
+class(Mean_tem) <- "numeric"
+Mean_tem_v1 <- Mean_tem[, grep("mean", colnames(Mean_tem))]
+biopsies_modules <-unlist(lapply(strsplit(colnames(Mean_tem_v1), "[_]"), `[[`, 1))
+biopsies_modules<- substring(biopsies_modules, 3)
+colnames(Mean_tem_v1) <- paste0("ME of ", biopsies_modules)
+par(mar=c(9,4,4,4))
+barplot(Mean_tem_v1, col= plot_colors, 
+        ylab = "Eigengens value", ylim = c(-0.15, 0.20), las = 2, beside = TRUE)
+legend("topright", legend=rownames(Mean_tem_v1), fill= plot_colors)
+dev.off()
+
+## figure 5:
+# in vitro
+selected_Proteins <- c("Q16698", "P06576", "P38117", "P29692") # DECR1, ATP5F1B, ETFB, EEF1D
+Print_protein_expression_log2FC_in_pdf(WGCNA_Invitro_data, selected_Proteins, Protein_metadata, 
+                                       get.path("outcome"), "WGCNA_selectedProteins_invitro_NN_2030April06.pdf")
+
+
+# biopsies
+pdf("Figure5B.pdf", width = 8, height = 6)
+selected_Proteins <- c("Q16698", "P06576", "P38117", "P29692") # DECR1, ATP5F1B, ETFB, EEF1D
+Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, selected_Proteins) 
+dev.off()
 
 
 ## DisGeNET database:

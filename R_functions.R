@@ -84,7 +84,7 @@ Made_sample_tree2 <- function(data, categorial_samples) {
   
   dend <- as.dendrogram(hclust(dist(data), method = "average"))
   labels_colors(dend) <- categorial_samples
-  plot(dend, main = "Sample clustering")
+  plot(dend, main = "Sample clustering", horiz = TRUE)
 }
 
 
@@ -254,7 +254,8 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
   if("ggplot2" %in% rownames(installed.packages()) == FALSE) print("Error!!! Install R package: ggplot2")
   if("gridExtra" %in% rownames(installed.packages()) == FALSE) print("Error!!! Install R package: gridExtra")
   
-  library("plyr")						
+  library("plyr")	
+  library("dplyr")	
   library("ggplot2")		
   library("gridExtra")
   
@@ -262,7 +263,7 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
   Protein_expression <- as.data.frame(t(Select_if_in_specific_list(t(expression_data), selected_list)))
   
   setwd(save_folder)
-  pdf(file_name, onefile = TRUE, width = 15) # set upt the pdf file
+  pdf(file_name, onefile = TRUE, width = 10, 5) # set upt the pdf file
   
   plist_mean   <- list()
   plist_Log2FC <- list()
@@ -270,18 +271,26 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
     Protein_expression_tem    <- as.data.frame(cbind(metadata, setNames(Protein_expression[i], "MEs")))
     Mean_tem  <- ddply(Protein_expression_tem, ~Dose+Time, summarise, Mean = mean(MEs, na.rm = TRUE), sd = sd(MEs, na.rm = TRUE))
     
-    Log2FC_tem <- Mean_tem %>% dplyr::group_by(Dose) %>% mutate(Log2FC = Mean -  Mean_tem[Mean_tem$Dose == 'Con_DMSO', 'Mean'])
-    Log2FC_tem <- Log2FC_tem[-which(Log2FC_tem$Dose == "Con_DMSO"),]
+    Log2FC <- Mean_tem[-which(Mean_tem$Dose == "Con_DMSO"),]
+    Log2FC <- Log2FC[, c(1:2)]
+    
+    grep("DOX_The", Mean_tem$Dose)
+    Log2FC$Log2FC <- c(Mean_tem$Mean[grep("DOX_The", Mean_tem$Dose)]- Mean_tem$Mean[grep("Con_DMSO", Mean_tem$Dose)],
+                       Mean_tem$Mean[grep("DOX_Tox", Mean_tem$Dose)]- Mean_tem$Mean[grep("Con_DMSO", Mean_tem$Dose)],
+                       Mean_tem$Mean[grep("EPI_The", Mean_tem$Dose)]- Mean_tem$Mean[grep("Con_DMSO", Mean_tem$Dose)],
+                       Mean_tem$Mean[grep("EPI_Tox", Mean_tem$Dose)]- Mean_tem$Mean[grep("Con_DMSO", Mean_tem$Dose)],
+                       Mean_tem$Mean[grep("IDA_The", Mean_tem$Dose)]- Mean_tem$Mean[grep("Con_DMSO", Mean_tem$Dose)],
+                       Mean_tem$Mean[grep("IDA_Tox", Mean_tem$Dose)]- head(Mean_tem$Mean[grep("Con_DMSO", Mean_tem$Dose)], -2))
     
     plist_mean[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() + geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
       xlab("Time (hours)") + ylab("Expression value") + ggtitle(i) +  theme_bw() 
     
-    plist_Log2FC[[i]]<- ggplot(Log2FC_tem, aes(x = Time, y = Log2FC, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
+    plist_Log2FC[[i]]<- ggplot(Log2FC, aes(x = Time, y = Log2FC, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() +
       xlab("Time (hours)") + ylab("Log2FC value") + ggtitle(i) +  theme_bw()
   }
-  ml <- marrangeGrob(cbind(plist_mean, plist_Log2FC), nrow=3, ncol=2)
+  ml <- marrangeGrob(cbind(plist_mean, plist_Log2FC), nrow=2, ncol=2)
   print(ml)
   dev.off() # Close the pdf file
 }
@@ -289,14 +298,14 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
 
 get.biopsies_type <- function(Biospies_info) {
   Samples <- c()
-  Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Late onset cardiotoxicity"] <- "Cardiotoxicity"
-  Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Control patients"]          <- "Control"
+  Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Late onset cardiotoxicity"] <- "Patient"
+  Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Control patients"]          <- "Control_patient"
   
   Samples$Drug[Biospies_info$Control...Cardiotoxicity == "Control patients"]           <- "" # control samples
   Samples$Drug[Biospies_info$Chemotherapeutic.agents == ""]            <- "_no_data"
-  Samples$Drug[grep("rubicin", Biospies_info$Chemotherapeutic.agents)] <- "_with_ANT"
-  Samples$Drug[grep("cycline", Biospies_info$Chemotherapeutic.agents)] <- "_with_ANT"
-  Samples$Drug[is.na(Samples$Drug)]                                    <- "_without_ANT"
+  Samples$Drug[grep("rubicin", Biospies_info$Chemotherapeutic.agents)] <- "_ANTtreatment"
+  Samples$Drug[grep("cycline", Biospies_info$Chemotherapeutic.agents)] <- "_ANTtreatment"
+  Samples$Drug[is.na(Samples$Drug)]                                    <- "_nonANTtreatment"
   
   summary_sample           <- matrix(unlist(Samples), ncol =2, byrow = FALSE)
   output <- apply(summary_sample, 1, paste , collapse = "" )
@@ -317,26 +326,31 @@ get.Module_Proteins_overlap_DisGeNET <- function(module_color, DisGeNET, express
 }
 
 Print_protein_expression_log2FC_biopsies <- function(expression_data, selected_list) {
-  library("plyr")	
+  library("plyr")
+  library("dplyr")
+  plot_colors <- c("#F8766D", "#C49A00", "#53B400")
   
   Protein_expression <- as.data.frame(t(Select_if_in_specific_list(t(expression_data), selected_list)))
-  Protein_expression$condition_biospies <- unlist(lapply(strsplit(rownames(Protein_expression), "[.]"), `[[`, 1))
+  Protein_expression$condition_biospies <-  paste0(unlist(lapply(strsplit(rownames(Protein_expression), "[_]"), `[[`, 1)), 
+                                                   "_", unlist(lapply(strsplit(rownames(Protein_expression), "[_]"), `[[`, 2)))
   
   Mean_expression <- Protein_expression %>% dplyr::group_by(condition_biospies) %>% dplyr::summarise_all(.funs = c(mean = "mean", Sd="sd"), na.rm = TRUE)
   Mean_expression <- get.rowname(as.matrix(Mean_expression))
   class(Mean_expression) <- "numeric"
   Mean_expression_v1 <- Mean_expression[, grep("mean", colnames(Mean_expression))]
-  
-  op <- par(mar=c(14,4,4,2))
-  barplot(Mean_expression_v1, ylab = "Expression", col=c("red", "green", "blue"),  las = 2, beside = TRUE)
-  barplot(Mean_expression_v1, ylab = "Expression", col=c("red", "green", "blue"), legend = rownames(Mean_expression_v1),  las = 2, beside = TRUE)
+  colnames(Mean_expression_v1) <- unlist(lapply(strsplit(colnames(Mean_expression_v1), "[_]"), `[[`, 1))
+  op <- par(mar=c(4.5,4,4,2))
+  barplot(Mean_expression_v1 , col= plot_colors, 
+          ylab = "Expression value", ylim = c(0, 25), las = 2, beside = TRUE)
+  legend("topright", legend=rownames(Mean_expression_v1), fill= plot_colors)
   rm(op)
   
   
-  Mean_Log2FC<- sweep(Mean_expression_v1[c("Cardiotoxicity_with_ANT", "Cardiotoxicity_without_ANT"),  ], 2, Mean_expression_v1["Control", ])
-  op <- par(mar=c(14,4,4,2))
-  barplot(Mean_Log2FC, col=c("red", "green"),  las = 2, beside = TRUE)
-  barplot(Mean_Log2FC, col=c("red", "green"), legend = rownames(Mean_Log2FC),  las = 2, beside = TRUE)
+  Mean_Log2FC<- sweep(Mean_expression_v1[c("Patient_ANTtreatment", "Patient_nonANTtreatment"),  ], 2, Mean_expression_v1["Control_patient", ])
+  op <- par(mar=c(4.5,4,4,2))
+  barplot(Mean_Log2FC, col= plot_colors[2:3], 
+          ylab = "Log2 expression value", ylim = c(-0.15, 0.5), las = 2, beside = TRUE)
+  legend("topright", legend=rownames(Mean_Log2FC), fill= plot_colors[2:3])
   rm(op)
 }
 
