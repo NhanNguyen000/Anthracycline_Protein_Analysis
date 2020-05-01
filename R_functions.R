@@ -234,15 +234,16 @@ Print_ME_in_pdf <- function(MEs, metadata, save_folder, file_name) {
   library("gridExtra")
   
   setwd(save_folder)
-  pdf(file_name, onefile = TRUE, width = 15) # set upt the pdf file
+  pdf(file_name, onefile = TRUE, width = 8, height = 8) # set upt the pdf file
   
   plist<- list()
   for (i in colnames(MEs))	{
     ME_tem    <- as.data.frame(cbind(metadata, setNames(MEs[i], "MEs")))
     Mean_tem  <- ddply(ME_tem, ~Dose+Time, summarise, Mean = mean(MEs, na.rm = TRUE), sd = sd(MEs, na.rm = TRUE))
-    plist[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
+    plot_names <- paste0(substr(i,1,2), " of ", substring(i, 3))
+    plist[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.25, ymax = 0.25, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() + geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
-      xlab("Time (hours)") + ylab("Eigengens value") + ggtitle(i) +  theme_bw() 
+      xlab("Time (hours)") + ylab("Eigengens value") + ggtitle(plot_names) +  theme_bw() 
   }
   ml <- marrangeGrob(plist, nrow=3, ncol=2)
   print(ml)

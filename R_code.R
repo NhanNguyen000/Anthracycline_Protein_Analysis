@@ -94,6 +94,47 @@ for (module in names(Invitro_module_color)) {
 }
 dev.off()
 
+# make supplementation figure:
+# digure S1:
+pdf("FigureS1.pdf", width = 8, height = 2.5)
+
+Print_ME_in_pdf(MEs = Protein_MEs, metadata = Protein_metadata, 
+                save_folder = get.path("outcome"), file_name = "FigureS1.pdf")
+
+ml <- marrangeGrob(list(b1,b2), nrow=1, ncol=2)
+print(ml)
+dev.off()
+# figure S2:
+pdf("FigureS2.pdf", width = 7, height = 12)
+
+library(factoextra)
+library("gridExtra")
+setwd(get.path("outcome"))
+#pca_total <- get.pca_with_selected_time(WGCNA_Invitro_data, substring(rownames(WGCNA_Invitro_data), 1,8), name = "Total Invitro")
+get.pca_with_selected_time(WGCNA_Invitro_data,
+                           c(substring(rownames(WGCNA_Invitro_data)[1:21], 1,8), substring(rownames(WGCNA_Invitro_data)[22:length(rownames(WGCNA_Invitro_data))], 1,7)),
+                           name = "Total Invitro")
+
+Invitro_module_color_matrix           <- as.matrix(MEList$validColors)
+rownames(Invitro_module_color_matrix) <- colnames(WGCNA_Invitro_data)
+Invitro_module_color                  <- get.Module_proteins(Invitro_module_color_matrix)
+
+plist <- list()
+for (module in names(Invitro_module_color)) {
+  data <- Select_if_in_specific_list(t(WGCNA_Invitro_data), 
+                                     selected_list = Invitro_module_color[[module]])
+  data <- t(data)
+  plist[[module]] <- get.pca_with_selected_time(data, 
+                                                c(substring(rownames(data)[1:21], 1,8), substring(rownames(data)[22:length(rownames(data))], 1,7)), 
+                                                name = module)
+}
+#ml <- marrangeGrob(list(pca_total, plist), nrow=1, ncol=2)
+ml <- marrangeGrob(plist, nrow=3, ncol=1)
+print(ml)
+dev.off()
+
+
+
 # made figure 2 in paper:
 #sampling
 dend <- as.dendrogram(hclust(dist(WGCNA_Invitro_data), method = "average"))
@@ -298,6 +339,31 @@ selected_Proteins <- c("Q16698", "P06576", "P38117", "P29692") # DECR1, ATP5F1B,
 Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, selected_Proteins) 
 expression_data <-WGCNA_Biospies_data_v2
 selected_list <-selected_Proteins
+
+# plot supplementary data:
+# figure S3:
+pdf("FigureS3.pdf", width = 21, height = 12)
+
+library(factoextra)
+library("gridExtra")
+setwd(get.path("outcome"))
+plist <- list()
+condition_biospies <- paste0(unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[_]"), `[[`, 1)),
+                             "_", unlist(lapply(strsplit(rownames(MEList_v2$eigengenes), "[_]"), `[[`, 2)))
+plist[["pca_total"]] <- get.pca(WGCNA_Biospies_data_v2, condition_biospies, name = "total biopsies")
+
+Biospies_module_color_matrix           <- as.matrix(MEs_v2$moduleColors)
+rownames(Biospies_module_color_matrix) <- colnames(WGCNA_Biospies_data_v2)
+Biospies_module_color                  <- get.Module_proteins(Biospies_module_color_matrix)
+
+for (module in names(Biospies_module_color)) {
+  data <- Select_if_in_specific_list(t(WGCNA_Biospies_data_v2), 
+                                     selected_list = Biospies_module_color[[module]])
+  plist[[module]] <- get.pca(t(data), condition_biospies, name = module)
+}
+ml <- marrangeGrob(plist, nrow=3, ncol=3)
+print(ml)
+dev.off()
 
 # plot figure 3:
 pdf("Figure3.pdf", width = 12, height = 6)
@@ -539,6 +605,9 @@ High_MM_Protein <- rownames(Proteins) %in% c(get.High_MM_proteins_list(Biospies_
 
 output <- cbind(Proteins, Protein_detection, Heart_Failure_info_protein, High_MM_Protein)
 write.csv(output, "protein_data_v2_NN_2020Jan13.csv")
+
+output <- cbind(Proteins, Protein_detection, Heart_Failure_info_protein, Invitro_High_MM_proteins, Biospies_High_MM_proteins, High_MM_Protein)
+write.csv(output, "protein_data_v2_NN_2020May01.csv")
 
 ## Protein in both in vitro and biopsies data
 #a<-output[which(output$Protein_detection == 3),] # 704 proteins detected in both in vitro and biopsies data
