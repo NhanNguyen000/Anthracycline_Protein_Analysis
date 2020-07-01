@@ -350,6 +350,45 @@ selected_Proteins <- c("Q16698", "P06576", "P38117", "P29692", "P11021", "P04792
 Print_protein_expression_log2FC_biopsies(WGCNA_Biospies_data_v2, selected_Proteins) 
 dev.off()
 
+
+
+expression_data <- WGCNA_Biospies_data_v2
+selected_list <-selected_Proteins
+library("plyr")
+library("dplyr")
+plot_colors <- c("#F8766D", "#C49A00", "#53B400")
+
+Protein_expression <- as.data.frame(t(Select_if_in_specific_list(t(expression_data), selected_list)))
+Protein_expression$condition_biospies <-  paste0(unlist(lapply(strsplit(rownames(Protein_expression), "[_]"), `[[`, 1)), 
+                                                 "_", unlist(lapply(strsplit(rownames(Protein_expression), "[_]"), `[[`, 2)))
+
+Mean_expression <- Protein_expression %>% dplyr::group_by(condition_biospies) %>% dplyr::summarise_all(.funs = c(mean = "mean", Sd="sd"), na.rm = TRUE)
+Mean_expression <- get.rowname(as.matrix(Mean_expression))
+class(Mean_expression) <- "numeric"
+Mean_expression_v1 <- Mean_expression[, grep("mean", colnames(Mean_expression))]
+colnames(Mean_expression_v1) <- unlist(lapply(strsplit(colnames(Mean_expression_v1), "[_]"), `[[`, 1))
+
+library(reshape)
+temp <- melt(Protein_expression)
+
+library(ggplot2)
+ggplot(temp, aes(x = variable, y = value, fill = condition_biospies)) +
+  geom_boxplot() +
+  scale_fill_manual(values = plot_colors)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Using DisGeNET database -------------------------------------------------
 
 Heart_Failure           <- Loaded_data(folder = get.path("data"), file_name = "C0018801_disease_gda_summary.tsv")

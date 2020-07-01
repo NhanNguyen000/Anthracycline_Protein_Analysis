@@ -285,7 +285,7 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
     
     plist_mean[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() + geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
-      xlab("Time (hours)") + ylab("Expression value") + ggtitle(i) +  theme_bw() 
+      xlab("Time (hours)") + ylab("Log expression") + ggtitle(i) +  theme_bw() 
     
     plist_Log2FC[[i]]<- ggplot(Log2FC, aes(x = Time, y = Log2FC, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() +
@@ -341,20 +341,19 @@ Print_protein_expression_log2FC_biopsies <- function(expression_data, selected_l
   Mean_expression_v1 <- Mean_expression[, grep("mean", colnames(Mean_expression))]
   colnames(Mean_expression_v1) <- unlist(lapply(strsplit(colnames(Mean_expression_v1), "[_]"), `[[`, 1))
   op <- par(mar=c(4.5,4,4,2))
-  barplot(Mean_expression_v1 , col= plot_colors, 
-          ylab = "Expression value", ylim = c(0, 25), las = 2, beside = TRUE)
-  rm(op)
-  barplot(Mean_expression_v1 , col= plot_colors, 
-          ylab = "Expression value", ylim = c(0, 25), las = 2, beside = TRUE)
-  legend("topright", legend=rownames(Mean_expression_v1), fill= plot_colors)
+  
+  library(reshape)
+  temp <- melt(Protein_expression)
+  
+  library(ggplot2)
+  Log_expression_plot <- ggplot(temp, aes(x = variable, y = value, fill = condition_biospies)) + 
+    geom_boxplot() + scale_fill_manual(values = plot_colors)
+  print(Log_expression_plot + labs(y="Log expression", x = ""))
   rm(op)
   
   
   Mean_Log2FC<- sweep(Mean_expression_v1[c("Patient_ANTtreatment", "Patient_nonANTtreatment"),  ], 2, Mean_expression_v1["Control_patient", ])
   op <- par(mar=c(4.5,4,4,2))
-  barplot(Mean_Log2FC, col= plot_colors[2:3], 
-          ylab = "Log2 expression value", ylim = c(-0.4, 0.6), las = 2, beside = TRUE)
-  rm(op)
   barplot(Mean_Log2FC, col= plot_colors[2:3], 
           ylab = "Log2 expression value", ylim = c(-0.4, 0.6), las = 2, beside = TRUE)
   legend("topright", legend=rownames(Mean_Log2FC), fill= plot_colors[2:3])
