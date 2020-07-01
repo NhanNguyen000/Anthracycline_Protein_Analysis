@@ -283,7 +283,7 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
                        Mean_tem$Mean[grep("IDA_The", Mean_tem$Dose)]- Mean_tem$Mean[grep("Con_DMSO", Mean_tem$Dose)],
                        Mean_tem$Mean[grep("IDA_Tox", Mean_tem$Dose)]- head(Mean_tem$Mean[grep("Con_DMSO", Mean_tem$Dose)], -2))
     
-    plist_mean[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
+    plist_mean[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() + geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
       xlab("Time (hours)") + ylab("Expression value") + ggtitle(i) +  theme_bw() 
     
@@ -303,7 +303,7 @@ get.biopsies_type <- function(Biospies_info) {
   Samples$Patient[Biospies_info$Control...Cardiotoxicity == "Control patients"]          <- "Control_patient"
   
   Samples$Drug[Biospies_info$Control...Cardiotoxicity == "Control patients"]           <- "" # control samples
-  Samples$Drug[Biospies_info$Chemotherapeutic.agents == ""]            <- "_no_data"
+  #Samples$Drug[Biospies_info$Chemotherapeutic.agents == ""]            <- "_no_data"
   Samples$Drug[grep("rubicin", Biospies_info$Chemotherapeutic.agents)] <- "_ANTtreatment"
   Samples$Drug[grep("cycline", Biospies_info$Chemotherapeutic.agents)] <- "_ANTtreatment"
   Samples$Drug[is.na(Samples$Drug)]                                    <- "_nonANTtreatment"
@@ -343,6 +343,9 @@ Print_protein_expression_log2FC_biopsies <- function(expression_data, selected_l
   op <- par(mar=c(4.5,4,4,2))
   barplot(Mean_expression_v1 , col= plot_colors, 
           ylab = "Expression value", ylim = c(0, 25), las = 2, beside = TRUE)
+  rm(op)
+  barplot(Mean_expression_v1 , col= plot_colors, 
+          ylab = "Expression value", ylim = c(0, 25), las = 2, beside = TRUE)
   legend("topright", legend=rownames(Mean_expression_v1), fill= plot_colors)
   rm(op)
   
@@ -350,7 +353,10 @@ Print_protein_expression_log2FC_biopsies <- function(expression_data, selected_l
   Mean_Log2FC<- sweep(Mean_expression_v1[c("Patient_ANTtreatment", "Patient_nonANTtreatment"),  ], 2, Mean_expression_v1["Control_patient", ])
   op <- par(mar=c(4.5,4,4,2))
   barplot(Mean_Log2FC, col= plot_colors[2:3], 
-          ylab = "Log2 expression value", ylim = c(-0.15, 0.5), las = 2, beside = TRUE)
+          ylab = "Log2 expression value", ylim = c(-0.4, 0.6), las = 2, beside = TRUE)
+  rm(op)
+  barplot(Mean_Log2FC, col= plot_colors[2:3], 
+          ylab = "Log2 expression value", ylim = c(-0.4, 0.6), las = 2, beside = TRUE)
   legend("topright", legend=rownames(Mean_Log2FC), fill= plot_colors[2:3])
   rm(op)
 }
