@@ -1,7 +1,7 @@
 ### Function: ================================================
 Loaded_data <- function(folder, file_name) {
   setwd(folder)
-  output<-read.table(file_name, header = TRUE, sep = "\t") 
+  output<-read.table(file_name, header = TRUE, sep = "\t", fill = TRUE) 
   return(output)
 }
 
@@ -243,7 +243,7 @@ Print_ME_in_pdf <- function(MEs, metadata, save_folder, file_name) {
     plot_names <- paste0(substr(i,1,2), " of ", substring(i, 3))
     plist[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, ymin = -0.25, ymax = 0.25, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() + geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
-      xlab("Time (hours)") + ylab("Eigengens value") + ggtitle(plot_names) +  theme_bw() 
+      xlab("Time (hours)") + ylab("Eigengene values") + ggtitle(plot_names) +  theme_bw() 
   }
   ml <- marrangeGrob(plist, nrow=3, ncol=2)
   print(ml)
@@ -268,6 +268,9 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
   
   plist_mean   <- list()
   plist_Log2FC <- list()
+  outcome_mean <- list()
+  outcome_Log2FC <-list()
+  
   for (i in colnames(Protein_expression))	{
     Protein_expression_tem    <- as.data.frame(cbind(metadata, setNames(Protein_expression[i], "MEs")))
     Mean_tem  <- ddply(Protein_expression_tem, ~Dose+Time, summarise, Mean = mean(MEs, na.rm = TRUE), sd = sd(MEs, na.rm = TRUE))
@@ -286,14 +289,17 @@ Print_protein_expression_log2FC_in_pdf <- function(expression_data, selected_lis
     plist_mean[[i]]<- ggplot(Mean_tem, aes(x = Time, y = Mean, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() + geom_errorbar(aes(ymin = Mean-sd, ymax= Mean+sd), width=.2,position=position_dodge(0.05)) +
       xlab("Time (hours)") + ylab("Log expression") + ggtitle(i) +  theme_bw() 
+    outcome_mean[[i]] <- Mean_tem
     
     plist_Log2FC[[i]]<- ggplot(Log2FC, aes(x = Time, y = Log2FC, ymin = -0.4, ymax = 0.4, colour = Dose, group = Dose)) + 
       geom_line() + geom_point() +
       xlab("Time (hours)") + ylab("Log2FC value") + ggtitle(i) +  theme_bw()
+    outcome_Log2FC[[i]] <- Log2FC
   }
   ml <- marrangeGrob(cbind(plist_mean, plist_Log2FC), nrow=2, ncol=2)
   print(ml)
   dev.off() # Close the pdf file
+  return(list("mean" = outcome_mean, "Log2FC" = outcome_Log2FC))
 }
 
 
@@ -355,9 +361,10 @@ Print_protein_expression_log2FC_biopsies <- function(expression_data, selected_l
   Mean_Log2FC<- sweep(Mean_expression_v1[c("Patient_ANTtreatment", "Patient_nonANTtreatment"),  ], 2, Mean_expression_v1["Control_patient", ])
   op <- par(mar=c(4.5,4,4,2))
   barplot(Mean_Log2FC, col= plot_colors[2:3], 
-          ylab = "Log2 expression value", ylim = c(-0.4, 0.6), las = 2, beside = TRUE)
+          ylab = "Log2FC value", ylim = c(-0.4, 0.6), las = 2, beside = TRUE)
   legend("topright", legend=rownames(Mean_Log2FC), fill= plot_colors[2:3])
   rm(op)
+  return(Mean_Log2FC)
 }
 
 get.High_MM_proteins_list <- function(High_MM_proteins) {
