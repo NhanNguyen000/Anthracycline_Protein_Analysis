@@ -2,7 +2,7 @@
 
 ## Description
 This repository for analysis the proteomic analysis in R.
-This data analysis workflow is for the built on the pulication: Nguyen, Nhan et al. “Translational Proteomics Analysis of Anthracycline-Induced Cardiotoxicity From Cardiac Microtissues to Human Heart Biopsies.” Frontiers in Genetics 12 (2021). [https://doi.org/10.3389/fgene.2021.695625](https://doi.org/10.3389/fgene.2021.695625)
+This data analysis workflow is for the pulication: Nguyen, Nhan et al. “Translational Proteomics Analysis of Anthracycline-Induced Cardiotoxicity From Cardiac Microtissues to Human Heart Biopsies.” Frontiers in Genetics 12 (2021). [https://doi.org/10.3389/fgene.2021.695625](https://doi.org/10.3389/fgene.2021.695625)
 
 ## Instructions
 - The **data** folder stores data information files
